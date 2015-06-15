@@ -61,7 +61,7 @@ class ScanCommand extends Command
         }
 
         $httpClient = new PhantomJsHttpClient();
-        $httpClient->init("/usr/local/Cellar/phantomjs/1.9.7/bin/phantomjs");
+        $httpClient->init('/usr/local/Cellar/phantomjs/1.9.7/bin/phantomjs');
 
         $httpClient = new StandardHttpClient(HttpAdapterFactory::guess());
 

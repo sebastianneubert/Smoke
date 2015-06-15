@@ -1,13 +1,12 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: langn
  * Date: 11.06.15
- * Time: 16:15
+ * Time: 16:15.
  */
-
 namespace whm\Smoke\Http\HttpClient\PhantomJs;
-
 
 use whm\Smoke\Http\Response;
 

@@ -1,16 +1,14 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: langn
  * Date: 11.06.15
- * Time: 15:57
+ * Time: 15:57.
  */
-
 namespace whm\Smoke\Http\HttpClient\PhantomJs;
 
-
 use whm\Smoke\Http\HttpClient\HttpClient;
-use whm\Smoke\Http\Response;
 
 class PhantomJsHttpClient implements HttpClient
 {
@@ -30,8 +28,8 @@ class PhantomJsHttpClient implements HttpClient
             $responseArray = $this->doPhantomRequest($uri);
             $parameters['duration'] = microtime(true) - $startTime;
 
-            $response = new PhantomResponse($responseArray["body"], $responseArray["status"], $responseArray["headers"], $parameters);
-            $response->setConsoleOutput($responseArray["consoleOutput"]);
+            $response = new PhantomResponse($responseArray['body'], $responseArray['status'], $responseArray['headers'], $parameters);
+            $response->setConsoleOutput($responseArray['consoleOutput']);
             $responses[] = $response;
         }
 
@@ -40,7 +38,7 @@ class PhantomJsHttpClient implements HttpClient
 
     private function doPhantomRequest($url)
     {
-        $command = $this->phantomPath . " " . __DIR__ . '/sniff.js ' . "'" . $url . "' 2>/dev/null";
+        $command = $this->phantomPath . ' ' . __DIR__ . '/sniff.js ' . "'" . $url . "' 2>/dev/null";
 
         exec($command, $output);
 
@@ -52,10 +50,10 @@ class PhantomJsHttpClient implements HttpClient
 
         die;
 
-        preg_match("/###begin body###(.*)###end body###/s", $output, $matches);
+        preg_match('/###begin body###(.*)###end body###/s', $output, $matches);
         $body = $matches[1];
 
-        preg_match("/###begin header###(.*)###end header###/s", $output, $matches);
+        preg_match('/###begin header###(.*)###end header###/s', $output, $matches);
         $header = $matches[1];
 
         var_dump($header);

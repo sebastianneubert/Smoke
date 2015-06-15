@@ -2,9 +2,9 @@
 
 namespace whm\Smoke\Http\HttpClient\Standard;
 
-use whm\Smoke\Http\HttpClient\HttpClient;
 use Ivory\HttpAdapter\HttpAdapterInterface;
 use Ivory\HttpAdapter\MultiHttpAdapterException;
+use whm\Smoke\Http\HttpClient\HttpClient;
 use whm\Smoke\Http\Request;
 
 /**

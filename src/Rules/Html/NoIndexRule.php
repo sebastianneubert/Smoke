@@ -14,7 +14,7 @@ class NoIndexRule implements Rule
 {
     public function validate(Response $response)
     {
-        if ($response->getContentType() != "text/html") {
+        if ($response->getContentType() !== 'text/html') {
             return;
         }
 
