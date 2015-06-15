@@ -15,6 +15,7 @@ cache:
 
 before_script:
    - mkdir -p "$HOME/.php-cs-fixer"
+   - composer self-update
    - composer update
 
 script:
