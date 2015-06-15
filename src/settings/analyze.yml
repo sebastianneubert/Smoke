@@ -54,7 +54,7 @@ rules:
   _HtmlClosingTag:
     class: whm\Smoke\Rules\Html\ClosingHtmlTagRule
 
-  _HtmlnoIndex:
+  _HtmlNoIndex:
     class: whm\Smoke\Rules\Html\NoIndexRule
 
   _HtmlInvalidUrlsTag:

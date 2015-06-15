@@ -5,10 +5,9 @@ namespace whm\Smoke\Scanner;
 use Phly\Http\Uri;
 use phmLabs\Components\Annovent\Dispatcher;
 use phmLabs\Components\Annovent\Event\Event;
-use PhmLabs\Components\Init\Init;
 use whm\Smoke\Config\Configuration;
 use whm\Smoke\Http\Document;
-use whm\Smoke\Http\HttpClient;
+use whm\Smoke\Http\HttpClient\HttpClient;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\ValidationFailedException;
 

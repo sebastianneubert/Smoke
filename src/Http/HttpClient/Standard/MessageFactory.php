@@ -1,11 +1,12 @@
 <?php
 
-namespace whm\Smoke\Http;
+namespace whm\Smoke\Http\HttpClient\Standard;
 
 use Ivory\HttpAdapter\Message\RequestInterface;
 use Ivory\HttpAdapter\Normalizer\HeadersNormalizer;
 use Phly\Http\Stream;
 use Psr\Http\Message\StreamInterface;
+use whm\Smoke\Http\Response;
 
 /**
  * MessageFactory.

@@ -1,16 +1,18 @@
 <?php
 
-namespace whm\Smoke\Http;
+namespace whm\Smoke\Http\HttpClient\Standard;
 
+use whm\Smoke\Http\HttpClient\HttpClient;
 use Ivory\HttpAdapter\HttpAdapterInterface;
 use Ivory\HttpAdapter\MultiHttpAdapterException;
+use whm\Smoke\Http\Request;
 
 /**
  * HttpClient.
  *
  * @author Robert Schönthal <robert.schoenthal@gmail.com>
  */
-class HttpClient
+class StandardHttpClient implements HttpClient
 {
     /**
      * @var HttpAdapterInterface

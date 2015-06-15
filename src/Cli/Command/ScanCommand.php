@@ -12,7 +12,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
 use whm\Smoke\Config\Configuration;
-use whm\Smoke\Http\HttpClient;
+use whm\Smoke\Http\HttpClient\PhantomJs\PhantomJsHttpClient;
+use whm\Smoke\Http\HttpClient\Standard\StandardHttpClient;
 use whm\Smoke\Scanner\Scanner;
 
 class ScanCommand extends Command
@@ -59,7 +60,12 @@ class ScanCommand extends Command
             include $input->getOption('bootstrap');
         }
 
-        $scanner = new Scanner($config, new HttpClient(HttpAdapterFactory::guess()), $eventDispatcher);
+        $httpClient = new PhantomJsHttpClient();
+        $httpClient->init("/usr/local/Cellar/phantomjs/1.9.7/bin/phantomjs");
+
+        $httpClient = new StandardHttpClient(HttpAdapterFactory::guess());
+
+        $scanner = new Scanner($config, $httpClient, $eventDispatcher);
 
         $scanner->scan();
 
