@@ -12,7 +12,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
 use whm\Smoke\Config\Configuration;
-use whm\Smoke\Http\HttpClient;
+use whm\Smoke\Http\HttpClient\Standard\StandardHttpClient;
 use whm\Smoke\Scanner\Scanner;
 
 class WarmUpCommand extends Command
@@ -58,7 +58,7 @@ class WarmUpCommand extends Command
             include $input->getOption('bootstrap');
         }
 
-        $scanner = new Scanner($config, new HttpClient(HttpAdapterFactory::guess()), $eventDispatcher);
+        $scanner = new Scanner($config, new StandardHttpClient(HttpAdapterFactory::guess()), $eventDispatcher);
 
         $timeStrategy = $config->getExtension('_SmokeStop')->getStrategy('_TimeStop');
         $timeStrategy->init($input->getOption('duration'));
