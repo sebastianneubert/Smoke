@@ -21,7 +21,6 @@ class HttpsCertificateExpireRule extends HttpsRule
 
     protected function doValidate($certInfo)
     {
-
         $validFrom = date('d.m.Y H:i:s', $certInfo['validFrom_time_t']);
         $validTo = date('d.m.Y H:i:s', $certInfo['validTo_time_t']);
 
@@ -32,6 +31,5 @@ class HttpsCertificateExpireRule extends HttpsRule
             $errorMessage = 'Certificate warning, expires in less than ' . $this->expireWarningTime . ' days. Certificate expires at: ' . $validTo;
             throw new ValidationFailedException($errorMessage);
         }
-
     }
 }

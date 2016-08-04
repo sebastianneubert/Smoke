@@ -25,7 +25,7 @@ class RegExNotExistsRule extends StandardRule
     protected function doValidation(Response $response)
     {
         foreach ($this->regExs as $regEx) {
-            $this->assert(preg_match('^' . $regEx . '^', (string) $response->getBody()) == 0,
+            $this->assert(preg_match('^' . $regEx . '^', (string) $response->getBody()) === 0,
                 'The given regular expression (' . $regEx . ') was found in this document.');
         }
     }

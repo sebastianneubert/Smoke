@@ -29,8 +29,8 @@ class XPathExistsRule extends StandardRule
         foreach ($this->xPaths as $xpath) {
             $count = $domXPath->query($xpath['pattern'])->length;
 
-            if ($xpath['relation'] == 'equals') {
-                $result = $count == $xpath['value'];
+            if ($xpath['relation'] === 'equals') {
+                $result = $count === $xpath['value'];
                 $message = 'The xpath "' . $xpath['pattern'] . '" was found ' . $count . ' times. Expected were exact ' . $xpath['value'] . ' occurencies.';
             } elseif ($xpath['relation'] === 'less than') {
                 $result = $count < $xpath['value'];
