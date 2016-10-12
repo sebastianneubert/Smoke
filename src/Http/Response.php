@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Http;
 
+use Ivory\HttpAdapter\Message\Request;
 use whm\Html\Uri;
 
 class Response extends \Ivory\HttpAdapter\Message\Response

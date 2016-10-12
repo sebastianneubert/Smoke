@@ -16,7 +16,7 @@ class SizeRule extends StandardRule
     protected $contentTypes = array('text/html');
 
     /**
-     * @param int $maxSize The maximum size of a html file in kilobytes.
+     * @param int $maxSize The maximum size of a html file in kilobytes
      */
     public function init($maxSize = 200)
     {

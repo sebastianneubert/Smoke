@@ -15,7 +15,7 @@ class SizeRule extends StandardRule
     protected $contentTypes = array('image');
 
     /**
-     * @param int $maxSize The maximum size of an image file in kilobytes.
+     * @param int $maxSize The maximum size of an image file in kilobytes
      */
     public function init($maxSize = 100)
     {

@@ -35,9 +35,9 @@ class MessageFactory extends \Ivory\HttpAdapter\Message\MessageFactory
     /**
      * Creates a stream.
      *
-     * @param null|resource|string|\Psr\Http\Message\StreamInterface|null $body The body.
+     * @param null|resource|string|\Psr\Http\Message\StreamInterface|null $body The body
      *
-     * @return \Psr\Http\Message\StreamInterface The stream.
+     * @return \Psr\Http\Message\StreamInterface The stream
      */
     private function doCreateStream($body)
     {

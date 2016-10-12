@@ -3,8 +3,8 @@
 namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Koalamon;
 
 use Ivory\HttpAdapter\HttpAdapterInterface;
-use Ivory\HttpAdapter\Message\Request;
 use Psr\Http\Message\UriInterface;
+use whm\Crawler\Http\RequestFactory;
 use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever as SmokeRetriever;
 
@@ -58,7 +58,7 @@ class Retriever implements SmokeRetriever
 
         $system = array_pop($this->systems);
 
-        $request = new Request(new Uri($system['url']), 'GET', 'php://memory', ['Accept-Encoding' => 'gzip']);
+        $request = RequestFactory::getRequest(new Uri($system['url']), 'GET', 'php://memory', ['Accept-Encoding' => 'gzip', 'Connection' => 'keep-alive']);
         $responses = $this->client->sendRequests(array($request));
 
         return $responses[0];

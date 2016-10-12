@@ -53,9 +53,6 @@ class XUnitReporter implements Reporter
         $this->results[] = $result;
     }
 
-    /**
-     *
-     */
     public function finish()
     {
         $failures = 0;

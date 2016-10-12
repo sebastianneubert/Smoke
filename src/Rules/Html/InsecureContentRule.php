@@ -28,7 +28,8 @@ class InsecureContentRule implements Rule
         }
 
         $htmlDocument = new Document($response->getBody());
-        $resources = $htmlDocument->getDependencies($response->getUri(), false);
+
+        $resources = $htmlDocument->getDependencies($response->getRequest()->getUri(), false);
 
         foreach ($resources as $resource) {
             if ($resource->getScheme() && 'https' !== $resource->getScheme()) {

@@ -30,13 +30,13 @@ class XPathExistsRule extends StandardRule
             $count = $domXPath->query($xpath['pattern'])->length;
 
             if ($xpath['relation'] === 'equals') {
-                $result = $count === $xpath['value'];
+                $result = $count === (int) $xpath['value'];
                 $message = 'The xpath "' . $xpath['pattern'] . '" was found ' . $count . ' times. Expected were exact ' . $xpath['value'] . ' occurencies.';
             } elseif ($xpath['relation'] === 'less than') {
-                $result = $count < $xpath['value'];
+                $result = $count < (int) $xpath['value'];
                 $message = 'The xpath "' . $xpath['pattern'] . '" was found ' . $count . ' times. Expected were less than ' . $xpath['value'] . '.';
             } elseif ($xpath['relation'] === 'greater than') {
-                $result = $count > $xpath['value'];
+                $result = $count > (int) $xpath['value'];
                 $message = 'The xpath "' . $xpath['pattern'] . '" was found ' . $count . ' times. Expected were more than ' . $xpath['value'] . '.';
             } else {
                 throw new \RuntimeException('Relation not defined. Given "' . $xpath['relation'] . '" expected [equals, greater than, less than]');

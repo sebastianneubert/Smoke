@@ -15,7 +15,7 @@ abstract class CountRule extends StandardRule
     protected $errorMessage;
 
     /**
-     * @param int $maxCount The maximum number of css files that are allowed in one html document.
+     * @param int $maxCount The maximum number of css files that are allowed in one html document
      */
     public function init($maxCount)
     {

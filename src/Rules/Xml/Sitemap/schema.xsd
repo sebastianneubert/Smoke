@@ -1,0 +1,9 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9"
+               schemaLocation="sitemap0_9.xsd"/>
+
+    <xs:import namespace="http://www.google.com/schemas/sitemap-image/1.1"
+               schemaLocation="sitemap-image.xsd"/>
+
+</xs:schema>

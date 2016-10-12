@@ -3,9 +3,9 @@
 namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever;
 
 use Ivory\HttpAdapter\HttpAdapterInterface;
-use Ivory\HttpAdapter\Message\Request;
 use Ivory\HttpAdapter\MultiHttpAdapterException;
 use Psr\Http\Message\UriInterface;
+use whm\Crawler\Http\RequestFactory;
 use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever as SmokeRetriever;
 
@@ -37,7 +37,7 @@ class Retriever implements SmokeRetriever
 
         $url = array_pop($this->urlStack);
 
-        $request = new Request(new Uri($url['url']), 'GET', 'php://memory', ['Accept-Encoding' => 'gzip']);
+        $request = RequestFactory::getRequest(new Uri($url['url']), 'GET', 'php://memory', ['Accept-Encoding' => 'gzip', 'Connection' => 'keep-alive']);
 
         try {
             $responses = $this->httpClient->sendRequests(array($request));

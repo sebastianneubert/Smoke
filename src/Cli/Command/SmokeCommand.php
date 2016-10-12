@@ -6,13 +6,13 @@ use Ivory\HttpAdapter\CurlHttpAdapter;
 use Ivory\HttpAdapter\Event\Subscriber\RedirectSubscriber;
 use Ivory\HttpAdapter\Event\Subscriber\RetrySubscriber;
 use Ivory\HttpAdapter\EventDispatcherHttpAdapter;
-use Ivory\HttpAdapter\HttpAdapterFactory;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use whm\Crawler\Http\RequestFactory;
 use whm\Smoke\Http\MessageFactory;
 use whm\Smoke\Scanner\Scanner;
 use whm\Smoke\Yaml\EnvAwareYaml;
@@ -69,6 +69,9 @@ class SmokeCommand extends Command
         /** @var \Ivory\HttpAdapter\Guzzle6HttpAdapter $guessedAdapter */
         $guessedAdapter = new CurlHttpAdapter();
 
+        RequestFactory::addStandardHeader('Accept-Encoding', 'gzip');
+        RequestFactory::addStandardHeader('Connection', 'keep-alive');
+
         $adapter = new EventDispatcherHttpAdapter($guessedAdapter, $eventDispatcher);
         $adapter->getConfiguration()->setTimeout(30);
         //$adapter->getConfiguration()->setUserAgent('versioneye-php');
@@ -101,7 +104,7 @@ class SmokeCommand extends Command
         $configArray = array();
 
         if ($configFile) {
-            if (strpos($configFile, 'http://') === 0) {
+            if (strpos($configFile, 'http://') === 0 || strpos($configFile, 'https://') === 0) {
                 $fileContent = (string) $this->getHttpClient()->get($configFile)->getBody();
             } else {
                 if (file_exists($configFile)) {

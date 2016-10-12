@@ -29,8 +29,8 @@ class ExistsRule extends StandardRule
 
             $currentValue = $response->getHeader($headerConfig['key'])[0];
 
-            if ($currentValue !== $headerConfig['value']) {
-                throw new ValidationFailedException('Header "' . $headerConfig['key'] . '" does not equal "' . $headerConfig['value'] . '". Current value is "' . $currentValue . '"');
+            if (!preg_match('^' . $headerConfig['value'] . '^', $currentValue, $matches)) {
+                throw new ValidationFailedException('Header "' . $headerConfig['key'] . '" does not match "' . $headerConfig['value'] . '". Current value is "' . $currentValue . '"');
             }
         }
     }

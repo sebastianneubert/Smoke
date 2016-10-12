@@ -5,13 +5,13 @@
 
   "require": {
     "php": ">= 5.4.0",
-    "symfony/yaml": "~2.8",
-    "symfony/console": "~2.8",
-    "symfony/dom-crawler": "~2.8",
+    "symfony/yaml": "~3.1",
+    "symfony/console": "~3.1",
+    "symfony/dom-crawler": "~3.1",
     "egeloen/http-adapter": "dev-timings",
     "phmlabs/annovent": "~1.0.0",
     "phmlabs/init": "~1.0.0",
-    "phmlabs/html": "~1.1.0",
+    "phmlabs/html": "~2.0",
     "phmlabs/crawler": "~1.2.0",
     "phmlabs/xunitreport": ">= 1.0.2",
     "koalamon/koalamonclient": "dev-master"

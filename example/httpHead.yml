@@ -32,31 +32,16 @@ extensions:
     parameters:
       runLevel: 10
 
-#reporter:
-#  _CliReporter:
-#    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
-
 reporter:
   _CliReporter:
     class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
-
-  KoalamonReporter:
-     class: whm\Smoke\Extensions\SmokeReporter\Reporter\KoalamonReporter
-     parameters:
-       systemUseRetriever: false
-       identifier: ${IDENTIFIER}
-       system: ${SYSTEM}
-       apiKey: BED9198D-48FA-453E-BD57-D42103E41542
-       server: http://lean.xcel.io/webhook/
-       tool: SmokeBasic
-       collect: true
 
 responseRetriever:
  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
 
  parameters:
    parallelRequests: 5
-   startPage: "${SCAN_URL}"
+   startPage: http://www.maennersache.de/
 
    pageContainer:
      class: whm\Crawler\PageContainer\PatternAwareContainer
@@ -75,31 +60,17 @@ stop:
   _CountStop:
     class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
     parameters:
-      maxCount: ${SCAN_URL_COUNT}
+      maxCount: 10
 
 rules:
   _IvwJsFile:
    runLevel: 1
-   class: whm\Smoke\Rules\Html\RegExExistsRule
+   class: whm\Smoke\Rules\Http\Header\ExistsRule
    parameters:
-     regExs:
-       - "//script.ioam.de/iam.js"
-
-  _IvwCall:
-   runLevel: 1
-   class: whm\Smoke\Rules\Html\RegExExistsRule
-   parameters:
-     regExs:
-       - "iom.c\(iam_data(,1)?\);"
-       - 'var iam_data = {'
-       # - '"st":"wuweib",'
-       - '"cp":"[A-Za-z0-9\-\_]*",'
-       - '"sv":"[A-Za-z0-9\-\_]*"'
-
-  _IvwCNotall:
-   runLevel: 1
-   class: whm\Smoke\Rules\Html\RegExNotExistsRule
-   parameters:
-     regExs:
-       - '"var iam_data = {'
-       - '""st""'
+     checkedHeaders:
+      1:
+        key: 'Connection'
+        value: '(keep\-alive|close)'
+      2:
+        key: 'Cache-control'
+        value: 'public(, (s-)?maxage=\d*)?'
