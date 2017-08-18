@@ -36,6 +36,7 @@ class LeankoalaReporter implements Reporter
     private $groupBy;
     private $server;
     private $addComingFrom;
+    private $useUrlAsIdentifier;
 
     /**
      * @var KoalaReporter
@@ -60,7 +61,7 @@ class LeankoalaReporter implements Reporter
     const STATUS_SUCCESS = 'success';
     const STATUS_FAILURE = 'failure';
 
-    public function init($apiKey, Configuration $_configuration, OutputInterface $_output, $server = 'https://webhook.koalamon.com', $system = '', $identifier = '', $tool = '', $collect = true, $systemUseRetriever = false, $groupBy = false, $addComingFrom = true, $useMongo = true)
+    public function init($apiKey, Configuration $_configuration, OutputInterface $_output, $server = 'https://webhook.koalamon.com', $system = '', $identifier = '', $tool = '', $collect = true, $systemUseRetriever = false, $groupBy = false, $addComingFrom = true, $useMongo = true, $useUrlAsIdentifier = false)
     {
         $httpClient = new \GuzzleHttp\Client();
 
@@ -76,6 +77,7 @@ class LeankoalaReporter implements Reporter
         $this->system = $system;
         $this->collect = $collect;
         $this->identifier = $identifier;
+        $this->useUrlAsIdentifier = $useUrlAsIdentifier;
         $this->groupBy = $groupBy;
 
         $this->addComingFrom = $addComingFrom;
@@ -216,7 +218,13 @@ class LeankoalaReporter implements Reporter
 
     private function getIdentifier(CheckResult $result)
     {
-        return $this->tool . '_' . $result->getRuleName();
+        if ($this->useUrlAsIdentifier) {
+            $suffix = '_' . md5((string)$result->getResponse()->getUri());
+        } else {
+            $suffix = '';
+        }
+
+        return $this->tool . '_' . $result->getRuleName() . $suffix;
     }
 
     private function getPrefix($string)
