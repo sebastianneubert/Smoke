@@ -45,8 +45,10 @@ class MemoryExtension
      */
     public function finish()
     {
-        $yaml = Yaml::dump($this->memory);
-        file_put_contents($this->memoryFile, $yaml);
+        if ((reset($this->memory)) !== false) {
+            $yaml = Yaml::dump($this->memory);
+            file_put_contents($this->memoryFile, $yaml);
+        }
     }
 
 
