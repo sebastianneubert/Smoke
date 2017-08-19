@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules;
 
+use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 
 class CheckResult
@@ -76,7 +77,7 @@ class CheckResult
     }
 
     /**
-     * @return ResponseInterface
+     * @return UriAwareResponse
      */
     public function getResponse()
     {
