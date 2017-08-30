@@ -9,31 +9,39 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Html\Document;
 use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\Rule;
 
 /**
- * This rule checks if a https document uses http (insecure) ressources.
+ * This rule checks if a https document uses http (insecure) resources.
  */
 class InsecureContentRule implements Rule
 {
     private $excludedFiles = [];
 
-    public function init($excludedFiles = [])
+    private $nonStrictFiles = ['\.png', '\.jpg', '\.jpeg', '\.ico', '\.bmp', '\.gif'];
+
+    public function init($excludedFiles = [], $nonStrictMode = false)
     {
         foreach ($excludedFiles as $excludedFile) {
             $this->excludedFiles[] = $excludedFile['file'];
+        }
+
+        if ($nonStrictMode == 'on' || $nonStrictMode == true) {
+            $this->excludedFiles = array_merge($this->excludedFiles, $this->nonStrictFiles);
         }
     }
 
     public function validate(ResponseInterface $response)
     {
+        /** @var UriAwareResponse $response */
         $uri = $response->getUri();
 
         if ('https' !== $uri->getScheme()) {
-            return;
+            return true;
         }
 
         $htmlDocument = new Document((string)$response->getBody());
@@ -46,7 +54,7 @@ class InsecureContentRule implements Rule
             if ($resource->getScheme() && 'https' !== $resource->getScheme()) {
                 $excluded = false;
                 foreach ($this->excludedFiles as $excludedFile) {
-                    if (preg_match('*' . $excludedFile . '*', (string)$resource)) {
+                    if (preg_match('~' . $excludedFile . '~', (string)$resource)) {
                         $excluded = true;
                         break;
                     }
