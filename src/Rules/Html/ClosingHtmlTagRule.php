@@ -16,6 +16,7 @@ class ClosingHtmlTagRule implements Rule
     {
         if ($response instanceof ContentTypeAwareResponse) {
 
+            // @todo this could be part of the StandardRule class
             $body = (string)$response->getBody();
             $body = preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F,\xFF,\x8B]/', '', $body);
 

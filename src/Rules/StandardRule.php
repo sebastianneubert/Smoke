@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules;
 
+use phm\HttpWebdriverClient\Http\Response\ContentTypeAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class StandardRule implements Rule
@@ -10,6 +11,8 @@ abstract class StandardRule implements Rule
 
     public function validate(ResponseInterface $response)
     {
+        /** @var ContentTypeAwareResponse $response */
+
         if (count($this->contentTypes) > 0) {
             $valid = false;
             foreach ($this->contentTypes as $validContentType) {
@@ -19,7 +22,7 @@ abstract class StandardRule implements Rule
                 }
             }
             if (!$valid) {
-                return;
+                return true;
             }
         }
 
