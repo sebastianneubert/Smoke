@@ -22,7 +22,7 @@ abstract class StandardRule implements Rule
                 }
             }
             if (!$valid) {
-                return true;
+                return;
             }
         }
 

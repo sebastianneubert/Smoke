@@ -90,6 +90,7 @@ class Scanner
 
             try {
                 $result = $rule->validate($response);
+
                 if (!$result) {
                     $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
                 }

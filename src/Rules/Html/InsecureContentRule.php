@@ -41,7 +41,7 @@ class InsecureContentRule implements Rule
         $uri = $response->getUri();
 
         if ('https' !== $uri->getScheme()) {
-            return true;
+            return;
         }
 
         $htmlDocument = new Document((string)$response->getBody());

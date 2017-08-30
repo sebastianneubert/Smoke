@@ -19,11 +19,8 @@ class InvalidUrlsRule extends StandardRule
     protected function doValidation(ResponseInterface $response)
     {
         $document = new Document((string)$response->getBody(), false);
-
         $urls = $document->getDependencies($response->getUri());
-
         $invalidUrls = array();
-
 
         foreach ($urls as $url) {
 
