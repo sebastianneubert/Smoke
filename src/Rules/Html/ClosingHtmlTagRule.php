@@ -15,9 +15,16 @@ class ClosingHtmlTagRule implements Rule
     public function validate(ResponseInterface $response)
     {
         if ($response instanceof ContentTypeAwareResponse) {
-            if (($response->getStatusCode() < 300 || $response->getStatusCode() >= 400) && $response->getContentType() === 'text/html') {
-                if (stripos((string)$response->getBody(), '</html>') === false) {
-                    throw new ValidationFailedException('Closing html tag is missing (document length: ' . strlen((string)$response->getBody()) . ').');
+
+            $body = (string)$response->getBody();
+            $body = preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F,\xFF,\x8B]/', '', $body);
+
+            if (($response->getStatusCode() < 300 || $response->getStatusCode() >= 400)
+                && $response->getContentType() === 'text/html'
+                && strlen($body) > 0
+            ) {
+                if (stripos($body, '</html>') === false) {
+                    throw new ValidationFailedException('Closing html tag is missing (document length: ' . strlen($body) . ').');
                 }
             }
         }
