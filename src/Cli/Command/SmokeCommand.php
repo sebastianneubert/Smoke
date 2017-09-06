@@ -2,22 +2,13 @@
 
 namespace whm\Smoke\Cli\Command;
 
-use Cache\Adapter\Filesystem\FilesystemCachePool;
 use GuzzleHttp\Client;
-use Ivory\HttpAdapter\CurlHttpAdapter;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
-use phm\HttpWebdriverClient\Http\Client\Chrome\ChromeClient;
-use phm\HttpWebdriverClient\Http\Client\Decorator\CacheDecorator;
-use phm\HttpWebdriverClient\Http\Client\Guzzle\GuzzleClient;
-use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use whm\Smoke\Config\Configuration;
-use whm\Smoke\Extensions\SmokeHttpClient\CacheAware;
 use whm\Smoke\Scanner\Scanner;
 use whm\Smoke\Yaml\EnvAwareYaml;
 
