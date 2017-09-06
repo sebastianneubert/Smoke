@@ -65,12 +65,25 @@ class SmokeCommand extends Command
 
     protected function scan()
     {
+        $client = $this->config->getClient();
+
         $scanner = new Scanner($this->config->getRules(),
-            $this->config->getClient(),
+            $client,
             $this->eventDispatcher,
             $this->config->getExtension('_ResponseRetriever')->getRetriever());
 
-        $scanner->scan();
+        try {
+            $scanner->scan();
+        } catch (\Exception $e) {
+            if (method_exists($client, 'close')) {
+                $client->close();
+            }
+            throw $e;
+        }
+
+        if (method_exists($client, 'close')) {
+            $client->close();
+        }
 
         return $scanner->getStatus();
     }

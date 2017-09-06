@@ -34,4 +34,9 @@ class ChromeClient implements HttpClient
     {
         return $this->chromeClient->getClientType();
     }
+
+    public function close()
+    {
+        $this->chromeClient->close();
+    }
 }
