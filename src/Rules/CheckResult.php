@@ -16,6 +16,7 @@ class CheckResult
     private $message;
     private $attributes = array();
     private $ruleName;
+    private $url;
 
     /**
      * @var ResponseInterface
@@ -29,11 +30,12 @@ class CheckResult
      * @param $value
      * @param $message
      */
-    public function __construct($status, $message = '', $value = null)
+    public function __construct($status, $message = '', $value = null, $url = null)
     {
         $this->status = $status;
         $this->value = $value;
         $this->message = $message;
+        $this->url = $url;
     }
 
     /**
@@ -106,5 +108,13 @@ class CheckResult
     public function setRuleName($ruleName)
     {
         $this->ruleName = $ruleName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

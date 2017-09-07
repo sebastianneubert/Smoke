@@ -210,7 +210,8 @@ class LeankoalaReporter implements Reporter
                     $result->getValue(),
                     $tool,
                     $component,
-                    $attributes
+                    $attributes,
+                    $result->getUrl()
                 );
             }
         }
@@ -242,11 +243,12 @@ class LeankoalaReporter implements Reporter
      * @param $component
      * @param Attribute[] $attributes
      */
-    private function send($identifier, $system, $message, $status, $value, $tool, $component, $attributes = [])
+    private function send($identifier, $system, $message, $status, $value, $tool, $component, $attributes = [], $url = "")
     {
         if ($status !== CheckResult::STATUS_NONE) {
-            $event = new Event($identifier, $system, $status, $tool, $message, $value, '', $component);
+            $event = new Event($identifier, $system, $status, $tool, $message, $value, $url, $component);
             $event->addAttribute(new Attribute('_config', json_encode($this->config->getConfigArray()), true));
+            
             foreach ($attributes as $attribute) {
                 $event->addAttribute($attribute);
             }
