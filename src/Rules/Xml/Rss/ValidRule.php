@@ -27,6 +27,7 @@ class ValidRule extends StandardRule
     public function doValidation(ResponseInterface $response)
     {
         $body = (string)$response->getBody();
+
         if (preg_match('/<rss/', $body)) {
             libxml_clear_errors();
             $dom = new \DOMDocument();

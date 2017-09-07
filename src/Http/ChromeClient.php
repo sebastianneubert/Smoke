@@ -2,8 +2,11 @@
 
 namespace whm\Smoke\Http;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use phm\HttpWebdriverClient\Http\Client\Chrome\ChromeClient as phmChromeClient;
 use phm\HttpWebdriverClient\Http\Client\Decorator\FileCacheDecorator;
+use phm\HttpWebdriverClient\Http\Client\Decorator\LoggerDecorator;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use Psr\Http\Message\RequestInterface;
 
@@ -17,7 +20,8 @@ class ChromeClient implements HttpClient
     public function init($host = 'localhost', $port = 4444)
     {
         $chromeClient = new phmChromeClient($host, $port);
-        $this->chromeClient = new FileCacheDecorator($chromeClient);
+        $cachedClient = new FileCacheDecorator($chromeClient);
+        $this->chromeClient = new LoggerDecorator($cachedClient);
     }
 
     public function sendRequest(RequestInterface $request)
