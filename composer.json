@@ -5,7 +5,7 @@
     "php": ">= 5.4.0",
     "symfony/yaml": "~3.1",
     "symfony/console": "~3.1",
-    "phmlabs/annovent": "~1.0.0",
+    "phmlabs/annovent": "dev-master",
     "phmlabs/init": "~1.0.0",
     "phmlabs/html": "dev-master",
     "phmlabs/crawler": "dev-master",
