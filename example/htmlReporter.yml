@@ -43,7 +43,15 @@ reporter:
     class: whm\Smoke\Extensions\SmokeReporter\Reporter\HtmlReporter
     parameters:
       resultFile: 'test-reports/result.html'
-
+  KoalamonSummaryReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\KoalamonSummaryReporter
+     parameters:
+       identifier: ${IDENTIFIER}
+       system: ${SYSTEM}
+       apiKey: 1D65C05A-EF06-4150-9CB6-78EE07F835E1
+       server: http://monitor.xcel.io/webhook/
+       tool: IvwCrawler
+       url: ${BUILD_URL}/artifacts/result.html
 
 
 responseRetriever:
