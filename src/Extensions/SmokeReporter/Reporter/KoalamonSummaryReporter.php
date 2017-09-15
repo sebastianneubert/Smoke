@@ -72,8 +72,6 @@ class KoalamonSummaryReporter implements Reporter
         $this->url = $url;
         $this->server = $server;
         $this->output = $_output;
-
-        var_dump($this->url);
     }
 
     /**
