@@ -6,6 +6,7 @@
     "symfony/yaml": "~3.1",
     "symfony/console": "~3.1",
     "phmlabs/annovent": "dev-master",
+    "twig/twig":"~2.0",
     "phmlabs/init": "~1.0.0",
     "phmlabs/html": "dev-master",
     "phmlabs/crawler": "dev-master",

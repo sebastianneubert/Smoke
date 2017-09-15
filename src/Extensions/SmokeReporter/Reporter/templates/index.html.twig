@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smoke HTML Report</title>
+</head>
+<body>
+<h1>Checked {{ results|length }} URLs</h1>
+<ul>
+    {% for result in results %}
+        <li class="{{ result.status }}">{{ result.rule }} {{ result.message }} <a href="{{ result.url }}">{{ result.url }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
