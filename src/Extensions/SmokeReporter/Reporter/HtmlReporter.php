@@ -11,6 +11,11 @@ use whm\Smoke\Rules\CheckResult;
 class HtmlReporter implements Reporter
 {
     private $results = [];
+    private $success = 0;
+    private $failure = 0;
+    private $unknown = 0;
+
+
     /**
      * @var Configuration
      */
@@ -43,6 +48,13 @@ class HtmlReporter implements Reporter
     public function processResults($results)
     {
         foreach ($results as $result) {
+            switch ($result->getStatus()) {
+                case CheckResult::STATUS_SUCCESS: $this->success++; break;
+                case CheckResult::STATUS_FAILURE: $this->failure++; break;
+                default:
+                    $this->unknown++;
+            }
+
             $this->results[] = [
                 'url' => $result->getResponse()->getUri(),
                 'rule' => $result->getRuleName(),
@@ -59,6 +71,10 @@ class HtmlReporter implements Reporter
 
         $html = $twig->render($this->templateFile, [
             'results' => $this->results,
+            'success' => $this->success,
+            'failure' => $this->failure,
+            'unknown' => $this->unknown,
+            'total' => count($this->results),
         ]);
 
         if (!file_exists(dirname($this->resultFile))) {

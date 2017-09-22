@@ -3,13 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Smoke HTML Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .success {
+            color: #7CBF00;
+        }
+
+        .failure {
+            color: #D50400;
+        }
+
+        div.failure {
+            color: #000000;
+            background: #D50400;
+        }
+
+        div.success {
+            color: #000000;
+            background: #7CBF00;
+        }
+
+        div.chart {
+            width: 400px;
+        }
+
+    </style>
+    <script type="application/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>
+
 </head>
 <body>
-<h1>Checked {{ results|length }} URLs</h1>
-<ul>
+
+
+<div class="container">
+    <h1>HTML Report
+        <small>(<span class="success">{{ success }}</span>/{{ total }})</small>
+    </h1>
+
+    <div class="row">
+        <div class="jumbotron">
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
     {% for result in results %}
-        <li class="{{ result.status }}">{{ result.rule }} {{ result.message }} <a href="{{ result.url }}">{{ result.url }}</a></li>
+        <div class="row">
+            {% if result.status == "failure" %}
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        A failure was detected at <a href="{{ result.url }}">{{ result.url }}</a>
+                        <span class="pull-right">
+                            <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+                        </span>
+                    </div>
+
+                    <div class="panel-body">
+                        {{ result.message }}
+                    </div>
+
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    <a class="alert-link" href="{{ result.url }}">{{ result.url }}</a>
+                    <span class="pull-right">
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    </span>
+                </div>
+            {% endif %}
+        </div>
     {% endfor %}
-</ul>
+
+</div>
+
+
+<script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Success", "Fails"],
+            datasets: [{
+                backgroundColor: [
+                    "#7CBF00",
+                    "#D50400"
+                ],
+                data: [{{ success }}, {{ failure }}]
+            }]
+        }
+    });
+</script>
 </body>
 </html>
