@@ -20,6 +20,8 @@ class Configuration
 {
     const DEFAULT_SETTINGS = 'analyze.yml';
 
+    const CONFIG_RULES_KEY = 'rules';
+
     private $startUri;
 
     private $rules = [];
@@ -54,12 +56,12 @@ class Configuration
             $this->addListener($this->configArray['extensions']);
         }
 
-        if (!array_key_exists('rules', $this->configArray)) {
-            $this->configArray['rules'] = [];
+        if (!array_key_exists(self::CONFIG_RULES_KEY, $this->configArray)) {
+            $this->configArray[self::CONFIG_RULES_KEY] = [];
         }
 
         $this->startUri = $uri;
-        $this->initRules($this->configArray['rules']);
+        $this->initRules($this->configArray[self::CONFIG_RULES_KEY]);
     }
 
     private function initConfigArray(array $configArray, array $defaultSettings = null)
