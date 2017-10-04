@@ -41,10 +41,11 @@ responseRetriever:
 rules:
   cssSelectorChecker_3:
     class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    errrorMessage: "oh oh"
     parameters:
       cssSelectors:
         32431484:
-          pattern: footer
+          pattern: footerr
         85340812:
-          pattern: header
+          pattern: headerr
 

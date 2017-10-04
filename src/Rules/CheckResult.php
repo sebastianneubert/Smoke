@@ -71,11 +71,19 @@ class CheckResult
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
     }
 
     /**
