@@ -100,6 +100,8 @@ class Scanner
                 $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occured: ' . $e->getMessage());
             }
 
+            $this->eventDispatcher->simpleNotify('Scanner.CheckResponse.Rule', array('checkResult' => $result, 'ruleName' => $name));
+
             $result->setResponse($response);
             $result->setRuleName($name);
             $results[$name] = $result;
