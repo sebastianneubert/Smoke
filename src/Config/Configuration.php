@@ -6,12 +6,12 @@ use Cache\Adapter\Filesystem\FilesystemCachePool;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use phm\HttpWebdriverClient\Http\Client\Decorator\CacheDecorator;
-use phm\HttpWebdriverClient\Http\Client\Guzzle\GuzzleClient;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
 use Symfony\Component\Yaml\Yaml;
 use whm\Html\Uri;
+use whm\Smoke\Http\GuzzleClient;
 use whm\Smoke\Http\Session;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Scanner\SessionContainer;
@@ -204,17 +204,11 @@ class Configuration
                 throw new ConfigurationException('Error initializing client (' . $e->getMessage() . ')');
             }
 
-            if (array_key_exists('cache', $this->configArray['client'])) {
-                if ($this->configArray['client']['cache'] == true) {
-                    $filesystemAdapter = new Local('/tmp/cached/');
-                    $filesystem = new Filesystem($filesystemAdapter);
-                    $cachePoolInterface = new FilesystemCachePool($filesystem);
-                    return new CacheDecorator($client, $cachePoolInterface);
-                }
-            }
             return $client;
         } else {
-            return new GuzzleClient();
+            $client = new GuzzleClient();
+            $client->init();
+            return $client;
         }
     }
 }
