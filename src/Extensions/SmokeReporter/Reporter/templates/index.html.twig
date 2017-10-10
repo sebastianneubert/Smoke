@@ -15,9 +15,9 @@
             color: #D50400;
         }
 
-        div.failure {
-            color: #000000;
-            background: #D50400;
+        a.failure {
+            font-weight: bold;
+            color: #D50400;
         }
 
         div.success {
@@ -49,34 +49,47 @@
             </div>
         </div>
     </div>
-
-    {% for result in results %}
+    {% if failures|length > 0 %}
         <div class="row">
-            {% if result.status == "failure" %}
+            <div class="panel-group">
                 <div class="panel panel-danger">
                     <div class="panel-heading">
-                        A failure was detected at <a href="{{ result.url }}">{{ result.url }}</a>
-                        <span class="pull-right">
-                            <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
-                        </span>
+                        Failure summary
+                        <span class="pull-right"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></span>
                     </div>
-
                     <div class="panel-body">
-                        {{ result.message }}
+                        {% for failure in failures %}
+                            <a href="{{ failure.url }}" class="failure">{{ failure.url }}</a><br/>
+                        {% endfor %}
                     </div>
-
                 </div>
-            {% else %}
-                <div class="alert alert-success" role="alert">
+            </div>
+        </div>
+    {% endif %}
+
+    {% if unknowns|length > 0 %}
+        {% for result in unknowns %}
+            <div class="row">
+                <div class="alert alert-warning" role="alert">
                     <a class="alert-link" href="{{ result.url }}">{{ result.url }}</a>
                     <span class="pull-right">
-                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                     </span>
                 </div>
-            {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% for result in successes %}
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <a class="alert-link" href="{{ result.url }}">{{ result.url }}</a>
+                <span class="pull-right">
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                </span>
+            </div>
         </div>
     {% endfor %}
-
 </div>
 
 

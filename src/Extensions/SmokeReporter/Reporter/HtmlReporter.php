@@ -11,9 +11,9 @@ use whm\Smoke\Rules\CheckResult;
 class HtmlReporter implements Reporter
 {
     private $results = [];
-    private $success = 0;
-    private $failure = 0;
-    private $unknown = 0;
+    private $successes = [];
+    private $failures = [];
+    private $unknowns = [];
 
 
     /**
@@ -48,19 +48,26 @@ class HtmlReporter implements Reporter
     public function processResults($results)
     {
         foreach ($results as $result) {
-            switch ($result->getStatus()) {
-                case CheckResult::STATUS_SUCCESS: $this->success++; break;
-                case CheckResult::STATUS_FAILURE: $this->failure++; break;
-                default:
-                    $this->unknown++;
-            }
-
-            $this->results[] = [
+            $temp = [
                 'url' => $result->getResponse()->getUri(),
                 'rule' => $result->getRuleName(),
                 'message' => $result->getMessage(),
                 'status' => $result->getStatus(),
             ];
+
+            switch ($result->getStatus()) {
+                case CheckResult::STATUS_SUCCESS:
+                    $this->successes[] = $temp;
+                    break;
+
+                case CheckResult::STATUS_FAILURE:
+                    $this->failures[] = $temp;
+                break;
+                default:
+                    $this->unknowns[] = $temp;
+            }
+
+            $this->results[] = $temp;
         }
     }
 
@@ -71,9 +78,12 @@ class HtmlReporter implements Reporter
 
         $html = $twig->render($this->templateFile, [
             'results' => $this->results,
-            'success' => $this->success,
-            'failure' => $this->failure,
-            'unknown' => $this->unknown,
+            'successes' => $this->successes,
+            'failures' => $this->failures,
+            'unknowns' => $this->unknowns,
+            'success' => count($this->successes),
+            'failure' => count($this->failures),
+            'unknown' => count($this->unknowns),
             'total' => count($this->results),
         ]);
 
