@@ -62,6 +62,9 @@
                             <a href="{{ failure.url }}" class="failure">{{ failure.url }}</a><br/>
                         {% endfor %}
                     </div>
+                    <div class="panel-footer">
+                        {{ failures.0.message|raw }}
+                    </div>
                 </div>
             </div>
         </div>
