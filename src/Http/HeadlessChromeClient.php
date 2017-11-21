@@ -15,12 +15,12 @@ class HeadlessChromeClient implements HttpClient
      */
     private $chromeClient;
 
-    public function init($nocache = false)
+    public function init($nocache = false, $clientTimeout = 31000)
     {
         if ($nocache) {
-            $this->chromeClient = new HeadlessChrome();
+            $this->chromeClient = new HeadlessChrome($clientTimeout);
         } else {
-            $chromeClient = new HeadlessChrome();
+            $chromeClient = new HeadlessChrome($clientTimeout);
             $cachedClient = new FileCacheDecorator($chromeClient);
             $this->chromeClient = new LoggerDecorator($cachedClient);
         }
