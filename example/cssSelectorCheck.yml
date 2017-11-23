@@ -1,6 +1,12 @@
 options:
   extendDefault: false
 
+client:
+  class: whm\Smoke\Http\HeadlessChromeClient
+  parameters:
+    nocache: true
+    clientTimeout: 3000
+
 extensions:
 
   _SmokeStop:
@@ -24,7 +30,7 @@ reporter:
 responseRetriever:
   class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
   parameters:
-    startPage: "http://www.tvmovie.de"
+    startPage: "http://www.selbst.de/suche/rasen"
 
     pageContainer:
       class: whm\Crawler\PageContainer\PatternAwareContainer
@@ -48,12 +54,4 @@ rules:
     parameters:
       cssSelectors:
         -
-          pattern: "div.wrapper"
-        -
-          pattern: "body > div.wrapper > div > header > nav"
-        -
-          pattern: "header.mainHeader"
-        -
-          pattern: "div.innerWrapper"
-        -
-          pattern: "footer.contentFooter"
+          pattern: "footer"

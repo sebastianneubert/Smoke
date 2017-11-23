@@ -7,6 +7,8 @@ use Koalamon\Client\Reporter\Event\Attribute;
 use Koalamon\Client\Reporter\Event\Processor\MongoDBProcessor;
 use Koalamon\Client\Reporter\KoalamonException;
 use Koalamon\Client\Reporter\Reporter as KoalaReporter;
+use phm\HttpWebdriverClient\Http\Response\TimeoutAwareResponse;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use whm\Smoke\Config\Configuration;
 use whm\Smoke\Extensions\Leankoala\LeankoalaExtension;
@@ -158,7 +160,13 @@ class LeankoalaReporter implements Reporter
                 $status = Event::STATUS_FAILURE;
                 $message .= '</ul>';
                 $firstResult = array_pop($results);
-                $attributes[] = new Attribute('html-content', (string)$firstResult->getResponse()->getBody(), true);
+                $response = $firstResult->getResponse();
+                /** @var ResponseInterface $response */
+
+                $attributes[] = new Attribute('html-content', (string)$response->getBody(), true);
+                if ($response instanceof TimeoutAwareResponse) {
+                    $attributes[] = new Attribute('timeout', $response->isTimeout());
+                }
             } else {
                 $message = 'All checks for system "#system_name#" succeeded [SmokeBasic:' . $toolName . '].';
             }
@@ -248,7 +256,7 @@ class LeankoalaReporter implements Reporter
         if ($status !== CheckResult::STATUS_NONE) {
             $event = new Event($identifier, $system, $status, $tool, $message, $value, $url, $component);
             $event->addAttribute(new Attribute('_config', json_encode($this->config->getConfigArray()), true));
-            
+
             foreach ($attributes as $attribute) {
                 $event->addAttribute($attribute);
             }
