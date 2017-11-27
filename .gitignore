@@ -20,3 +20,5 @@ test-reports
 phpunit.phar
 
 CookieMaker
+
+tmp/
