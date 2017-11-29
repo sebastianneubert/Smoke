@@ -24,6 +24,7 @@ class GZipRule extends StandardRule
         if ($response instanceof ContentTypeAwareResponse) {
             if (strpos($response->getContentType(), 'image') === false
                 && strpos($response->getContentType(), 'pdf') === false
+                && strpos($response->getContentType(), 'postscript') === false
                 && strlen((string)$response->getBody()) >= $this->minFileSize
             ) {
                 if (!$response->hasHeader('Content-Encoding') || $response->getHeader('Content-Encoding')[0] !== 'gzip') {
