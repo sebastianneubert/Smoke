@@ -197,6 +197,10 @@ class LeankoalaReporter implements Reporter
                     }
                     $attributes[] = new Attribute('http header', json_encode($result->getResponse()->getHeaders()), true);
                     $attributes[] = new Attribute('http status code', $result->getResponse()->getStatusCode());
+
+                    if ($result->getResponse() instanceof TimeoutAwareResponse) {
+                        $attributes[] = new Attribute('timeout', $result->getResponse()->isTimeout());
+                    }
                 }
 
                 $checkResultAttributes = $result->getAttributes();
