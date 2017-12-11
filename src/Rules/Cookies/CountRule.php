@@ -3,6 +3,7 @@
 namespace whm\Smoke\Rules\Cookies;
 
 use phm\HttpWebdriverClient\Http\Response\CookieAwareResponse;
+use phm\HttpWebdriverClient\Http\Response\TimeoutAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\Attribute;
 use whm\Smoke\Rules\CheckResult;
@@ -27,23 +28,27 @@ class CountRule implements Rule
     public function validate(ResponseInterface $response)
     {
         if ($response instanceof CookieAwareResponse) {
-            $cookieCount = $response->getCookieCount();
 
-            if ($cookieCount > $this->maxCookies) {
-                $result = new CheckResult(
-                    CheckResult::STATUS_FAILURE,
-                    $cookieCount . 'cookies were stored (limit was ' . $this->maxCookies . ').',
-                    $cookieCount);
-            } else {
-                $result = new CheckResult(
-                    CheckResult::STATUS_SUCCESS,
-                    $cookieCount . ' cookies were stored (limit was ' . $this->maxCookies . ').',
-                    $cookieCount);
+            if (!$response instanceof TimeoutAwareResponse || !$response->isTimeout()) {
+
+                $cookieCount = $response->getCookieCount();
+
+                if ($cookieCount > $this->maxCookies) {
+                    $result = new CheckResult(
+                        CheckResult::STATUS_FAILURE,
+                        $cookieCount . ' cookies were stored (limit was ' . $this->maxCookies . ').',
+                        $cookieCount);
+                } else {
+                    $result = new CheckResult(
+                        CheckResult::STATUS_SUCCESS,
+                        $cookieCount . ' cookies were stored (limit was ' . $this->maxCookies . ').',
+                        $cookieCount);
+                }
+
+                $result->addAttribute(new Attribute(' cookies', $response->getCookies(), true));
+
+                return $result;
             }
-
-            $result->addAttribute(new Attribute(' cookies', $response->getCookies(), true));
-
-            return $result;
         }
     }
 }
