@@ -48,6 +48,13 @@ class CountRule implements Rule
                 $result->addAttribute(new Attribute(' cookies', $response->getCookies(), true));
 
                 return $result;
+            } else {
+                $result = new CheckResult(
+                    CheckResult::STATUS_SKIPPED,
+                    'Skipped: Request timed out. Cannot read cookies.',
+                    0);
+
+                return $result;
             }
         }
     }
