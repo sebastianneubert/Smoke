@@ -9,6 +9,7 @@ class CheckResult
 {
     const STATUS_SUCCESS = 'success';
     const STATUS_FAILURE = 'failure';
+    const STATUS_SKIPPED = 'skipped';
     const STATUS_NONE = 'none';
 
     const HINT_KEY = '__hint';

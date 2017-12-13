@@ -6,7 +6,6 @@ client:
   parameters:
     nocache: true
     clientTimeout: 60000
-    
 
 extensions:
 
@@ -31,7 +30,7 @@ reporter:
 responseRetriever:
   class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
   parameters:
-    startPage: "http://worker3.leankoala.com/storage/5a2aea273f7a997d0b00f9d9"
+    startPage: "https://www.leankoala.com"
 
     pageContainer:
       class: whm\Crawler\PageContainer\PatternAwareContainer

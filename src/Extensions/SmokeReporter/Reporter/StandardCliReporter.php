@@ -140,5 +140,13 @@ class StandardCliReporter extends CliReporter
                 }
             }
         }
+
+        foreach ($this->results as $results) {
+            foreach ($results as $result) {
+                if ($result->getStatus() === CheckResult::STATUS_SKIPPED) {
+                    $this->renderSkipped($result);
+                }
+            }
+        }
     }
 }

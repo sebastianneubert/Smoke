@@ -39,4 +39,10 @@ abstract class CliReporter implements Reporter
     {
         $this->output->writeln('   <info> ' . (string) $result->getResponse()->getUri() . ' </info> all tests passed');
     }
+
+    protected function renderSkipped(CheckResult $result)
+    {
+        $this->output->writeln('   <comment> ' . (string) $result->getResponse()->getUri() . ' </comment>test skipped');
+        $this->output->writeln('    - ' . $result->getMessage() . ' [rule: ' . $result->getRuleName() . ']');
+    }
 }

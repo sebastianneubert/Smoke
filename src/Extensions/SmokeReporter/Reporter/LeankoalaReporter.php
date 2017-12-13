@@ -214,17 +214,20 @@ class LeankoalaReporter implements Reporter
                     $currentSystem = $system;
                 }
 
-                $this->send(
-                    $identifier,
-                    $currentSystem,
-                    $result->getMessage() . ' (url: ' . (string)$result->getResponse()->getUri() . ')',
-                    $result->getStatus(),
-                    $result->getValue(),
-                    $tool,
-                    $component,
-                    $attributes,
-                    $result->getUrl()
-                );
+                // do not send skipped check results to Leankoala
+                if ($result->getStatus() != CheckResult::STATUS_SKIPPED) {
+                    $this->send(
+                        $identifier,
+                        $currentSystem,
+                        $result->getMessage() . ' (url: ' . (string)$result->getResponse()->getUri() . ')',
+                        $result->getStatus(),
+                        $result->getValue(),
+                        $tool,
+                        $component,
+                        $attributes,
+                        $result->getUrl()
+                    );
+                }
             }
         }
     }
