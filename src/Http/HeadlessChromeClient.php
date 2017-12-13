@@ -45,4 +45,9 @@ class HeadlessChromeClient implements HttpClient
     {
         $this->chromeClient->close();
     }
+
+    public function setOption($key, $value)
+    {
+        $this->chromeClient->setOption($key, $value);
+    }
 }

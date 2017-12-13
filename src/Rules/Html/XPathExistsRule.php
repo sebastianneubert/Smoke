@@ -10,7 +10,7 @@ use whm\Smoke\Rules\StandardRule;
  */
 class XPathExistsRule extends StandardRule
 {
-    protected $contentTypes = ['text/html'];
+    // protected $contentTypes = ['text/html'];
 
     private $xPaths;
 

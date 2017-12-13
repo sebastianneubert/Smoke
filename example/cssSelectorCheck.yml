@@ -5,7 +5,8 @@ client:
   class: whm\Smoke\Http\HeadlessChromeClient
   parameters:
     nocache: true
-    clientTimeout: 3000
+    clientTimeout: 60000
+    
 
 extensions:
 
@@ -30,7 +31,7 @@ reporter:
 responseRetriever:
   class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
   parameters:
-    startPage: "http://www.selbst.de/suche/rasen"
+    startPage: "http://worker3.leankoala.com/storage/5a2aea273f7a997d0b00f9d9"
 
     pageContainer:
       class: whm\Crawler\PageContainer\PatternAwareContainer
@@ -50,8 +51,10 @@ stop:
 
 rules:
    _CssSelectorCheck:
-    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    class: whm\Smoke\Rules\Html\XPathExistsRule
     parameters:
-      cssSelectors:
+      xPaths:
         -
-          pattern: "footer"
+          pattern: "//html/head/meta[@property='og:title']"
+          relation: "equals"
+          value: 1
