@@ -20,9 +20,9 @@ class CountRule implements Rule
     /**
      * @param int $maxDuration The maximum duration a http call is allowed to take (time to first byte)
      */
-    public function init($maxCookies = 20)
+    public function init($maxElements = 20)
     {
-        $this->maxCookies = $maxCookies;
+        $this->maxCookies = $maxElements;
     }
 
     public function validate(ResponseInterface $response)
