@@ -31,7 +31,7 @@ class InvalidStatusCodeRule extends StandardRule
 
             if (count($errorList) > 0) {
                 $count = count($errorList);
-                $msg = 'Found ' . $count . ' resources with status code 4xx or 5xx. <ul>';
+                $msg = 'Found ' . $count . ' resource(s) with status code 4xx or 5xx. <ul>';
                 foreach ($errorList as $error) {
                     $msg .= '<li>' . $error['name'] . ' (' . $error['http_status'] . ')</li>';
                 }
