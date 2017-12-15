@@ -5,7 +5,7 @@ client:
   class: whm\Smoke\Http\HeadlessChromeClient
   parameters:
     nocache: true
-    clientTimeout: 30000
+    clientTimeout: 60000
 
 extensions:
 
@@ -49,7 +49,11 @@ stop:
       maxCount: 1
 
 rules:
-   _CookieCheck:
-    class: whm\Smoke\Rules\Cookies\CountRule
+   _CssSelectorCheck:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
     parameters:
-      maxCookies: 10
+      xPaths:
+        -
+          pattern: "//html/head/meta[@property='og:title']"
+          relation: "equals"
+          value: 1

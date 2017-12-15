@@ -23,16 +23,19 @@ class CssSelectorExistsRule extends StandardRule
 
     public function doValidation(ResponseInterface $response)
     {
+        $content = (string)$response->getBody();
+
         $domDocument = new \DOMDocument();
-        @$domDocument->loadHTML((string)$response->getBody());
+        @$domDocument->loadHTML($content);
 
         $domXPath = new \DOMXPath($domDocument);
 
         $error = false;
         $snotFoundSelectors = array();
 
+        $converter = new CssSelectorConverter();
+
         foreach ($this->cssSelectors as $selector) {
-            $converter = new CssSelectorConverter();
 
             try {
                 $selectorAsXPath = $converter->toXPath($selector['pattern']);

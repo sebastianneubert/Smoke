@@ -12,6 +12,8 @@ class CheckResult
     const STATUS_SKIPPED = 'skipped';
     const STATUS_NONE = 'none';
 
+    const HINT_KEY = '__hint';
+
     private $status;
     private $value;
     private $message;
@@ -53,6 +55,11 @@ class CheckResult
     public function addAttribute(Attribute $attribute)
     {
         $this->attributes[] = $attribute;
+    }
+
+    public function setHint($message)
+    {
+        $this->addAttribute(new Attribute(self::HINT_KEY, $message, false));
     }
 
     /**

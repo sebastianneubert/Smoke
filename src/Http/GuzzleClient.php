@@ -44,4 +44,9 @@ class GuzzleClient implements HttpClient
     {
 
     }
+
+    public function setOption($key, $value)
+    {
+        $this->guzzleClient->setOption($key, $value);
+    }
 }
