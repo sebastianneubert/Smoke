@@ -11,9 +11,18 @@ use whm\Smoke\Rules\StandardRule;
 /**
  * This rule checks if a scanned resource has 4xx or 5xx links
  */
-class InvalidStatusCodeRule extends StandardRule
+class BrokenLinkRule extends StandardRule
 {
     protected $contentTypes = ['text/html'];
+
+    private $excludedFiles = [];
+
+    public function init($excludedFiles = array())
+    {
+        foreach ($excludedFiles as $fileName) {
+            $this->excludedFiles[] = $fileName['filename'];
+        }
+    }
 
     public function doValidation(ResponseInterface $response)
     {
@@ -25,7 +34,16 @@ class InvalidStatusCodeRule extends StandardRule
 
             foreach ($resources as $resource) {
                 if ($resource['http_status'] >= 400) {
-                    $errorList[] = $resource;
+                    $excluded = false;
+                    foreach ($this->excludedFiles as $excludedFile) {
+                        if (strpos($resource['name'], $excludedFile) !== false) {
+                            $excluded = true;
+                        }
+                    }
+
+                    if (!$excluded) {
+                        $errorList[] = $resource;
+                    }
                 }
             }
 
@@ -33,7 +51,7 @@ class InvalidStatusCodeRule extends StandardRule
                 $count = count($errorList);
                 $msg = 'Found ' . $count . ' resource(s) with status code 4xx or 5xx. <ul>';
                 foreach ($errorList as $error) {
-                    $msg .= '<li>' . $error['name'] . ' (HTTP status: ' . $error['http_status'] . ')</li>';
+                    $msg .= '<li>' . $error['name'] . ' (http status: ' . $error['http_status'] . ')</li>';
                 }
                 $msg .= '</ul>';
                 return new CheckResult(CheckResult::STATUS_FAILURE, $msg, $count);
