@@ -49,7 +49,7 @@ class BrokenLinkRule extends StandardRule
 
             if (count($errorList) > 0) {
                 $count = count($errorList);
-                $msg = 'Found ' . $count . ' resource(s) with status code 4xx or 5xx. <ul>';
+                $msg = 'Found ' . $count . ' broken link(s). <ul>';
                 foreach ($errorList as $error) {
                     $msg .= '<li>' . $error['name'] . ' (http status: ' . $error['http_status'] . ')</li>';
                 }
