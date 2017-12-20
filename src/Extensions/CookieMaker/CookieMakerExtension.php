@@ -40,6 +40,7 @@ class CookieMakerExtension
                 $session->addCookie($key, $value);
             }
 
+
             $this->sessionContainer->addSession($sessionName, $session);
         }
     }
