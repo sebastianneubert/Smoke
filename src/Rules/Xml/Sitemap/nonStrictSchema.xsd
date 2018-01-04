@@ -4,7 +4,7 @@
                schemaLocation="sitemapNonStrict.xsd"/>
 
     <xs:import namespace="http://www.google.com/schemas/sitemap-image/1.1"
-               schemaLocation="sitemap-image.xsd"/>
+               schemaLocation="sitemap-image-nonStrict.xsd"/>
 
     <xs:import namespace="http://www.google.com/schemas/sitemap-news/0.9"
                schemaLocation="sitemap-news.xsd"/>
