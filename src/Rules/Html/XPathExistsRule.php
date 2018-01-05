@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use phm\HttpWebdriverClient\Http\Response\DomAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\StandardRule;
 
@@ -11,18 +12,35 @@ use whm\Smoke\Rules\StandardRule;
 class XPathExistsRule extends StandardRule
 {
     // protected $contentTypes = ['text/html'];
-
     private $xPaths;
 
-    public function init(array $xPaths)
+    /**
+     * @var boolean
+     */
+    private $useDom = true;
+
+    public function init(array $xPaths, $useDom = true)
     {
         $this->xPaths = $xPaths;
+        $this->useDom = $useDom;
     }
 
     public function doValidation(ResponseInterface $response)
     {
         $domDocument = new \DOMDocument();
-        @$domDocument->loadHTML((string)$response->getBody());
+
+        // @todo this could be part of an abstract class
+        if ($this->useDom) {
+            $content = (string)$response->getBody();
+        } else {
+            if ($response instanceof DomAwareResponse) {
+                $content = $response->getHtmlBody();
+            } else {
+                $content = (string)$response->getBody();
+            }
+        }
+
+        @$domDocument->loadHTML($content);
 
         $domXPath = new \DOMXPath($domDocument);
 
