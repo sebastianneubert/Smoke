@@ -19,6 +19,7 @@ class BrokenLinkRule extends StandardRule
 
     public function init($excludedFiles = array())
     {
+        $this->excludedFiles[] = '/socket.io/';
         foreach ($excludedFiles as $fileName) {
             $this->excludedFiles[] = $fileName['filename'];
         }
