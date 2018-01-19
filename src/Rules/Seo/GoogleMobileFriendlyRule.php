@@ -3,7 +3,7 @@
 namespace whm\Smoke\Rules\Seo;
 
 use Psr\Http\Message\ResponseInterface;
-use whm\Html\Uri;
+use Psr\Http\Message\UriInterface;
 use whm\Smoke\Rules\Attribute;
 use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\Rule;
@@ -12,7 +12,7 @@ class GoogleMobileFriendlyRule implements Rule
 {
     const ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v3beta1/mobileReady?url=#url#&strategy=mobile';
 
-    private function getEndpoint(Uri $uri)
+    private function getEndpoint(UriInterface $uri)
     {
         return str_replace('#url#', urlencode((string)$uri), self::ENDPOINT);
     }
