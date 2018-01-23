@@ -21,8 +21,10 @@ class CheckResult
     private $ruleName;
     private $url;
 
+    private $tool;
+
     /**
-     * @var ResponseInterface
+     * @var UriAwareResponse
      */
     private $response;
 
@@ -76,6 +78,22 @@ class CheckResult
     public function getValue()
     {
         return $this->value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTool()
+    {
+        return $this->tool;
+    }
+
+    /**
+     * @param string $tool
+     */
+    public function setTool($tool)
+    {
+        $this->tool = $tool;
     }
 
     /**
