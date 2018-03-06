@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Xml\Sitemap;
 
+use phm\HttpWebdriverClient\Http\Response\DomAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\StandardRule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -39,6 +40,12 @@ class ValidRule extends StandardRule
         }
     }
 
+    /**
+     * @param $body
+     * @param $filename
+     * @param bool $isIndex
+     * @throws ValidationFailedException
+     */
     private function validateBody($body, $filename, $isIndex = true)
     {
         $dom = new \DOMDocument();
@@ -53,9 +60,17 @@ class ValidRule extends StandardRule
         }
     }
 
+    /**
+     * @param ResponseInterface $response
+     * @throws ValidationFailedException
+     */
     protected function doValidation(ResponseInterface $response)
     {
-        $body = (string)$response->getBody();
+        if ($response instanceof DomAwareResponse) {
+            $body = (string)$response->getHtmlBody();
+        } else {
+            $body = (string)$response->getBody();
+        }
 
         // sitemapindex or urlset
         if (preg_match('/<sitemapindex/', $body)) {
