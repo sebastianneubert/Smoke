@@ -34,6 +34,10 @@ class RegExExistsRule extends StandardRule
         $this->regExs = $regExArray;
     }
 
+    /**
+     * @param ResponseInterface $response
+     * @throws ValidationFailedException
+     */
     protected function doValidation(ResponseInterface $response)
     {
         $errors = [];

@@ -31,6 +31,11 @@ abstract class StandardRule implements Rule
 
     abstract protected function doValidation(ResponseInterface $response);
 
+    /**
+     * @param $valueToBeTrue
+     * @param $errorMessage
+     * @throws ValidationFailedException
+     */
     protected function assert($valueToBeTrue, $errorMessage)
     {
         if (!$valueToBeTrue) {
