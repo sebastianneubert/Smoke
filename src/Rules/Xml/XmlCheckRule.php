@@ -2,7 +2,6 @@
 
 namespace whm\Smoke\Rules\Xml;
 
-use phm\HttpWebdriverClient\Http\Request\TimeoutAwareRequest;
 use phm\HttpWebdriverClient\Http\Response\DomAwareResponse;
 use phm\HttpWebdriverClient\Http\Response\TimeoutAwareResponse;
 use Psr\Http\Message\ResponseInterface;
