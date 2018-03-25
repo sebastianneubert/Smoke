@@ -14,6 +14,9 @@ class CheckResult
 
     const HINT_KEY = '__hint';
 
+    const IDENTIFIER_RULE_STANDARD = 'standard';
+    const IDENTIFIER_RULE_WITHOUT_SMOKE_PREFIX = 'withoutSmokePrefix';
+
     private $status;
     private $value;
     private $message;
@@ -22,6 +25,7 @@ class CheckResult
     private $url;
 
     private $tool;
+    private $identifierRule = self::IDENTIFIER_RULE_STANDARD;
 
     /**
      * @var UriAwareResponse
@@ -94,6 +98,22 @@ class CheckResult
     public function setTool($tool)
     {
         $this->tool = $tool;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentifierRule()
+    {
+        return $this->identifierRule;
+    }
+
+    /**
+     * @param string $identifier
+     */
+    public function setIdentifierRule($identifierRule)
+    {
+        $this->identifierRule = $identifierRule;
     }
 
     /**
