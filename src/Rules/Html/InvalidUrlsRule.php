@@ -23,7 +23,11 @@ class InvalidUrlsRule extends StandardRule
         $invalidUrls = array();
 
         foreach ($urls as $url) {
-            $idnUrl = $url->getScheme() . '://' . idn_to_ascii($url->getHost()) . $url->getPath();
+            if (function_exists('idn_to_ascii')) {
+                $idnUrl = $url->getScheme() . '://' . idn_to_ascii($url->getHost()) . $url->getPath();
+            } else {
+                $idnUrl = $url->getScheme() . '://' . $url->getHost() . $url->getPath();
+            }
 
             if (!filter_var($idnUrl, FILTER_VALIDATE_URL)) {
                 $invalidUrls[] = (string)$url;

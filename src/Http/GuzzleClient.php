@@ -4,7 +4,6 @@ namespace whm\Smoke\Http;
 
 use phm\HttpWebdriverClient\Http\Client\Guzzle\GuzzleClient as phmGuzzleClient;
 use phm\HttpWebdriverClient\Http\Client\Decorator\FileCacheDecorator;
-use phm\HttpWebdriverClient\Http\Client\Decorator\LoggerDecorator;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use Psr\Http\Message\RequestInterface;
 

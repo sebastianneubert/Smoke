@@ -2,10 +2,6 @@
 
 namespace whm\Smoke\Config;
 
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
-use phm\HttpWebdriverClient\Http\Client\Decorator\CacheDecorator;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
@@ -62,6 +58,13 @@ class Configuration
 
         $this->startUri = $uri;
         $this->initRules($this->configArray[self::CONFIG_RULES_KEY]);
+    }
+
+    private function initLogger($loggerArray)
+    {
+        if ($loggerArray) {
+
+        }
     }
 
     private function initConfigArray(array $configArray, array $defaultSettings = null)
