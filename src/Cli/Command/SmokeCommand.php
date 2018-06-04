@@ -47,13 +47,21 @@ class SmokeCommand extends Command
      */
     protected function writeSmokeCredentials($url = null)
     {
-        $this->output->writeln("\n Smoke " . SMOKE_VERSION . " by Nils Langner\n");
+        if (defined('SMOKE_CREDENTIALS')) {
+            $this->output->writeln("\n " . SMOKE_CREDENTIALS . "\n");
+        } else {
+            $this->output->writeln("\n Smoke " . SMOKE_VERSION . " by Nils Langner\n");
+        }
 
         if ($url) {
             $this->output->writeln(' <info>Scanning ' . $url . "</info>\n");
         }
     }
 
+    /**
+     * @return int
+     * @throws \Exception
+     */
     protected function scan()
     {
         $client = $this->config->getClient();
