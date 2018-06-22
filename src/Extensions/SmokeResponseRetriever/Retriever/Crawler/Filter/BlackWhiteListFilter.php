@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter;
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 use whm\Crawler\Filter;
 use whm\Smoke\Config\Configuration;
@@ -14,9 +15,9 @@ class BlackWhiteListFilter implements Filter
     public function isFiltered(UriInterface $uri, UriInterface $startPage)
     {
         foreach ($this->whitelist as $whitelist) {
-            if (preg_match($whitelist, (string) $uri)) {
+            if (preg_match($whitelist, (string)$uri)) {
                 foreach ($this->blacklist as $blacklist) {
-                    if (preg_match($blacklist, (string) $uri)) {
+                    if (preg_match($blacklist, (string)$uri)) {
                         return true;
                     }
                 }
@@ -39,5 +40,10 @@ class BlackWhiteListFilter implements Filter
         } else {
             $this->whitelist = array('/(.*)/');
         }
+    }
+
+    public function isResponseFiltered(ResponseInterface $response, UriInterface $startUri)
+    {
+        return false;
     }
 }
