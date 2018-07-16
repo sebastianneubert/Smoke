@@ -105,6 +105,10 @@ class Configuration
         }
     }
 
+    /**
+     * @param array $listenerArray
+     * @throws \phmLabs\Components\Annovent\Exception
+     */
     private function addListener(array $listenerArray)
     {
         foreach ($listenerArray as $key => $listenerConfig) {
@@ -185,6 +189,11 @@ class Configuration
         }
     }
 
+    /**
+     * @param $name
+     * @param $extension
+     * @throws \phmLabs\Components\Annovent\Exception
+     */
     public function addExtension($name, $extension)
     {
         $this->extensions[$name] = $extension;
