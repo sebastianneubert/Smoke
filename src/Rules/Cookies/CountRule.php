@@ -45,7 +45,9 @@ class CountRule implements Rule
                         $cookieCount);
                 }
 
-                $result->addAttribute(new Attribute(' cookies', $response->getCookies(), true));
+                $cookies = $response->getCookies();
+
+                $result->addAttribute(new Attribute(' cookies', json_encode($cookies), true));
 
                 return $result;
             } else {
