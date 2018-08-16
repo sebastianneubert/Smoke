@@ -6,6 +6,7 @@ use PhmLabs\Components\Init\Init;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use whm\Smoke\Config\Configuration;
+use whm\Smoke\Extensions\SmokeReporter\Reporter\ExceptionAwareReporter;
 use whm\Smoke\Extensions\SmokeReporter\Reporter\Reporter;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever;
 use whm\Smoke\Rules\CheckResult;
@@ -64,6 +65,18 @@ class ReporterExtension
     {
         foreach ($this->reporters as $reporter) {
             $reporter->finish();
+        }
+    }
+
+    /**
+     * @Event("Scanner.Scan.Exceptions.Handle")
+     */
+    public function handleExceptions($occuredExceptions)
+    {
+        foreach ($this->reporters as $reporter) {
+            if ($reporter instanceof ExceptionAwareReporter) {
+                $reporter->handleExceptions($occuredExceptions);
+            }
         }
     }
 }

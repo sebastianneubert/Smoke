@@ -71,6 +71,8 @@ class Scanner
             $this->eventDispatcher->simpleNotify('Scanner.Scan.Validate', array('results' => $results, 'response' => $response));
         }
 
+        $this->eventDispatcher->simpleNotify('Scanner.Scan.Exceptions.Handle', array('occuredExceptions' => $this->responseRetriever->getOccuredExceptions()));
+
         $this->eventDispatcher->simpleNotify('Scanner.Scan.Finish');
     }
 

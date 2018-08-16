@@ -5,6 +5,7 @@ namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
+use whm\Smoke\Extensions\SmokeResponseRetriever\RetrieverException;
 use whm\Smoke\Scanner\SessionContainer;
 
 interface Retriever
@@ -21,4 +22,9 @@ interface Retriever
     public function getComingFrom(UriInterface $uri);
 
     public function getOriginUri(UriInterface $uri);
+
+    /**
+     * @return RetrieverException[]
+     */
+    public function getOccuredExceptions();
 }

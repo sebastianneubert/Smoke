@@ -11,6 +11,7 @@ use whm\Crawler\PageContainer\PageContainer;
 use whm\Crawler\PageContainer\PatternAwareContainer;
 use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\CrawlingRetriever;
+use whm\Smoke\Extensions\SmokeResponseRetriever\RetrieverException;
 use whm\Smoke\Scanner\SessionContainer;
 
 class Crawler implements CrawlingRetriever
@@ -110,5 +111,10 @@ class Crawler implements CrawlingRetriever
 
     public function setSessionContainer(SessionContainer $sessionContainer)
     {
+    }
+
+    public function getOccuredExceptions()
+    {
+        return [];
     }
 }

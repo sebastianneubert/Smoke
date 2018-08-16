@@ -9,6 +9,7 @@ use Psr\Http\Message\UriInterface;
 use whm\Crawler\Http\RequestFactory;
 use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever as SmokeRetriever;
+use whm\Smoke\Extensions\SmokeResponseRetriever\RetrieverException;
 use whm\Smoke\Scanner\SessionContainer;
 
 class Retriever implements SmokeRetriever
@@ -178,5 +179,10 @@ class Retriever implements SmokeRetriever
     public function setSessionContainer(SessionContainer $sessionContainer)
     {
         $this->sessionContainer = $sessionContainer;
+    }
+
+    public function getOccuredExceptions()
+    {
+        return [];
     }
 }

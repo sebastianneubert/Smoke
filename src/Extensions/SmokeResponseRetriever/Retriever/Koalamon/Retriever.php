@@ -2,7 +2,7 @@
 
 namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Koalamon;
 
-use Ivory\HttpAdapter\HttpAdapterInterface;
+use GuzzleHttp\Client;
 use phm\HttpWebdriverClient\Http\HttpClient;
 use Psr\Http\Message\UriInterface;
 use whm\Crawler\Http\RequestFactory;
@@ -29,7 +29,7 @@ class Retriever implements SmokeRetriever
         $this->project = $project;
     }
 
-    public function setHttpClient(HttpClient $httpClient)
+    public function setHttpClient(Client $httpClient)
     {
         $this->client = $httpClient;
         $this->systems = $this->getSystems($httpClient);
@@ -78,5 +78,10 @@ class Retriever implements SmokeRetriever
 
     public function setSessionContainer(SessionContainer $sessionContainer)
     {
+    }
+
+    public function getOccuredExceptions()
+    {
+        return [];
     }
 }
