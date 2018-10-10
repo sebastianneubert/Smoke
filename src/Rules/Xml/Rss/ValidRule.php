@@ -2,6 +2,8 @@
 
 namespace whm\Smoke\Rules\Xml\Rss;
 
+use Anh\FeedBuilder\FeedBuilder;
+use Fungku\MarkupValidator\FeedValidator;
 use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\CheckResult;
@@ -33,12 +35,15 @@ class ValidRule extends StandardRule
             $dom = new \DOMDocument();
             @$dom->loadXML($body);
             $lastError = libxml_get_last_error();
+
             if ($lastError) {
                 throw new ValidationFailedException(
                     'The given xml file is not well formed (last error: ' .
                     str_replace("\n", '', $lastError->message) . ').');
             }
+
             $valid = @$dom->schemaValidate($this->getSchema());
+
             if (!$valid) {
                 $lastError = libxml_get_last_error();
                 $lastErrorMessage = str_replace("\n", '', $lastError->message);
