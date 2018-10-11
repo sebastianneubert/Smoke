@@ -2,8 +2,6 @@
 
 namespace whm\Smoke\Rules\Xml\Rss;
 
-use Anh\FeedBuilder\FeedBuilder;
-use Fungku\MarkupValidator\FeedValidator;
 use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\CheckResult;

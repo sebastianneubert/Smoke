@@ -4,6 +4,8 @@ namespace whm\Smoke\Rules;
 
 class Attribute
 {
+    const KEY_DETAIL_URL = '_detail_url';
+
     private $key;
     private $value;
     private $isStorable;
