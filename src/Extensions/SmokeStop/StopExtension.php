@@ -11,6 +11,11 @@ class StopExtension
 {
     private $stopStrategies = array();
 
+    /**
+     * @param Configuration $_configuration
+     * @param Dispatcher $_eventDispatcher
+     * @throws \phmLabs\Components\Annovent\Exception
+     */
     public function init(Configuration $_configuration, Dispatcher $_eventDispatcher)
     {
         if ($_configuration->hasSection('stop')) {
@@ -31,7 +36,6 @@ class StopExtension
         foreach ($this->stopStrategies as $strategy) {
             if ($strategy->isStopped()) {
                 $event->setProcessed();
-
                 return true;
             }
         }
