@@ -2,6 +2,9 @@
 
 namespace whm\Smoke\Config;
 
+use Cache\Adapter\Filesystem\FilesystemCachePool;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
@@ -17,6 +20,8 @@ class Configuration
     const DEFAULT_SETTINGS = 'analyze.yml';
 
     const CONFIG_RULES_KEY = 'rules';
+
+    const CACHE_DIR = '/tmp/cache/smoke/';
 
     private $startUri;
 
@@ -41,6 +46,7 @@ class Configuration
         Init::registerGlobalParameter('_configuration', $this);
 
         $this->initConfigArray($configArray, $defaultSettings);
+        $this->initCache();
 
         if (array_key_exists('sessions', $this->configArray)) {
             $this->initSessionContainer($this->configArray['sessions']);
@@ -58,6 +64,12 @@ class Configuration
 
         $this->startUri = $uri;
         $this->initRules($this->configArray[self::CONFIG_RULES_KEY]);
+    }
+
+    private function initCache()
+    {
+        $cachePool = new FilesystemCachePool(new Filesystem(new Local(self::CACHE_DIR)));
+        Init::registerGlobalParameter('_cacheItemPool', $cachePool);
     }
 
     private function initLogger($loggerArray)
