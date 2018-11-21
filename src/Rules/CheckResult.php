@@ -20,6 +20,10 @@ class CheckResult
     private $status;
     private $value;
     private $message;
+
+    /**
+     * @var Attribute[]
+     */
     private $attributes = array();
     private $ruleName;
     private $url;
@@ -53,6 +57,19 @@ class CheckResult
     public function getAttributes()
     {
         return $this->attributes;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function hasAttribute($key)
+    {
+        foreach($this->attributes as $attribute) {
+            if($attribute->getKey() == $key) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

@@ -6,6 +6,8 @@ class Attribute
 {
     const KEY_DETAIL_URL = '_detail_url';
 
+    const KEY_GENERAL_TIMEOUT = 'timeout';
+
     private $key;
     private $value;
     private $isStorable;
