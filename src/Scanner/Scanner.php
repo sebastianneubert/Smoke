@@ -3,6 +3,7 @@
 namespace whm\Smoke\Scanner;
 
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
+use phm\HttpWebdriverClient\Http\Response\InteractiveResponse;
 use phmLabs\Components\Annovent\Dispatcher;
 use phmLabs\Components\Annovent\Event\Event;
 use Psr\Http\Message\ResponseInterface;
@@ -92,7 +93,6 @@ class Scanner
 
             try {
                 $result = $rule->validate($response);
-
                 if (!$result) {
                     $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
                 }
@@ -107,6 +107,10 @@ class Scanner
             $result->setResponse($response);
             $result->setRuleName($name);
             $results[$name] = $result;
+        }
+
+        if ($response instanceof InteractiveResponse) {
+            $response->getInteractionProcessor()->endInteraction();
         }
 
         return $results;
