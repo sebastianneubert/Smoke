@@ -4,6 +4,7 @@ namespace whm\Smoke\Rules\Seo;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
+use whm\Html\Uri;
 use whm\Smoke\Rules\Attribute;
 use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\Rule;
@@ -20,6 +21,10 @@ class GoogleMobileFriendlyRule implements Rule
     public function validate(ResponseInterface $response)
     {
         $uri = $response->getUri();
+
+        if (Uri::isBasicAuth($uri)) {
+            return new CheckResult(CheckResult::STATUS_SKIPPED, 'Google mobile friendliness cannot be checked for an URL with http basic auth.');
+        }
 
         $endpoint = $this->getEndpoint($uri);
 
