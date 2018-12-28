@@ -30,7 +30,6 @@ class BigContentRule extends StandardRule
         if ($response instanceof ResourcesAwareResponse) {
             foreach ($response->getResources() as $resource) {
                 $resourceSize = round($resource['transferSize'] / 1000);
-
                 $totalSize += $resourceSize;
             }
         }

@@ -20,6 +20,10 @@ class XmlValidXsdRule extends StandardRule
         $this->xsdFiles = $xsdFiles;
     }
 
+    /**
+     * @param ResponseInterface $response
+     * @throws ValidationFailedException
+     */
     protected function doValidation(ResponseInterface $response)
     {
         $body = (string)$response->getBody();

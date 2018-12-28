@@ -8,6 +8,7 @@ use phmLabs\Components\Annovent\Dispatcher;
 use phmLabs\Components\Annovent\Event\Event;
 use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever;
+use whm\Smoke\Http\ErrorResponse;
 use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -91,15 +92,19 @@ class Scanner
                 continue;
             }
 
-            try {
-                $result = $rule->validate($response);
-                if (!$result) {
-                    $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
+            if ($response instanceof ErrorResponse) {
+                $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occurred: ' . $response->getErrorMessage());
+            } else {
+                try {
+                    $result = $rule->validate($response);
+                    if (!$result) {
+                        $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
+                    }
+                } catch (ValidationFailedException $e) {
+                    $result = new CheckResult(CheckResult::STATUS_FAILURE, $e->getMessage());
+                } catch (\Exception $e) {
+                    $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occurred: ' . $e->getMessage());
                 }
-            } catch (ValidationFailedException $e) {
-                $result = new CheckResult(CheckResult::STATUS_FAILURE, $e->getMessage());
-            } catch (\Exception $e) {
-                $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occured: ' . $e->getMessage());
             }
 
             $this->eventDispatcher->simpleNotify('Scanner.CheckResponse.Rule', array('checkResult' => $result, 'ruleName' => $name));

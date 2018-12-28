@@ -7,7 +7,7 @@ use phm\HttpWebdriverClient\Http\Response\RequestAwareResponse;
 use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use Psr\Http\Message\RequestInterface;
 
-class ErrorResponse extends Response implements UriAwareResponse, RequestAwareResponse
+class ConnectionRefusedResponse extends Response implements UriAwareResponse, RequestAwareResponse
 {
     /**
      * @var RequestInterface
