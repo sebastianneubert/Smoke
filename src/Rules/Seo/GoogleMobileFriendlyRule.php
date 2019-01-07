@@ -47,10 +47,12 @@ class GoogleMobileFriendlyRule implements Rule
 
         if (!$passResult->pass) {
             $result = new CheckResult(CheckResult::STATUS_FAILURE, 'Google mobile friendly test was not passed. Score ' . $passResult->score . '/100.', (int)$passResult->score);
-            $result->addAttribute(new Attribute('google_result', json_encode($result), true));
-            return $result;
+
+        } else {
+            $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Google mobile friendly test passed. Score ' . $passResult->score . '/100.', (int)$passResult->score);
         }
 
-        return new CheckResult(CheckResult::STATUS_SUCCESS, 'Google mobile friendly test passed. Score ' . $passResult->score . '/100.', (int)$passResult->score);
+        $result->addAttribute(new Attribute('google_result', json_encode($result), true));
+        return $result;
     }
 }
