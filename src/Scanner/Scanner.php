@@ -62,7 +62,12 @@ class Scanner
                 continue;
             }
 
-            $results = $this->checkResponse($response);
+            if ($response instanceof ErrorResponse) {
+                $this->eventDispatcher->simpleNotify('Scanner.Scan.Response.Error', array('response' => $response));
+                continue;
+            } else {
+                $results = $this->checkResponse($response);
+            }
 
             if (count($results) === 0) {
                 $checkResult = new CheckResult(CheckResult::STATUS_NONE, '');
@@ -92,19 +97,14 @@ class Scanner
                 continue;
             }
 
-            if ($response instanceof ErrorResponse) {
-                $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occurred: ' . $response->getErrorMessage());
-            } else {
-                try {
-                    $result = $rule->validate($response);
-                    if (!$result) {
-                        $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
-                    }
-                } catch (ValidationFailedException $e) {
-                    $result = new CheckResult(CheckResult::STATUS_FAILURE, $e->getMessage());
-                } catch (\Exception $e) {
-                    $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occurred: ' . $e->getMessage());
+            try {
+                $result = $rule->validate($response);
+                if (!$result) {
+                    $result = new CheckResult(CheckResult::STATUS_SUCCESS, 'Check successful.');
                 }
+            } catch (\Exception $e) {
+                $result = new CheckResult(CheckResult::STATUS_FAILURE, 'An error occurred: ' . $e->getMessage());
+                $this->eventDispatcher->simpleNotify('Scanner.CheckResponse.Rule.Error', array('checkResult' => $result, 'ruleName' => $name, 'exception' => $e));
             }
 
             $this->eventDispatcher->simpleNotify('Scanner.CheckResponse.Rule', array('checkResult' => $result, 'ruleName' => $name));
