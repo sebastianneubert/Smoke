@@ -14,6 +14,10 @@ class GuzzleClient implements HttpClient
      */
     private $guzzleClient;
 
+    /**
+     * @param bool $nocache
+     * @throws \Exception
+     */
     public function init($nocache = false)
     {
         if ($nocache) {

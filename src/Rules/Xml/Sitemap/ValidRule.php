@@ -19,7 +19,7 @@ class ValidRule extends StandardRule
     private $strictMode;
     private $debug;
 
-    protected $contentTypes = array('text/xml', 'application/xml');
+    // protected $contentTypes = array('text/xml', 'application/xml');
 
     public function init($strictMode = true, $debug = false)
     {
