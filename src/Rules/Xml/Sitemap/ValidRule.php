@@ -77,6 +77,8 @@ class ValidRule extends StandardRule
             $this->validateBody($body, (string)$response->getUri());
         } elseif (preg_match('/<urlset/', $body)) {
             $this->validateBody($body, (string)$response->getUri(), false);
+        } else {
+            throw new ValidationFailedException('The given document is not a valid sitemap. Nether sitemapindex nor urlset element was found. ');
         }
     }
 }
