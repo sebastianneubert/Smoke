@@ -16,14 +16,17 @@ class GuzzleClient implements HttpClient
 
     /**
      * @param bool $nocache
+     * @param integer $clientTimeout
      * @throws \Exception
      */
-    public function init($nocache = false)
+    public function init($nocache = false, $clientTimeout = 20000)
     {
+        $timeoutInSeconds = (int)($clientTimeout / 1000);
+
         if ($nocache) {
-            $this->guzzleClient = new phmGuzzleClient();
+            $this->guzzleClient = new phmGuzzleClient(null, $timeoutInSeconds);
         } else {
-            $guzzleClient = new phmGuzzleClient;
+            $guzzleClient = new phmGuzzleClient(null, $timeoutInSeconds);
             $this->guzzleClient = new FileCacheDecorator($guzzleClient);
         }
     }

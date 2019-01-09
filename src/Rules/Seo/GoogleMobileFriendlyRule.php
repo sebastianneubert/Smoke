@@ -23,7 +23,8 @@ class GoogleMobileFriendlyRule implements Rule
         $uri = $response->getUri();
 
         if (Uri::isBasicAuth($uri)) {
-            return new CheckResult(CheckResult::STATUS_SKIPPED, 'Google mobile friendliness cannot be checked for an URL with http basic auth.');
+            $result = new CheckResult(CheckResult::STATUS_SKIPPED, 'Google mobile friendliness cannot be checked for an URL with http basic auth.');
+            return $result;
         }
 
         $endpoint = $this->getEndpoint($uri);
