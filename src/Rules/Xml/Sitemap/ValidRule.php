@@ -19,6 +19,11 @@ class ValidRule extends StandardRule
     private $strictMode;
     private $debug;
 
+    private $gzipContentTypes = [
+        'application/x-gzip',
+        'application/gzip'
+    ];
+
     // protected $contentTypes = array('text/xml', 'application/xml');
 
     public function init($strictMode = true, $debug = false)
@@ -74,7 +79,7 @@ class ValidRule extends StandardRule
             $body = (string)$response->getBody();
         }
 
-        if (is_array($contentType) && $contentType[0] === "application/gzip") {
+        if (is_array($contentType) && in_array(strtolower($contentType[0]), $this->gzipContentTypes)) {
             $body = gzdecode($response->getBody());
         }
 
