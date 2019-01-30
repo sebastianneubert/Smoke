@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Smoke HTML Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         .success {
             color: #7CBF00;
@@ -29,10 +27,11 @@
             width: 400px;
         }
 
+        {{ source('bootstrap.min.css') }}
     </style>
-    <script type="application/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>
-
+    <script type="application/javascript">
+        {{ source('Chart.min.js') }}
+    </script>
 </head>
 <body>
 
