@@ -30,7 +30,6 @@ class RedirectRule implements Rule
 
         $targetUrl = (string)$this->removeCredentials($response->getUri());
 
-
         foreach ($this->urls as $url) {
             $uri = new Uri($url['url']);
 

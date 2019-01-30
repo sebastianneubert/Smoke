@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever;
 use whm\Smoke\Http\ErrorResponse;
 use whm\Smoke\Rules\CheckResult;
+use whm\Smoke\Rules\ErrorResponseAwareRule;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
 
@@ -64,10 +65,9 @@ class Scanner
 
             if ($response instanceof ErrorResponse) {
                 $this->eventDispatcher->simpleNotify('Scanner.Scan.Response.Error', array('response' => $response));
-                continue;
-            } else {
-                $results = $this->checkResponse($response);
             }
+
+            $results = $this->checkResponse($response);
 
             if (count($results) === 0) {
                 $checkResult = new CheckResult(CheckResult::STATUS_NONE, '');
@@ -94,6 +94,10 @@ class Scanner
 
         foreach ($this->rules as $name => $rule) {
             if ($this->eventDispatcher->notifyUntil(new Event('Scanner.CheckResponse.isFiltered', array('ruleName' => $name, 'rule' => $rule, 'response' => $response)))) {
+                continue;
+            }
+
+            if ($response instanceof ErrorResponse && !($rule instanceof ErrorResponseAwareRule)) {
                 continue;
             }
 
