@@ -65,7 +65,7 @@ class ValidRule extends StandardRule
             return new CheckResult(CheckResult::STATUS_FAILURE, $message);
         } else {
             $message = 'The given sitemap file (' . $filename . ') is valid.';
-            return new CheckResult(CheckResult::STATUS_FAILURE, $message);
+            return new CheckResult(CheckResult::STATUS_SUCCESS, $message);
 
         }
     }
