@@ -4,6 +4,7 @@ namespace whm\Smoke\Rules\Xml\Sitemap;
 
 use phm\HttpWebdriverClient\Http\Response\DomAwareResponse;
 use Psr\Http\Message\ResponseInterface;
+use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\StandardRule;
 use whm\Smoke\Rules\ValidationFailedException;
 
@@ -60,8 +61,12 @@ class ValidRule extends StandardRule
 
         if (!$valid) {
             $lastError = libxml_get_last_error();
-            throw new ValidationFailedException(
-                'The given sitemap file (' . $filename . ') did not validate against the sitemap schema (last error: ' . str_replace("\n", '', $lastError->message) . ').');
+            $message = 'The given sitemap file (' . $filename . ') did not validate against the sitemap schema (last error: ' . str_replace("\n", '', $lastError->message) . ').';
+            return new CheckResult(CheckResult::STATUS_FAILURE, $message);
+        } else {
+            $message = 'The given sitemap file (' . $filename . ') is valid.';
+            return new CheckResult(CheckResult::STATUS_FAILURE, $message);
+
         }
     }
 
@@ -85,9 +90,9 @@ class ValidRule extends StandardRule
 
         // sitemapindex or urlset
         if (preg_match('/<sitemapindex/', $body)) {
-            $this->validateBody($body, (string)$response->getUri());
+            return $this->validateBody($body, (string)$response->getUri(), true);
         } elseif (preg_match('/<urlset/', $body)) {
-            $this->validateBody($body, (string)$response->getUri(), false);
+            return $this->validateBody($body, (string)$response->getUri(), false);
         } else {
             throw new ValidationFailedException('The given document is not a valid sitemap. Nether sitemapindex nor urlset element was found. ');
         }
