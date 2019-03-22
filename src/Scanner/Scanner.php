@@ -4,6 +4,7 @@ namespace whm\Smoke\Scanner;
 
 use phm\HttpWebdriverClient\Http\Client\HttpClient;
 use phm\HttpWebdriverClient\Http\Response\InteractiveResponse;
+use phm\HttpWebdriverClient\Http\Response\SequenceAwareResponse;
 use phmLabs\Components\Annovent\Dispatcher;
 use phmLabs\Components\Annovent\Event\Event;
 use Psr\Http\Message\ResponseInterface;
@@ -12,7 +13,7 @@ use whm\Smoke\Http\ErrorResponse;
 use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\ErrorResponseAwareRule;
 use whm\Smoke\Rules\Rule;
-use whm\Smoke\Rules\ValidationFailedException;
+
 
 class Scanner
 {
@@ -119,7 +120,9 @@ class Scanner
         }
 
         if ($response instanceof InteractiveResponse) {
-            $response->getInteractionProcessor()->endInteraction();
+            if (!$response instanceof SequenceAwareResponse) {
+                $response->getInteractionProcessor()->endInteraction();
+            }
         }
 
         return $results;
