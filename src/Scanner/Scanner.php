@@ -120,7 +120,7 @@ class Scanner
         }
 
         if ($response instanceof InteractiveResponse) {
-            if (!$response instanceof SequenceAwareResponse) {
+            if (!$response instanceof SequenceAwareResponse && $response->getSeqeunce()) {
                 $response->getInteractionProcessor()->endInteraction();
             }
         }
