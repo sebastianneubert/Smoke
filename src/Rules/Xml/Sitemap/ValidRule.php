@@ -25,8 +25,6 @@ class ValidRule extends StandardRule
         'application/gzip'
     ];
 
-    // protected $contentTypes = array('text/xml', 'application/xml');
-
     public function init($strictMode = true, $debug = false)
     {
         $this->debug = $debug;
@@ -54,10 +52,16 @@ class ValidRule extends StandardRule
      */
     private function validateBody($body, $filename, $isIndex = true)
     {
+        if (!$this->strictMode) {
+            $body = str_replace('<sitemapindex>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', $body);
+        }
+
         $dom = new \DOMDocument();
+
         @$dom->loadXML($body);
 
-        $valid = @$dom->schemaValidate($this->getSchema($isIndex));
+        $schema = $this->getSchema($isIndex);
+        $valid = @$dom->schemaValidate($schema);
 
         if (!$valid) {
             $lastError = libxml_get_last_error();

@@ -19,7 +19,7 @@ class GuzzleClient implements HttpClient
      * @param integer $clientTimeout
      * @throws \Exception
      */
-    public function init($nocache = false, $clientTimeout = 20000)
+    public function init($nocache = true, $clientTimeout = 20000)
     {
         $timeoutInSeconds = (int)($clientTimeout / 1000);
 
