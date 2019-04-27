@@ -80,16 +80,17 @@ class ValidRule extends StandardRule
      */
     protected function doValidation(ResponseInterface $response)
     {
-        $contentType = $response->getHeader('content-type');
-
         if ($response instanceof DomAwareResponse) {
             $body = (string)$response->getHtmlBody();
         } else {
             $body = (string)$response->getBody();
         }
 
-        if (is_array($contentType) && in_array(strtolower($contentType[0]), $this->gzipContentTypes)) {
-            $body = gzdecode($response->getBody());
+        if ($response->hasHeader('content-type')) {
+            $contentType = $response->getHeader('content-type');
+            if (is_array($contentType) && in_array(strtolower($contentType[0]), $this->gzipContentTypes)) {
+                $body = gzdecode($response->getBody());
+            }
         }
 
         // sitemapindex or urlset

@@ -31,6 +31,8 @@ class Configuration
 
     private $eventDispatcher;
 
+    private $verbose = false;
+
     private $extensions = array();
 
     private $runLevels = array();
@@ -94,6 +96,10 @@ class Configuration
                 if ($configArray['options']['extendDefault'] === true) {
                     $configArray = array_replace_recursive($defaultSettings, $configArray);
                 }
+            }
+
+            if (array_key_exists('verbose', $configArray['options']) && $configArray['options']['verbose'] === true) {
+                $this->verbose = true;
             }
         }
 
@@ -236,5 +242,13 @@ class Configuration
             $client->init();
             return $client;
         }
+    }
+
+    /**
+     * @return bool
+     */
+    public function isVerbose(): bool
+    {
+        return $this->verbose;
     }
 }

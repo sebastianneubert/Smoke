@@ -64,8 +64,8 @@ class CheckResult
      */
     public function hasAttribute($key)
     {
-        foreach($this->attributes as $attribute) {
-            if($attribute->getKey() == $key) {
+        foreach ($this->attributes as $attribute) {
+            if ($attribute->getKey() == $key) {
                 return true;
             }
         }
@@ -73,11 +73,21 @@ class CheckResult
     }
 
     /**
-     * @param array $attributes
+     * @param Attribute $attributes
      */
     public function addAttribute(Attribute $attribute)
     {
         $this->attributes[] = $attribute;
+    }
+
+    /**
+     * @param Attribute[] $attributes
+     */
+    public function addAttributes($attributes)
+    {
+        foreach ($attributes as $attribute) {
+            $this->addAttribute($attribute);
+        }
     }
 
     public function setHint($message)
