@@ -1,0 +1,35 @@
+
+options:
+  extendDefault: false
+
+extensions:
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      258:
+        - https://monitor.leankoala.com/p/gala/
+
+rules:
+  _IvwCall:
+   runLevel: 1
+   class: whm\Smoke\Rules\Html\RegExExistsRule
+   parameters:
+     regExs:
+       2:
+         isRegEx: false
+         pattern: "var iam_data = {"

@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Image;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
 
@@ -23,13 +24,13 @@ class FavIconRule extends StandardRule
         'cfe845e2eaaf1bf4e86b5921df1d39f3' => 'phpbb',
     );
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
         if (strpos((string) $response->getUri(), 'favicon.ico') === false) {
             return;
         }
 
-        $imageHash = md5($response->getBody());
+        $imageHash = md5((string)$response->getBody());
 
         $this->assert(!array_key_exists($imageHash, $this->favicons), 'Seems like you use the standard favicon of your framework (' . $this->favicons[$imageHash] . ').');
     }

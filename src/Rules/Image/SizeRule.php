@@ -2,7 +2,7 @@
 
 namespace whm\Smoke\Rules\Image;
 
-use whm\Smoke\Http\Response;
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\StandardRule;
 
 /**
@@ -22,9 +22,9 @@ class SizeRule extends StandardRule
         $this->maxSize = $maxSize;
     }
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        $size = strlen($response->getBody()) / 1000;
+        $size = strlen((string)$response->getBody()) / 1000;
         $this->assert($size <= $this->maxSize, 'The size of the file is too big (' . $size . ' KB)');
     }
 }

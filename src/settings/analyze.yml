@@ -133,10 +133,6 @@ rules:
     runLevel: 1
     class: whm\Smoke\Rules\Json\ValidRule
 
-  _RssValid:
-    runLevel: 1
-    class: whm\Smoke\Rules\Xml\Rss\ValidRule
-
   _XmlDuplicateId:
     runLevel: 2
     class: whm\Smoke\Rules\Xml\DuplicateIdRule

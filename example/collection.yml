@@ -1,0 +1,51 @@
+
+options:
+  extendDefault: false
+
+extensions:
+
+  Leankoala:
+    class: whm\Smoke\Extensions\Leankoala\LeankoalaExtension
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  KoalamonReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\LeankoalaReporter
+     parameters:
+       systemUseRetriever: false
+       system: '__system__koala____leankoala_wizard__21'
+       apiKey: 22F112F4-1974-4DBA-A94B-1DF7ED4A99BD
+       server: http://leankoala.local/app_dev.php/webhook/
+       collect: false
+       groupBy: prefix
+       addComingFrom: false
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      3:
+        - https://www.thewebhatesme.com/allgemein/jeder-sollte-ein-start-up-haben/
+
+rules:
+  cssSelectorChecker_3:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    errrorMessage: "oh oh"
+    parameters:
+      cssSelectors:
+        32431484:
+          pattern: footerr
+        85340812:
+          pattern: headerr
+

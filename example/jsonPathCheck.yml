@@ -1,0 +1,67 @@
+# http://goessner.net/articles/JsonPath/
+
+### IMPORTANT! ###
+# JSON Path Checker is based on the JSONPath 0.8.3 - XPath for JSON by Stefan Goessner (Copyright (c) 2007 Stefan Goessner (goessner.net))
+#
+
+options:
+  extendDefault: false
+
+extensions:
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _SmokeRunLevel:
+    class: whm\Smoke\Extensions\SmokeRunLevel\RunLevelExtension
+    parameters:
+      runLevel: 1
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
+  parameters:
+    startPage: "http://epg.tvmovie.de/v1/broadcasts/hot7"
+
+    pageContainer:
+      class: whm\Crawler\PageContainer\PatternAwareContainer
+
+    filters:
+      _ValidUrlFilter:
+        class: whm\Crawler\Filter\ValidUrlFilter
+
+      _ForeignDomainFilter:
+        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+
+stop:
+  _CountStop:
+    class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
+    parameters:
+      maxCount: 1
+
+rules:
+   _CssSelectorCheck:
+    class: whm\Smoke\Rules\Json\JsonPathExistsRule
+    parameters:
+      jsonPaths:
+        -
+          pattern: "$.broadcasts[?(@.id)]"
+          relation: "equals"
+          value: 7
+        -
+          pattern: "$.broadcasts.[previewImage.filepath.android-image-320-180]"
+          relation: "equals"
+          value: 7
+        -
+          pattern: "$.broadcasts.[previewImage.caption]"
+          relation: "equals"
+          value: 7

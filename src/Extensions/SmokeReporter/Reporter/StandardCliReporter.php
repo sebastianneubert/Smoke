@@ -5,15 +5,20 @@ namespace whm\Smoke\Extensions\SmokeReporter\Reporter;
 use PhmLabs\Components\Init\Init;
 use Symfony\Component\Console\Output\OutputInterface;
 use whm\Smoke\Config\Configuration;
-use whm\Smoke\Scanner\Result;
+use whm\Smoke\Rules\CheckResult;
+use whm\Smoke\Rules\Rule;
 
 class StandardCliReporter extends CliReporter
 {
     /**
-     * @var Result[]
+     * @var CheckResult[]
      */
     private $results = array();
     private $orderBy;
+
+    /**
+     * @var Rule[]
+     */
     private $rules = array();
     private $maxResults;
 
@@ -31,9 +36,30 @@ class StandardCliReporter extends CliReporter
         }
     }
 
-    public function processResult(Result $result)
+    /**
+     * @param \whm\Smoke\Rules\CheckResult[] $results
+     */
+    public function processResults($results)
     {
-        $this->results[] = $result;
+        if (count($results) === 0) {
+            return;
+        }
+
+        $failures = false;
+
+        $processedResults = [];
+
+        foreach ($results as $result) {
+            if ($result->getStatus() === CheckResult::STATUS_FAILURE) {
+                $processedResults[] = $result;
+                $failures = true;
+            }
+        }
+        if ($failures) {
+            $this->results[] = $processedResults;
+        } else {
+            $this->results[] = [array_pop($results)];
+        }
     }
 
     public function finish()
@@ -49,18 +75,19 @@ class StandardCliReporter extends CliReporter
     private function getFailedUrls($ruleKey)
     {
         $failedUrls = array();
-
         $count = 0;
-        foreach ($this->results as $result) {
-            if ($result->isFailure()) {
-                if (array_key_exists($ruleKey, $result->getMessages())) {
-                    $messages = $result->getMessages();
-                    $failedUrls[] = (string) $result->getUrl() . ' - ' . $messages[$ruleKey];
-                    ++$count;
-                }
-                if ($count > $this->maxResults) {
-                    $failedUrls[] = '... only the first ' . $this->maxResults . ' elements are shown.';
-                    break;
+        foreach ($this->results as $results) {
+            foreach ($results as $key => $result) {
+                /** @var CheckResult $result */
+                if ($result->getStatus() === CheckResult::STATUS_FAILURE) {
+                    if ($ruleKey === $key) {
+                        $failedUrls[] = (string) $result->getResponse()->getUri() . ' - ' . $result->getMessage();
+                        ++$count;
+                    }
+                    if ($count > $this->maxResults) {
+                        $failedUrls[] = '... only the first ' . $this->maxResults . ' elements are shown.';
+                        break;
+                    }
                 }
             }
         }
@@ -96,17 +123,29 @@ class StandardCliReporter extends CliReporter
     {
         $this->output->writeln("\n\n <comment>Passed tests:</comment> \n");
 
-        foreach ($this->results as $result) {
-            if ($result->isSuccess()) {
-                $this->renderSuccess($result);
+        foreach ($this->results as $results) {
+            foreach ($results as $result) {
+                if ($result->getStatus() === CheckResult::STATUS_SUCCESS) {
+                    $this->renderSuccess($result);
+                }
             }
         }
 
         $this->output->writeln("\n <comment>Failed tests:</comment> \n");
 
-        foreach ($this->results as $result) {
-            if ($result->isFailure()) {
-                $this->renderFailure($result);
+        foreach ($this->results as $results) {
+            foreach ($results as $result) {
+                if ($result->getStatus() === CheckResult::STATUS_FAILURE) {
+                    $this->renderFailure($result);
+                }
+            }
+        }
+
+        foreach ($this->results as $results) {
+            foreach ($results as $result) {
+                if ($result->getStatus() === CheckResult::STATUS_SKIPPED) {
+                    $this->renderSkipped($result);
+                }
             }
         }
     }

@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Json;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\StandardRule;
@@ -23,9 +24,9 @@ class ValidRule extends StandardRule
         JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded',
     );
 
-    public function doValidation(Response $response)
+    public function doValidation(ResponseInterface $response)
     {
-        $result = json_decode($response->getBody());
+        $result = json_decode((string)$response->getBody());
         if ($result === null) {
             throw new ValidationFailedException("The given JSON data can not be validated (last error: '" . $this->json_errors[json_last_error()] . "').");
         }

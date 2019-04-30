@@ -28,6 +28,7 @@ class KoalamonReporter implements Reporter
     private $tool = 'smoke';
     private $groupBy;
     private $server;
+    private $addComingFrom;
 
     /**
      * @var KoalaReporter
@@ -44,7 +45,7 @@ class KoalamonReporter implements Reporter
     const STATUS_SUCCESS = 'success';
     const STATUS_FAILURE = 'failure';
 
-    public function init($apiKey, Configuration $_configuration, OutputInterface $_output, $server = 'https://webhook.koalamon.com', $system = '', $identifier = '', $tool = '', $collect = true, $systemUseRetriever = false, $groupBy = false)
+    public function init($apiKey, Configuration $_configuration, OutputInterface $_output, $server = 'https://webhook.koalamon.com', $system = '', $identifier = '', $tool = '', $collect = true, $systemUseRetriever = false, $groupBy = false, $addComingFrom = true)
     {
         $httpClient = new \GuzzleHttp\Client();
         $this->reporter = new KoalaReporter('', $apiKey, $httpClient, $server);
@@ -56,6 +57,8 @@ class KoalamonReporter implements Reporter
         $this->collect = $collect;
         $this->identifier = $identifier;
         $this->groupBy = $groupBy;
+
+        $this->addComingFrom = $addComingFrom;
 
         if ($tool) {
             $this->tool = $tool;
@@ -146,7 +149,12 @@ class KoalamonReporter implements Reporter
                         $failureMessages[$identifer]['message'] = 'The ' . $this->getPrefix($ruleLKey) . ' test for #system_name# failed.<ul>';
                     }
                     ++$counter[$identifer];
-                    $failureMessages[$identifer]['message'] .= '<li>' . $message . '<br>url: ' . $result->getUrl() . ', coming from: ' . $this->retriever->getComingFrom($result->getUrl()) . '</li>';
+                    $message = '<li>' . $message . '<br>url: ' . $result->getUrl();
+                    if ($this->addComingFrom) {
+                        $message .= ', coming from: ' . $this->retriever->getComingFrom($result->getUrl());
+                    }
+                    $message .= '</li>';
+                    $failureMessages[$identifer]['message'] .= $message;
                 }
             }
         }
@@ -218,7 +226,8 @@ class KoalamonReporter implements Reporter
                     ++$counter[$ruleLKey];
 
                     $comingFrom = '';
-                    if ($this->retriever->getComingFrom($result->getUrl())) {
+
+                    if ($this->addComingFrom && $this->retriever->getComingFrom($result->getUrl())) {
                         $comingFrom = ', coming from: ' . $this->retriever->getComingFrom($result->getUrl());
                     }
 
@@ -243,6 +252,7 @@ class KoalamonReporter implements Reporter
             $tool = $this->tool;
         }
         $event = new Event($identifier, $system, $status, $tool, $message, $value);
+
         $this->reporter->sendEvent($event);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace whm\Smoke\Rules\Http\Header\Cache;
 
-use whm\Smoke\Http\Response;
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
 
@@ -18,9 +18,9 @@ class PragmaNoCacheRule implements Rule
         $this->maxStatusCode = $maxStatusCode;
     }
 
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
-        if ($response->getStatus() <= $this->maxStatusCode) {
+        if ($response->getStatusCode() <= $this->maxStatusCode) {
             if ($response->hasHeader('Pragma') && 'no-cache' === $response->getHeader('Pragma')[0]) {
                 throw new ValidationFailedException('pragma:no-cache was found');
             }

@@ -2,25 +2,27 @@
 
 namespace whm\Smoke\Cli\Command;
 
-use Ivory\HttpAdapter\CurlHttpAdapter;
-use Ivory\HttpAdapter\Event\Subscriber\RedirectSubscriber;
-use Ivory\HttpAdapter\Event\Subscriber\RetrySubscriber;
-use Ivory\HttpAdapter\EventDispatcherHttpAdapter;
+use GuzzleHttp\Client;
 use phmLabs\Components\Annovent\Dispatcher;
 use PhmLabs\Components\Init\Init;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use whm\Crawler\Http\RequestFactory;
-use whm\Smoke\Http\MessageFactory;
+use whm\Smoke\Config\Configuration;
 use whm\Smoke\Scanner\Scanner;
 use whm\Smoke\Yaml\EnvAwareYaml;
 
 class SmokeCommand extends Command
 {
+    /**
+     * @var OutputInterface
+     */
     protected $output;
     protected $eventDispatcher;
+
+    /**
+     * @var Configuration
+     */
     protected $config;
 
     protected function init(InputInterface $input, OutputInterface $output, $url = null)
@@ -45,7 +47,11 @@ class SmokeCommand extends Command
      */
     protected function writeSmokeCredentials($url = null)
     {
-        $this->output->writeln("\n Smoke " . SMOKE_VERSION . " by Nils Langner\n");
+        if (defined('SMOKE_CREDENTIALS')) {
+            $this->output->writeln("\n " . SMOKE_CREDENTIALS . "\n");
+        } else {
+            $this->output->writeln("\n Smoke " . SMOKE_VERSION . " by Nils Langner\n");
+        }
 
         if ($url) {
             $this->output->writeln(' <info>Scanning ' . $url . "</info>\n");
@@ -53,41 +59,30 @@ class SmokeCommand extends Command
     }
 
     /**
-     * This function return a http client.
-     *
-     * @throws \Ivory\HttpAdapter\HttpAdapterException
-     *
-     * @return \Ivory\HttpAdapter\HttpAdapterInterface
+     * @return int
+     * @throws \Exception
      */
-    protected function getHttpClient()
-    {
-        $eventDispatcher = new EventDispatcher();
-        $eventDispatcher->addSubscriber(new RedirectSubscriber());
-        $eventDispatcher->addSubscriber(new RetrySubscriber());
-
-        // $guessedAdapter = HttpAdapterFactory::guess();
-        /** @var \Ivory\HttpAdapter\Guzzle6HttpAdapter $guessedAdapter */
-        $guessedAdapter = new CurlHttpAdapter();
-
-        RequestFactory::addStandardHeader('Accept-Encoding', 'gzip');
-        RequestFactory::addStandardHeader('Connection', 'keep-alive');
-
-        $adapter = new EventDispatcherHttpAdapter($guessedAdapter, $eventDispatcher);
-        $adapter->getConfiguration()->setTimeout(30);
-        //$adapter->getConfiguration()->setUserAgent('versioneye-php');
-        $adapter->getConfiguration()->setMessageFactory(new MessageFactory());
-
-        return $adapter;
-    }
-
     protected function scan()
     {
+        $client = $this->config->getClient();
+
         $scanner = new Scanner($this->config->getRules(),
-            $this->getHttpClient(),
+            $client,
             $this->eventDispatcher,
             $this->config->getExtension('_ResponseRetriever')->getRetriever());
 
-        $scanner->scan();
+        try {
+            $scanner->scan();
+        } catch (\Exception $e) {
+            if (method_exists($client, 'close')) {
+                $client->close();
+            }
+            throw $e;
+        }
+
+        if (method_exists($client, 'close')) {
+            $client->close();
+        }
 
         return $scanner->getStatus();
     }
@@ -105,7 +100,8 @@ class SmokeCommand extends Command
 
         if ($configFile) {
             if (strpos($configFile, 'http://') === 0 || strpos($configFile, 'https://') === 0) {
-                $fileContent = (string) $this->getHttpClient()->get($configFile)->getBody();
+                $curlClient = new Client();
+                $fileContent = (string)$curlClient->get($configFile)->getBody();
             } else {
                 if (file_exists($configFile)) {
                     $fileContent = file_get_contents($configFile);

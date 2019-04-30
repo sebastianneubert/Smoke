@@ -10,6 +10,10 @@ blacklist:
 options:
   scanForeignDomains: false
 
+client:
+  cache: true
+  class: \phm\HttpWebdriverClient\Http\Client\Chrome\ChromeClient
+
 extensions:
 
   _SmokeStop:
@@ -40,8 +44,8 @@ responseRetriever:
  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
 
  parameters:
-   parallelRequests: 5
-   startPage: http://www.maennersache.de/
+   parallelRequests: 1
+   startPage: http://www.spiegel.de/
 
    pageContainer:
      class: whm\Crawler\PageContainer\PatternAwareContainer
@@ -60,17 +64,14 @@ stop:
   _CountStop:
     class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
     parameters:
-      maxCount: 10
+      maxCount: 2
 
 rules:
-  _IvwJsFile:
-   runLevel: 1
-   class: whm\Smoke\Rules\Http\Header\ExistsRule
-   parameters:
-     checkedHeaders:
-      1:
-        key: 'Connection'
-        value: '(keep\-alive|close)'
-      2:
-        key: 'Cache-control'
-        value: 'public(, (s-)?maxage=\d*)?'
+
+  httphead_155:
+      class: whm\Smoke\Rules\Http\Header\ExistsRule
+      parameters:
+        checkedHeaders:
+          -
+            key: Age
+            value: '^(?!0+$)\d+$'

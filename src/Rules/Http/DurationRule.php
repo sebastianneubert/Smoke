@@ -2,13 +2,14 @@
 
 namespace whm\Smoke\Rules\Http;
 
-use whm\Smoke\Http\Response;
+use phm\HttpWebdriverClient\Http\Response\DurationAwareResponse;
+use Psr\Http\Message\ResponseInterface;
+use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\Rule;
-use whm\Smoke\Rules\ValidationFailedException;
 
 /**
  * This rule can validate if a http request takes longer than a given max duration.
- * A website that is slower than one second is concidered as slow.
+ * A website that is slower than one second is considered as slow.
  */
 class DurationRule implements Rule
 {
@@ -22,10 +23,20 @@ class DurationRule implements Rule
         $this->maxDuration = $maxDuration;
     }
 
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
-        if ($response->getDuration() > $this->maxDuration) {
-            throw new ValidationFailedException('the http request lasted ' . $response->getDuration() . ' milliseconds.');
+        if ($response instanceof DurationAwareResponse) {
+            if ($response->getDuration() > $this->maxDuration) {
+                return new CheckResult(
+                    CheckResult::STATUS_FAILURE,
+                    'The http request took ' . (int)$response->getDuration() . ' milliseconds (limit was ' . $this->maxDuration . 'ms).',
+                    (int)$response->getDuration());
+            }
+
+            return new CheckResult(
+                CheckResult::STATUS_SUCCESS,
+                'The http request took ' . (int)$response->getDuration() . ' milliseconds (limit was ' . $this->maxDuration . 'ms).',
+                (int)$response->getDuration());
         }
     }
 }

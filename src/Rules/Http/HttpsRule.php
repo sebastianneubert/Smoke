@@ -2,16 +2,18 @@
 
 namespace whm\Smoke\Rules\Http;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 
 abstract class HttpsRule implements Rule
 {
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
         if ('https' === $response->getUri()->getScheme()) {
             $certInfo = $this->getCertifacateInformation($response->getUri()->getHost());
-            $this->doValidate($certInfo);
+
+            return $this->doValidate($certInfo);
         }
     }
 
@@ -21,7 +23,7 @@ abstract class HttpsRule implements Rule
     {
         $sslOptions = stream_context_create(array('ssl' => array('capture_peer_cert' => true)));
 
-        $request = stream_socket_client(
+        $request = @stream_socket_client(
             'ssl://' . $host . ':443',
             $errno,
             $errstr,
@@ -30,9 +32,10 @@ abstract class HttpsRule implements Rule
             $sslOptions
         );
 
-        $content = stream_context_get_params($request);
-        $certinfo = openssl_x509_parse($content['options']['ssl']['peer_certificate']);
+        $content = @stream_context_get_params($request);
 
-        return $certinfo;
+        $certInfo = openssl_x509_parse($content['options']['ssl']['peer_certificate']);
+
+        return $certInfo;
     }
 }

@@ -1,0 +1,77 @@
+whitelist:
+ - ^^
+
+blacklist:
+ - ^jpg^
+ - ^png^
+ - ^css^
+ - ^.js^
+
+options:
+  scanForeignDomains: false
+
+extensions:
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _ProgressBar:
+    class: whm\Smoke\Extensions\SmokeProgressBar\ProgressBar
+    parameters:
+      width: 100
+      format: normal
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _SmokeRunLevel:
+    class: whm\Smoke\Extensions\SmokeRunLevel\RunLevelExtension
+    parameters:
+      runLevel: 10
+
+#reporter:
+#  _CliReporter:
+#    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+responseRetriever:
+ class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
+
+ parameters:
+   parallelRequests: 5
+   startPage: "${SCAN_URL}"
+
+   pageContainer:
+     class: whm\Crawler\PageContainer\PatternAwareContainer
+
+   filters:
+    _BlackWhiteListFilter:
+      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
+
+    _ValidUrlFilter:
+      class: whm\Crawler\Filter\ValidUrlFilter
+
+    _ForeignDomainFilter:
+      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+
+stop:
+  _CountStop:
+    class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
+    parameters:
+      maxCount: ${SCAN_URL_COUNT}
+
+rules:
+  _StroerJsFile:
+   runLevel: 1
+   class: whm\Smoke\Rules\Html\RegExExistsRule
+   parameters:
+     regExs:
+       1:
+         isRegEx: true
+         pattern: "http(s)?://cdn.stroeerdigitalgroup.de/metatag/live/bauer-(.*)/metaTag.min.js"

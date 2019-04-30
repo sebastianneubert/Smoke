@@ -2,8 +2,8 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Html\Document;
-use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
 
 /**
@@ -16,17 +16,21 @@ class InvalidUrlsRule extends StandardRule
     /**
      * {@inheritdoc}
      */
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        $document = new Document($response->getBody(), false);
-
+        $document = new Document((string)$response->getBody(), false);
         $urls = $document->getDependencies($response->getUri());
-
         $invalidUrls = array();
 
         foreach ($urls as $url) {
-            if (!filter_var(trim((string) $url), FILTER_VALIDATE_URL)) {
-                $invalidUrls[] = (string) $url;
+            if (function_exists('idn_to_ascii')) {
+                $idnUrl = $url->getScheme() . '://' . idn_to_ascii($url->getHost()) . $url->getPath();
+            } else {
+                $idnUrl = $url->getScheme() . '://' . $url->getHost() . $url->getPath();
+            }
+
+            if (!filter_var($idnUrl, FILTER_VALIDATE_URL)) {
+                $invalidUrls[] = (string)$url;
             }
         }
 

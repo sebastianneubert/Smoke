@@ -2,8 +2,8 @@
 
 namespace whm\Smoke\Rules\Xml;
 
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\DomCrawler\Crawler;
-use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
 
@@ -12,13 +12,13 @@ use whm\Smoke\Rules\ValidationFailedException;
  */
 class DuplicateIdRule implements Rule
 {
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
         if ($response->getContentType() !== 'text/html') {
             return;
         }
 
-        $crawler = new Crawler($response->getBody());
+        $crawler = new Crawler((string)$response->getBody());
 
         $idList = $crawler->filterXPath('//*[@id!=""]');
 

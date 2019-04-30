@@ -2,9 +2,9 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Html\Document;
 use whm\Html\Uri;
-use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
 
 /**
@@ -24,9 +24,9 @@ class ForeignDomainImageRule extends StandardRule
         $this->depth = $depth;
     }
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        $document = new Document($response->getBody());
+        $document = new Document((string)$response->getBody());
         $images = $document->getImages($response->getUri());
 
         $foreignImages = array();
@@ -37,7 +37,7 @@ class ForeignDomainImageRule extends StandardRule
         foreach ($images as $image) {
             /* @var $image Uri */
             if ($currentUri->getHost($this->depth) !== $image->getHost($this->depth)) {
-                $foreignImages[] = (string) $image;
+                $foreignImages[] = (string)$image;
             }
         }
 

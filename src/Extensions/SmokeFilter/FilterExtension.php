@@ -2,9 +2,10 @@
 
 namespace whm\Smoke\Extensions\SmokeFilter;
 
+use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
 use phmLabs\Components\Annovent\Event\Event;
+use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever;
-use whm\Smoke\Http\Response;
 use whm\Smoke\Yaml\EnvAwareYaml;
 
 /**
@@ -67,7 +68,14 @@ class FilterExtension
         }
 
         if (count($exclusive) > 0) {
-            $this->exclusives = $exclusive;
+            foreach ($exclusive as $rule => $urls) {
+                if (is_array($urls)) {
+                    foreach ($urls as $url) {
+                        $uri = new Uri($url);
+                        $this->exclusives[$rule][] = (string)$uri;
+                    }
+                }
+            }
             $this->currentModus = self::MODUS_EXCLUSIVE;
         }
     }
@@ -83,9 +91,9 @@ class FilterExtension
     /**
      * @Event("Scanner.CheckResponse.isFiltered")
      */
-    public function isFiltered(Event $event, $ruleName, Response $response)
+    public function isFiltered(Event $event, $ruleName, UriAwareResponse $response)
     {
-        $uri = (string) $this->retriever->getOriginUri($response->getUri());
+        $uri = (string)$this->retriever->getOriginUri($response->getUri());
 
         if ($this->currentModus === self::MODUS_FILTER) {
             $isFiltered = $this->isFilteredByFilter($ruleName, $uri);
@@ -95,7 +103,6 @@ class FilterExtension
 
         if ($isFiltered) {
             $event->setProcessed();
-
             return true;
         } else {
             return false;
@@ -109,6 +116,7 @@ class FilterExtension
                 return true;
             }
         }
+
 
         return false;
     }

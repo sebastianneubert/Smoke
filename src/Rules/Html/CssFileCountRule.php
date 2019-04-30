@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Html\Document;
 use whm\Smoke\Http\Response;
 
@@ -13,7 +14,7 @@ class CssFileCountRule extends CountRule
 {
     protected $errorMessage = 'Too many css files (%u) were found.';
 
-    protected function getFilesToCount(Document $document, Response $response)
+    protected function getFilesToCount(Document $document, ResponseInterface $response)
     {
         return $document->getCssFiles($response->getUri());
     }

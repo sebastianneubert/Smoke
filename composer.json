@@ -1,20 +1,28 @@
 {
   "name": "phmlabs/smoke",
-
   "description": "Smoke can be used to check if a web platform is basically working.",
-
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": ">= 5.4.0",
+    "ext-dom": "*",
+    "ext-libxml": "*",
     "symfony/yaml": "~3.1",
     "symfony/console": "~3.1",
-    "symfony/dom-crawler": "~3.1",
-    "egeloen/http-adapter": "dev-timings",
-    "phmlabs/annovent": "~1.0.0",
+    "phmlabs/annovent": "dev-master",
+    "twig/twig": "~2.0",
     "phmlabs/init": "~1.0.0",
-    "phmlabs/html": "~2.0",
-    "phmlabs/crawler": "~1.2.0",
+    "phmlabs/html": "dev-master",
+    "phmlabs/crawler": "dev-master",
     "phmlabs/xunitreport": ">= 1.0.2",
-    "koalamon/koalamonclient": "dev-master"
+    "phmlabs/httpwebdriveradapter": "dev-master",
+    "koalamon/koalamonclient": "dev-master",
+    "koalamon/cookiemakerhelper": "dev-master",
+    "koalamon/fallbackhelper": "dev-master",
+    "peekmo/jsonpath": "dev-master",
+    "justinrainbow/json-schema": "~4.0",
+    "psr/cache": "1.0.*",
+    "cache/filesystem-adapter": "~0.4"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "@stable"
@@ -29,15 +37,9 @@
       "whm\\Smoke\\Test\\": "test/unit"
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:digitalkaoz/ivory-http-adapter.git"
-    }
-  ],
-  "scripts" : {
-     "cs" : "vendor/bin/php-cs-fixer fix $1",
-     "test" : "vendor/bin/phpunit $1"
+  "scripts": {
+    "cs": "vendor/bin/php-cs-fixer fix $1",
+    "test": "vendor/bin/phpunit $1"
   },
   "bin": [
     "bin/Smoke.php"

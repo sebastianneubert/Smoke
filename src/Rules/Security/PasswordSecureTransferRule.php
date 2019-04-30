@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Security;
 
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
@@ -16,12 +17,12 @@ class PasswordSecureTransferRule extends StandardRule
 
     private $knownIdentifier = array();
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        $crawler = new Crawler($response->getBody());
+        $crawler = new Crawler((string)$response->getBody());
         $actionNodes = $crawler->filterXPath('//form[//input[@type="password"]]');
 
-        $url = (string) $response->getUri();
+        $url = (string)$response->getUri();
 
         foreach ($actionNodes as $node) {
             $action = $node->getAttribute('action');

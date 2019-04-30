@@ -1,0 +1,6998 @@
+
+options:
+  extendDefault: false
+
+
+extensions:
+
+  Leankoala:
+    class: whm\Smoke\Extensions\Leankoala\LeankoalaExtension
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _Filter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      exclusive:
+        XmlWellFormed_221:
+          - http://astrowoche.wunderweib.de/sitemap.xml
+        XmlWellFormed_491:
+          - http://astrowoche.wunderweib.de/sitemap/standard/1
+        XmlWellFormed_233:
+          - http://www.wunderweib.de/sitemap.xml
+        XmlWellFormed_490:
+          - http://www.wunderweib.de/sitemap/standard/16
+        XmlWellFormed_234:
+          - http://wohnidee.wunderweib.de/sitemap.xml
+        XmlWellFormed_493:
+          - http://wohnidee.wunderweib.de/sitemap/standard/0
+        XmlWellFormed_371:
+          - http://www.maennersache.de/sitemap.xml
+        XmlWellFormed_497:
+          - http://www.maennersache.de/sitemap/standard/0
+        XmlWellFormed_388:
+          - http://intouch.wunderweib.de/sitemap.xml
+        XmlWellFormed_492:
+          - http://intouch.wunderweib.de/sitemap/standard/9
+        XmlWellFormed_401:
+          - http://www.bravo.de/sitemap.xml
+        XmlWellFormed_494:
+          - http://www.bravo.de/sitemap/standard/7
+        XmlWellFormed_418:
+          - http://www.cosmopolitan.de/sitemap.xml
+        XmlWellFormed_495:
+          - http://www.cosmopolitan.de/sitemap/standard/12
+        XmlWellFormed_444:
+        XmlWellFormed_496:
+        XmlWellFormed_461:
+          - http://www.tvmovie.de/sitemap.xml
+        XmlWellFormed_498:
+          - http://www.tvmovie.de/sitemap/standard/3
+        XmlWellFormed_513:
+          - http://www.liebenswert-magazin.de/sitemap.xml
+        XmlWellFormed_520:
+          - http://www.liebenswert-magazin.de/sitemap/standard/0
+        XmlWellFormed_1184:
+          - http://www.autozeitung.de/sitemap.xml
+        XmlWellFormed_1185:
+          - http://www.autozeitung.de/sitemap/standard/5
+        XmlWellFormed_22583:
+          - http://www.lecker.de/sitemap.xml
+        sitemap_233:
+          - http://www.wunderweib.de/sitemap.xml
+        sitemap_490:
+          - http://www.wunderweib.de/sitemap/standard/16
+        sitemap_221:
+          - http://astrowoche.wunderweib.de/sitemap.xml
+        sitemap_491:
+          - http://astrowoche.wunderweib.de/sitemap/standard/1
+        sitemap_234:
+          - http://wohnidee.wunderweib.de/sitemap.xml
+        sitemap_493:
+          - http://wohnidee.wunderweib.de/sitemap/standard/0
+        sitemap_388:
+          - http://intouch.wunderweib.de/sitemap.xml
+        sitemap_492:
+          - http://intouch.wunderweib.de/sitemap/standard/9
+        sitemap_461:
+          - http://www.tvmovie.de/sitemap.xml
+        sitemap_498:
+          - http://www.tvmovie.de/sitemap/standard/3
+        sitemap_401:
+          - http://www.bravo.de/sitemap.xml
+        sitemap_494:
+          - http://www.bravo.de/sitemap/standard/7
+        sitemap_418:
+          - http://www.cosmopolitan.de/sitemap.xml
+        sitemap_495:
+          - http://www.cosmopolitan.de/sitemap/standard/12
+        sitemap_444:
+        sitemap_496:
+        sitemap_371:
+          - http://www.maennersache.de/sitemap.xml
+        sitemap_497:
+          - http://www.maennersache.de/sitemap/standard/0
+        sitemap_513:
+          - http://www.liebenswert-magazin.de/sitemap.xml
+        sitemap_520:
+          - http://www.liebenswert-magazin.de/sitemap/standard/0
+        sitemap_1184:
+          - http://www.autozeitung.de/sitemap.xml
+        sitemap_1185:
+          - http://www.autozeitung.de/sitemap/standard/5
+        sitemap_22583:
+          - http://www.lecker.de/sitemap.xml
+        xmlvalidxsd_233:
+          - http://www.wunderweib.de/sitemap.xml
+        xmlvalidxsd_221:
+          - http://astrowoche.wunderweib.de/sitemap.xml
+        xmlvalidxsd_234:
+          - http://wohnidee.wunderweib.de/sitemap.xml
+        xmlvalidxsd_388:
+          - http://intouch.wunderweib.de/sitemap.xml
+        xmlvalidxsd_461:
+          - http://www.tvmovie.de/sitemap.xml
+        xmlvalidxsd_401:
+          - http://www.bravo.de/sitemap.xml
+        xmlvalidxsd_418:
+          - http://www.cosmopolitan.de/sitemap.xml
+        xmlvalidxsd_444:
+        xmlvalidxsd_371:
+          - http://www.maennersache.de/sitemap.xml
+        xmlvalidxsd_513:
+          - http://www.liebenswert-magazin.de/sitemap.xml
+        xmlvalidxsd_1184:
+          - http://www.autozeitung.de/sitemap.xml
+
+Leankoala:
+  systems:
+      188:
+        186
+      190:
+        186
+      191:
+        186
+      192:
+        186
+      193:
+        186
+      196:
+        186
+      198:
+        186
+      5713:
+        186
+      201:
+        200
+      203:
+        200
+      204:
+        200
+      205:
+        200
+      206:
+        200
+      209:
+        200
+      246:
+        200
+      247:
+        200
+      248:
+        200
+      249:
+        200
+      211:
+        210
+      212:
+        210
+      213:
+        210
+      214:
+        210
+      215:
+        210
+      250:
+        210
+      380:
+        358
+      384:
+        358
+      385:
+        358
+      472:
+        358
+      5705:
+        358
+      455:
+        359
+      457:
+        359
+      458:
+        359
+      394:
+        360
+      395:
+        360
+      396:
+        360
+      403:
+        360
+      405:
+        360
+      5707:
+        360
+      408:
+        362
+      410:
+        362
+      414:
+        362
+      417:
+        362
+      430:
+        362
+      5709:
+        362
+      368:
+        364
+      373:
+        364
+      378:
+        364
+      5712:
+        364
+      511:
+        509
+      512:
+        509
+      514:
+        509
+      515:
+        509
+      519:
+        509
+      527:
+        509
+      5711:
+        509
+      1173:
+        1172
+      1178:
+        1172
+      1179:
+        1172
+      1180:
+        1172
+      1183:
+        1172
+      1367:
+        1172
+      2062:
+        1172
+      2196:
+        1172
+      5706:
+        1172
+      22577:
+        22566
+      202:
+        200
+      383:
+        358
+      387:
+        358
+      473:
+        358
+      474:
+        358
+      450:
+        359
+      456:
+        359
+      460:
+        359
+      462:
+        359
+      463:
+        359
+      470:
+        359
+      393:
+        360
+      398:
+        360
+      399:
+        360
+      404:
+        360
+      406:
+        360
+      411:
+        362
+      412:
+        362
+      416:
+        362
+      429:
+        362
+      376:
+        364
+      377:
+        364
+      476:
+        364
+      19177:
+        364
+      22704:
+        364
+      1177:
+        1172
+      1181:
+        1172
+      1182:
+        1172
+      230:
+        186
+      231:
+        186
+      238:
+        186
+      239:
+        186
+      261:
+        186
+      207:
+        200
+      223:
+        200
+      224:
+        200
+      225:
+        200
+      226:
+        200
+      236:
+        200
+      240:
+        200
+      256:
+        200
+      227:
+        210
+      228:
+        210
+      237:
+        210
+      241:
+        210
+      259:
+        210
+      379:
+        358
+      382:
+        358
+      386:
+        358
+      389:
+        358
+      465:
+        358
+      447:
+        359
+      448:
+        359
+      449:
+        359
+      464:
+        359
+      469:
+        359
+      391:
+        360
+      392:
+        360
+      397:
+        360
+      400:
+        360
+      466:
+        360
+      407:
+        362
+      409:
+        362
+      413:
+        362
+      415:
+        362
+      467:
+        362
+      365:
+        364
+      366:
+        364
+      369:
+        364
+      374:
+        364
+      381:
+        364
+      510:
+        509
+      531:
+        509
+      533:
+        509
+      22585:
+        22566
+      221:
+        200
+      491:
+        200
+      233:
+        186
+      490:
+        186
+      234:
+        210
+      493:
+        210
+      371:
+        364
+      497:
+        364
+      388:
+        358
+      492:
+        358
+      401:
+        360
+      494:
+        360
+      418:
+        362
+      495:
+        362
+      461:
+        359
+      498:
+        359
+      513:
+        509
+      520:
+        509
+      1184:
+        1172
+      1185:
+        1172
+      22583:
+        22566
+      186:
+        186
+      200:
+        200
+      210:
+        210
+      358:
+        358
+      359:
+        359
+      360:
+        360
+      362:
+        362
+      364:
+        364
+      509:
+        509
+      1172:
+        1172
+      245:
+        186
+      243:
+        200
+      242:
+        210
+      451:
+        359
+      452:
+        359
+      453:
+        359
+      454:
+        359
+      2321:
+        359
+      367:
+        364
+      532:
+        509
+      536:
+        509
+      2194:
+        1172
+      2195:
+        1172
+      2197:
+        1172
+      22245:
+        359
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  KoalamonReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\LeankoalaReporter
+     parameters:
+       systemUseRetriever: true
+       apiKey: 436790F7-E249-4596-9F40-BB6305C6D839
+       server: http://lean.xcel.io/webhook/
+       collect: false
+       groupBy: prefix
+       addComingFrom: false
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      188:
+        - http://www.wunderweib.de/
+
+      190:
+        - http://www.wunderweib.de/mode
+
+      191:
+        - http://www.wunderweib.de/5-bikini-wohlfuehltipps-von-curvy-model-angelina-kirsch-14800.html
+
+      192:
+        - http://www.wunderweib.de/lieblingsthemen
+
+      193:
+        - http://www.wunderweib.de/themen
+
+      196:
+        - http://www.wunderweib.de/die-lustigsten-whatsapp-bilder-zum-verschicken-26568.html
+
+      198:
+        - http://www.wunderweib.de/impressum
+
+      5713:
+        - http://gewinnspiel.wunderweib.de/
+
+      201:
+        - http://astrowoche.wunderweib.de/
+
+      203:
+        - http://astrowoche.wunderweib.de/monatshoroskop
+
+      204:
+        - http://astrowoche.wunderweib.de/wochenhoroskop/aktuelle-woche/loewe
+
+      205:
+        - http://astrowoche.wunderweib.de/bringt-uranus-jetzt-das-grosse-chaos-12122.html
+
+      206:
+        - http://astrowoche.wunderweib.de/das-gesundheits-horoskop-fuer-diese-woche-1737.html
+
+      209:
+        - http://astrowoche.wunderweib.de/impressum
+
+      246:
+        - http://astrowoche.wunderweib.de/tageshoroskop
+
+      247:
+        - http://astrowoche.wunderweib.de/wochenhoroskop
+
+      248:
+        - http://astrowoche.wunderweib.de/jahreshoroskop
+
+      249:
+        - http://astrowoche.wunderweib.de/themen
+
+      211:
+        - http://wohnidee.wunderweib.de/
+
+      212:
+        - http://wohnidee.wunderweib.de/einrichtungsstile
+
+      213:
+        - http://wohnidee.wunderweib.de/11-einrichtungstipps-fuer-das-wohnen-unterm-dach-585.html
+
+      214:
+        - http://wohnidee.wunderweib.de/impressum
+
+      215:
+        - http://wohnidee.wunderweib.de/vorher-nachher-ein-kochareal-wird-zur-wohnkueche-3953.html
+
+      250:
+        - http://wohnidee.wunderweib.de/themen
+
+      380:
+        - http://intouch.wunderweib.de/matthias-schweighoefer-liefert-nackt-pizza-65805.html
+
+      384:
+        - http://intouch.wunderweib.de/
+
+      385:
+        - http://intouch.wunderweib.de/impressum
+
+      472:
+        - http://intouch.wunderweib.de/themen
+
+      5705:
+        - http://gewinnspiel.intouch.wunderweib.de/
+
+      455:
+        - http://gewinnspiel.tvmovie.de/
+
+      457:
+        - http://www.tvmovie.de/
+
+      458:
+        - http://www.tvmovie.de/impressum
+
+      394:
+        - http://www.bravo.de/dr-sommer
+
+      395:
+        - http://www.bravo.de/
+
+      396:
+        - http://www.bravo.de/impressum
+
+      403:
+        - http://www.bravo.de/chris-hemsworth-er-weiss-nicht-das-liam-hemsworth-und-miley-cyrus-wieder-zusammen-sind-366783.html
+
+      405:
+        - http://www.bravo.de/themen
+
+      5707:
+        - http://gewinnspiel.bravo.de/
+
+      408:
+        - http://www.cosmopolitan.de/kylie-jenner-mag-rosa-neue-haarfarbe-bei-der-juengsten-k-sister-69406.html
+
+      410:
+        - http://www.cosmopolitan.de/kurzhaarfrisuren-2015-die-trends-fuer-herbst-winter-67242.html
+
+      414:
+        - http://www.cosmopolitan.de/
+
+      417:
+        - http://www.cosmopolitan.de/impressum
+
+      430:
+        - http://www.cosmopolitan.de/themen
+
+      5709:
+        - http://gewinnspiel.cosmopolitan.de/
+
+      368:
+        - http://www.maennersache.de/
+
+      373:
+        - http://www.maennersache.de/impressum
+
+      378:
+        - http://www.maennersache.de/themen
+
+      5712:
+        - http://gewinnspiel.maennersache.de/
+
+      511:
+        - http://www.liebenswert-magazin.de/
+
+      512:
+        - http://www.liebenswert-magazin.de/newsletter
+
+      514:
+        - http://www.liebenswert-magazin.de/beauty
+
+      515:
+        - http://www.liebenswert-magazin.de/themen
+
+      519:
+        - http://www.liebenswert-magazin.de/sprueche-zum-thema-nostalgie-397.html
+
+      527:
+        - http://www.liebenswert-magazin.de/was-sie-ihrer-mutter-unbedingt-sagen-muessen-566.html
+
+      5711:
+        - http://gewinnspiel.liebenswert-magazin.de/
+
+      1173:
+        - http://www.autozeitung.de/
+
+      1178:
+        - http://www.autozeitung.de/vw/tiguan
+
+      1179:
+        - http://www.autozeitung.de/bmw
+
+      1180:
+        - http://www.autozeitung.de/automarken
+
+      1183:
+        - http://www.autozeitung.de/themen
+
+      1367:
+        - http://www.autozeitung.de/hyundai-i10-renault-twingo-smart-forfour-vw-up-133925.html
+
+      2062:
+        - http://www.autozeitung.de/non-existing-page
+
+      2196:
+        - http://www.autozeitung.de/admin/add/content
+
+      5706:
+        - http://gewinnspiel.autozeitung.de/
+
+      22577:
+        - https://stage.lecker.de/service/user/login
+
+      202:
+        - http://astrowoche.wunderweib.de/sternzeichen
+
+      383:
+        - http://intouch.wunderweib.de/die-schoensten-bilder-von-topmodel-claudia-schiffer-bild-3-44366.html
+
+      387:
+        - http://intouch.wunderweib.de/wayne
+
+      473:
+        - http://intouch.wunderweib.de/aaron-paul
+
+      474:
+        - http://intouch.wunderweib.de/aaron-paul/archiv/0
+
+      450:
+        - http://www.tvmovie.de/news/der-bachelor-2016-jasmin-87102
+
+      456:
+        - http://www.tvmovie.de/tv/fernsehprogramm-heute-abend
+
+      460:
+        - http://www.tvmovie.de/tv/sender-zdf
+
+      462:
+        - http://www.tvmovie.de/tv/spielfilme
+
+      463:
+        - http://www.tvmovie.de/vod/highlights
+
+      470:
+        - http://www.tvmovie.de/news/so-erging-es-einer-jungen-kellnerin-mit-bruce-willis-78510
+
+      393:
+        - http://www.bravo.de/bilder
+
+      398:
+        - http://www.bravo.de/stars
+
+      399:
+        - http://www.bravo.de/was-deine-lieblingsfarbe-ueber-dich-verraet-236221.html
+
+      404:
+        - http://www.bravo.de/star-news
+
+      406:
+        - http://www.bravo.de/videos
+
+      411:
+        - http://www.cosmopolitan.de/kurzhaarfrisuren-2015-die-trends-fuer-herbst-winter-uebersicht-67242.html
+
+      412:
+        - http://www.cosmopolitan.de/bilder
+
+      416:
+        - http://www.cosmopolitan.de/kurzhaarfrisuren-2015-die-trends-fuer-herbst-winter-teaser-67242.html
+
+      429:
+        - http://www.cosmopolitan.de/frisuren/archiv/0
+
+      376:
+        - http://www.maennersache.de/unterhaltung/archiv/0
+
+      377:
+        - http://www.maennersache.de/sport
+
+      476:
+        - http://www.maennersache.de/trinken-regeln-fuers-erste-date-4.html
+
+      19177:
+        - http://www.maennersache.de/knight-rider-kommt-zurueck-erstes-foto-von-kitt-aufgetaucht-1479.html
+
+      22704:
+        - http://www.maennersache.de/team-lego-bausatz-1410.html
+
+      1177:
+        - http://www.autozeitung.de/detroit-auto-show-2017-highlights-137518.html
+
+      1181:
+        - http://www.autozeitung.de/vw-golf-gti-rs-tuning-sam-dobbins-140357.html
+
+      1182:
+        - http://www.autozeitung.de/lexikon
+
+      230:
+        - http://www.wunderweib.de/assets/styles/article_image/public/field/image/emotionale_affaere.jpg
+
+      231:
+        - http://www.wunderweib.de/sites/all/themes/wunderweib/js-drupal/teaser_ads.js
+
+      238:
+        - http://www.wunderweib.de/admin/content
+
+      239:
+        - http://www.wunderweib.de/nopageavailable
+
+      261:
+        - http://www.wunderweib.de/sites/all/themes/wunderweib/css/style.css
+
+      207:
+        - http://astrowoche.wunderweib.de/lebensberatung
+
+      223:
+        - http://astrowoche.wunderweib.de/assets/styles/610x457/public/tarot-tageskarte-slider.jpg
+
+      224:
+        - http://astrowoche.wunderweib.de/sites/all/themes/astrowoche/images/starsigns/overview/stier@2x.png
+
+      225:
+        - http://astrowoche.wunderweib.de/assets/styles/article_image/public/field/image/frage-der-woche-uranus-chaos.jpg
+
+      226:
+        - http://astrowoche.wunderweib.de/sites/all/themes/astrowoche/js-drupal/teaser_ads.js
+
+      236:
+        - http://astrowoche.wunderweib.de/admin/content
+
+      240:
+        - http://astrowoche.wunderweib.de/nopageavailable
+
+      256:
+        - http://astrowoche.wunderweib.de/sites/all/themes/astrowoche/css/style.css
+
+      227:
+        - http://wohnidee.wunderweib.de/sites/all/themes/wohnidee/js-drupal/teaser_ads.js
+
+      228:
+        - http://wohnidee.wunderweib.de/assets/styles/article_image/public/field/image/deko-ideen-picknick_0.jpg
+
+      237:
+        - http://wohnidee.wunderweib.de/admin/content
+
+      241:
+        - http://wohnidee.wunderweib.de/nopageavailable
+
+      259:
+        - http://wohnidee.wunderweib.de/sites/all/themes/wohnidee/css/style.css
+
+      379:
+        - http://intouch.wunderweib.de/nopageavailable
+
+      382:
+        - http://intouch.wunderweib.de/assets/styles/600x600/public/field/image/dschungelcamp-2016-jenny-elvers.jpg
+
+      386:
+        - http://intouch.wunderweib.de/sites/all/themes/intouch/teaserlist_ads.js
+
+      389:
+        - http://intouch.wunderweib.de/sites/all/themes/intouch/css/style.css
+
+      465:
+        - http://intouch.wunderweib.de/admin/content
+
+      447:
+        - http://www.tvmovie.de/nopageavailable
+
+      448:
+        - http://www.tvmovie.de/app
+
+      449:
+        - http://www.tvmovie.de/bilder/758/2016/09/13/58204-red-das-lifestyle-magazin.jpg
+
+      464:
+        - http://www.tvmovie.de/sites/all/themes/tvmovie/teaserlist_ads.js
+
+      469:
+        - http://www.tvmovie.de/admin/content
+
+      391:
+        - http://www.bravo.de/nopageavailable
+
+      392:
+        - http://www.bravo.de/assets/field/image/istock_000023035986_small.jpg
+
+      397:
+        - http://www.bravo.de/sites/all/themes/bravo/teaserlist_ads.js
+
+      400:
+        - http://www.bravo.de/user/register
+
+      466:
+        - http://www.bravo.de/admin/content
+
+      407:
+        - http://www.cosmopolitan.de/nopageavailable
+
+      409:
+        - http://www.cosmopolitan.de/bilder/610x610/2016/06/08/84161-guenstige-kleider-fuer-hochzeitsgaeste.jpg
+
+      413:
+        - http://gewinnspiel.cosmopolitan.de/
+
+      415:
+        - http://www.cosmopolitan.de/spiele-cosmo-playground
+
+      467:
+        - http://www.cosmopolitan.de/admin/content
+
+      365:
+        - http://www.maennersache.de/nopageavailable
+
+      366:
+        - http://www.maennersache.de/admin/content
+
+      369:
+        - http://www.maennersache.de/sites/all/themes/maennersache/js-drupal/teaser_ads.js
+
+      374:
+        - http://www.maennersache.de/sites/all/themes/maennersache/css/style.css
+
+      381:
+        - http://www.maennersache.de/assets/styles/article_image/public/field/image/istock_hammocking-palmen.jpg
+
+      510:
+        - http://www.liebenswert-magazin.de/was-jede-frau-ihrer-mutter-sagen-sollte-bevor-sie-stirbt-566.html
+
+      531:
+        - http://www.liebenswert-magazin.de/nopageavailable
+
+      533:
+        - http://www.liebenswert-magazin.de/admin/content
+
+      22585:
+        - http://www.lecker.de/sites/all/themes/lecker/css/style.css
+
+      221:
+        - http://astrowoche.wunderweib.de/sitemap.xml
+
+      491:
+        - http://astrowoche.wunderweib.de/sitemap/standard/1
+
+      233:
+        - http://www.wunderweib.de/sitemap.xml
+
+      490:
+        - http://www.wunderweib.de/sitemap/standard/16
+
+      234:
+        - http://wohnidee.wunderweib.de/sitemap.xml
+
+      493:
+        - http://wohnidee.wunderweib.de/sitemap/standard/0
+
+      371:
+        - http://www.maennersache.de/sitemap.xml
+
+      497:
+        - http://www.maennersache.de/sitemap/standard/0
+
+      388:
+        - http://intouch.wunderweib.de/sitemap.xml
+
+      492:
+        - http://intouch.wunderweib.de/sitemap/standard/9
+
+      401:
+        - http://www.bravo.de/sitemap.xml
+
+      494:
+        - http://www.bravo.de/sitemap/standard/7
+
+      418:
+        - http://www.cosmopolitan.de/sitemap.xml
+
+      495:
+        - http://www.cosmopolitan.de/sitemap/standard/12
+
+      461:
+        - http://www.tvmovie.de/sitemap.xml
+
+      498:
+        - http://www.tvmovie.de/sitemap/standard/3
+
+      513:
+        - http://www.liebenswert-magazin.de/sitemap.xml
+
+      520:
+        - http://www.liebenswert-magazin.de/sitemap/standard/0
+
+      1184:
+        - http://www.autozeitung.de/sitemap.xml
+
+      1185:
+        - http://www.autozeitung.de/sitemap/standard/5
+
+      22583:
+        - http://www.lecker.de/sitemap.xml
+
+      186:
+        - http://www.wunderweib.de
+
+      200:
+        - http://astrowoche.wunderweib.de
+
+      210:
+        - http://wohnidee.wunderweib.de
+
+      358:
+        - http://intouch.wunderweib.de
+
+      359:
+        - http://www.tvmovie.de
+
+      360:
+        - http://www.bravo.de
+
+      362:
+        - http://www.cosmopolitan.de
+
+      364:
+        - http://www.maennersache.de
+
+      509:
+        - http://www.liebenswert-magazin.de
+
+      1172:
+        - http://www.autozeitung.de
+
+      245:
+        - http://www.wunderweib.de/beauty/hippe-kurzhaarschnitte-rundum-durchgestufter-bob-bl1020810.html
+
+      243:
+        - http://astrowoche.wunderweib.de/numerologie-was-sagt-ihr-kennenlern-datum-ueber-ihre-beziehung-aus-bl2657953.html
+
+      242:
+        - http://wohnidee.wunderweib.de/dekorieren/diy-idee-windlichter-fuer-den-garten-basteln-a112257.html
+
+      451:
+        - http://epg.tvmovie.de/v1/channels/bouquet/4107451
+
+      452:
+        - http://epg.tvmovie.de/v1/broadcasts/2015
+
+      453:
+        - http://epg.tvmovie.de/v1/broadcasts/highlights
+
+      454:
+        - http://epg.tvmovie.de/v1/broadcasts/hot7
+
+      2321:
+        - http://bag.tvmovie.de/
+
+      367:
+        - http://www.maennersache.de/ultra-interview-pyro-gewalt-fan-fussball
+
+      532:
+        - http://www.liebenswert-magazin.de/sites/all/themes/liebenswert/css/style.css
+
+      536:
+        - http://www.liebenswert-magazin.de/assets/styles/article_image/public/field/image/werbungopaallegro.jpg
+
+      2194:
+        - http://www.autozeitung.de/sites/all/themes/autozeitung/css/style.css
+
+      2195:
+        - http://www.autozeitung.de/sites/all/themes/autozeitung/js-drupal/teaser_ads.js
+
+      2197:
+        - http://www.autozeitung.de/assets/styles/article_image/public/gallery_images/2010/07/Peugeot_308_CC_015.jpg
+
+      22245:
+        - http://capi.tvmovie.de/v1/channels/bouquet/4107451
+
+
+rules:
+  RegExExists_188:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: Mode
+          isRegEx: true
+        -
+          pattern: '.*weib'
+          isRegEx: true
+  RegExExists_190:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+  RegExExists_191:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_192:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: lieblingsthemen
+          isRegEx: false
+  RegExExists_193:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+        -
+          pattern: Geschenkverpackungen
+          isRegEx: false
+  RegExExists_196:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_198:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_5713:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_201:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+  RegExExists_203:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'September\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'April\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Mai\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'M\ärz\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Juli\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Dezember\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'August\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Oktober\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Januar\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Juni\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'November\s\d{4}'
+          isRegEx: true
+        -
+          pattern: 'Februar\s\d{4}'
+          isRegEx: true
+  RegExExists_204:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Wochenhoroskop\s\-\s.*\s\-\s(.*)\s\d{2}\.\d{2}\s\-\s\d{2}\.\d{2}'
+          isRegEx: true
+  RegExExists_205:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_206:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_209:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_246:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Heute
+          isRegEx: false
+        -
+          pattern: bermorgen
+          isRegEx: false
+        -
+          pattern: Gestern
+          isRegEx: false
+        -
+          pattern: Morgen
+          isRegEx: false
+  RegExExists_247:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: letzte\sWoche
+          isRegEx: true
+        -
+          pattern: n\ächste\sWoche
+          isRegEx: true
+        -
+          pattern: aktuelle\sWoche
+          isRegEx: true
+  RegExExists_248:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '\d{4}'
+          isRegEx: true
+  RegExExists_249:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+        -
+          pattern: Traumpartner
+          isRegEx: true
+  RegExExists_211:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_212:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+  RegExExists_213:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_214:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_215:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_250:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Wohnzim{2}ergestaltung'
+          isRegEx: true
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+  RegExExists_380:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_384:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: 'Mehr\sSuchergebnis{2}e'
+          isRegEx: true
+  RegExExists_385:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_472:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Aaron\sPaul
+          isRegEx: true
+  RegExExists_5705:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_455:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_457:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_458:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_394:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: WEITERE\sNEWS
+          isRegEx: true
+  RegExExists_395:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_396:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_403:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_405:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Analsex
+          isRegEx: false
+  RegExExists_5707:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_408:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_410:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '(\d{2}\.){2}\d{4}'
+          isRegEx: true
+  RegExExists_414:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+  RegExExists_417:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_430:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Abendkleider
+          isRegEx: false
+  RegExExists_5709:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_436:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_437:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_440:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Anbraten
+          isRegEx: false
+  RegExExists_442:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Versenden
+          isRegEx: false
+        -
+          pattern: Drucken
+          isRegEx: false
+  RegExExists_446:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '\d{2}\.\s([A-Za-zä]){3,9}\s\d{4}'
+          isRegEx: true
+        -
+          pattern: Tagesrezepte\sdieser\sWoche
+          isRegEx: true
+  RegExExists_5710:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_13253:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'no access'
+          isRegEx: false
+  RegExExists_368:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_373:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Online\-Streitbeilegung.*Art\.\s14\sAbs\.\s1\sODR-\VO'
+          isRegEx: true
+  RegExExists_378:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Al{2}e\sThemen'
+          isRegEx: true
+        -
+          pattern: 'gril{2}en'
+          isRegEx: true
+  RegExExists_5712:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_511:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: 'Liebenswert - Einfach gut fühlen'
+          isRegEx: false
+        -
+          pattern: 'Für mich'
+          isRegEx: false
+        -
+          pattern: Zuhause
+          isRegEx: false
+        -
+          pattern: 'Im Leben'
+          isRegEx: false
+        -
+          pattern: Gesundheit
+          isRegEx: false
+        -
+          pattern: Lieben
+          isRegEx: false
+  RegExExists_512:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: Astro-Newsletter
+          isRegEx: false
+        -
+          pattern: 'Melden Sie sich jetzt kostenlos an:'
+          isRegEx: false
+        -
+          pattern: 'Mit unseren Newslettern verpassen Sie nichts mehr.'
+          isRegEx: false
+        -
+          pattern: 'Bitte wählen Sie Ihr Sternzeichen für'
+          isRegEx: false
+  RegExExists_514:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: Beauty
+          isRegEx: false
+  RegExExists_515:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+        -
+          pattern: Vorsorge
+          isRegEx: false
+  RegExExists_519:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_527:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_5711:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  RegExExists_1173:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Datenschutz
+          isRegEx: false
+        -
+          pattern: Impressum
+          isRegEx: false
+        -
+          pattern: Nutzungsbedingungen
+          isRegEx: false
+  RegExExists_1178:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Alle Generationen'
+          isRegEx: false
+  RegExExists_1179:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Alle Modelle'
+          isRegEx: false
+  RegExExists_1180:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Meistgesuchte Marken'
+          isRegEx: false
+  RegExExists_1183:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Alle Themen'
+          isRegEx: false
+  RegExExists_1367:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Testverbrauch
+          isRegEx: false
+        -
+          pattern: 'L/B/H in cm'
+          isRegEx: false
+        -
+          pattern: Grundpreis
+          isRegEx: false
+  RegExExists_2062:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Zurück zur Startseite'
+          isRegEx: false
+  RegExExists_2196:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: 'Sie haben keine Zugriffsberechtigung für diese Seite.'
+          isRegEx: false
+  RegExExists_5706:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: googletagmanager
+          isRegEx: false
+  HttpCertExpire_13253:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_22577:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  xpathchecker_188:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+  xpathchecker_190:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_191:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_192:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"col-6 main")]//span[contains(@class,"teaser__roofline-counter")]'
+          relation: 'greater than'
+          value: '7'
+  xpathchecker_193:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//ul[contains(@class,"list--links")]/li'
+          relation: 'greater than'
+          value: '25'
+  xpathchecker_196:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_198:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_201:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_202:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_203:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"teaser--starsign")]'
+          relation: equals
+          value: '12'
+  xpathchecker_204:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_205:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_206:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_209:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_246:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"teaser--starsign")]'
+          relation: equals
+          value: '12'
+  xpathchecker_247:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"teaser--starsign")]'
+          relation: equals
+          value: '12'
+  xpathchecker_248:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"teaser--starsign")]'
+          relation: equals
+          value: '12'
+  xpathchecker_249:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//ul[contains(@class,"list--links")]/li'
+          relation: 'greater than'
+          value: '25'
+  xpathchecker_211:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_212:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_213:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_214:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_215:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_250:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//ul[contains(@class,"list--links")]/li'
+          relation: 'greater than'
+          value: '25'
+  xpathchecker_380:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_383:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_384:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_385:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_387:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_472:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_473:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_474:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer//section[@class="iconNavigation"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+  xpathchecker_450:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_456:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_457:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_458:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_460:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_462:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_463:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_470:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="contentFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_393:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_394:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_395:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_396:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_398:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_399:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_403:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_404:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_405:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_406:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_408:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_410:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_411:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_412:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_414:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_416:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_417:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_429:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_430:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+        -
+          pattern: '//section[@class="footerLinks"]'
+          relation: equals
+          value: '1'
+  xpathchecker_433:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_435:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_436:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_437:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_440:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_441:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//meta[@name="robots" and @content="noindex,follow"]'
+          relation: equals
+          value: '1'
+  xpathchecker_442:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_443:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_446:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_538:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '/html/head/script[contains(@type,"ld+json") and contains (@type,"application")]'
+          relation: 'greater than'
+          value: '1'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_368:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_373:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_376:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_377:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_378:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_476:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[@class="tagcloud--margin"]/ul/li'
+          relation: 'greater than'
+          value: '2'
+  xpathchecker_19177:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_22704:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"amazon")]//img[contains(@src,"images-eu.ssl-images-amazon.com/images")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"awidget")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@class,"amazon")]//a[contains(@href,"adverteaser")]'
+          relation: equals
+          value: '3'
+        -
+          pattern: '//div[contains(@class,"amazon")]'
+          relation: equals
+          value: '4'
+        -
+          pattern: '//footer[@class="pageFooter"]'
+          relation: equals
+          value: '1'
+  xpathchecker_1173:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//section[contains(@class,"teaser")]'
+          relation: 'greater than'
+          value: '3'
+        -
+          pattern: '//section[contains(@class,"teaser")]'
+          relation: 'greater than'
+          value: '3'
+  xpathchecker_1177:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+  xpathchecker_1178:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//h2[contains(@class,"headline--solid-teaser")]'
+          relation: 'greater than'
+          value: '0'
+  xpathchecker_1179:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//section[contains(@class,"typo--teaser")]'
+          relation: 'greater than'
+          value: '30'
+  xpathchecker_1180:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//h2[contains(@class,"headline--solid-teaser")]'
+          relation: equals
+          value: '2'
+        -
+          pattern: '//section[contains(@class,"typo--teaser")]'
+          relation: 'greater than'
+          value: '50'
+  xpathchecker_1181:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//div[contains(@data-bdu,"bdu")]'
+          relation: equals
+          value: '1'
+  xpathchecker_1182:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//ul[contains(@class,"list--tags-a-z")]/li'
+          relation: 'greater than'
+          value: '25'
+  xpathchecker_1183:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//ul[contains(@class,"list--tags-a-z")]/li'
+          relation: 'greater than'
+          value: '25'
+  xpathchecker_1367:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//div[contains(@class,"adAnything")]'
+          relation: 'greater than'
+          value: '4'
+        -
+          pattern: '//script[contains(@src,"ioam")]'
+          relation: equals
+          value: '1'
+  httphead_188:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_190:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_191:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_192:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_193:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_196:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_198:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_230:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_231:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_238:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_239:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_261:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_201:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_202:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_203:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_204:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_205:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_206:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_207:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_209:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_223:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_224:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_225:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_226:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_236:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_240:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_246:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_247:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_248:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_249:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_256:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_211:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_212:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_213:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_214:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_215:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_227:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_228:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_237:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_241:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_250:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_259:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_379:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_380:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_382:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_383:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_384:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_385:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_386:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_387:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_389:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_465:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_472:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_473:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_474:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_447:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_448:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_449:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_450:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_455:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_456:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_457:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_458:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_460:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_462:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_463:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_464:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_469:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_470:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_391:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_392:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_393:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_394:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_395:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_396:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_397:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_398:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_399:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_400:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_403:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_404:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_405:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_406:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_466:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_407:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_408:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_409:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_410:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_411:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_412:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_413:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_414:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_415:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_416:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_417:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_429:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_430:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_467:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_431:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_432:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_433:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_434:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_435:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_436:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_437:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_438:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_440:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_441:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_442:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_443:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_445:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  httphead_446:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_468:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_538:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_365:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_366:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_368:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_369:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_373:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_374:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: Content-Encoding
+          value: gzip
+  httphead_376:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_377:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_378:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_381:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Connection
+          value: keep-alive
+  httphead_476:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_510:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_511:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_512:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_514:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_515:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_519:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_527:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_531:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_533:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1173:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1177:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1178:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1179:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1180:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1181:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1182:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1183:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_1367:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_2062:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_2196:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+        -
+          key: X-Varnish-Cache
+          value: '(HIT|MIS{2})'
+        -
+          key: Cache-Control
+          value: 'public(, (s-)?max\-?age=\d*)*'
+  httphead_22585:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+        -
+          key: Connection
+          value: (keep\-alive|close)
+  XmlWellFormed_221:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_491:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_233:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_490:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_234:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_493:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_371:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_497:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_388:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_492:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_401:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_494:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_418:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_495:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_444:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_496:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_461:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_498:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_513:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_520:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_1184:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_1185:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_22583:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  sitemap_233:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_490:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_221:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_491:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_234:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_493:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_388:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_492:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_461:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_498:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_401:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_494:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_418:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_495:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_444:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_496:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_371:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_497:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_513:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_520:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_1184:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_1185:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_22583:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  LittleSeo_186:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_200:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_210:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_358:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_359:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_360:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_362:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_363:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_364:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_509:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_1172:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  xmlvalidxsd_233:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_221:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_234:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_388:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_461:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_401:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_418:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_444:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_371:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_513:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  xmlvalidxsd_1184:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        20647088:
+          xsdfiletitle: 'Side Index'
+          xsdfilename: siteindex.xsd
+          xsdfileurl: 'http://lean.xcel.io/upload/xsdfiles/29878f1cac62de1da4d222e101774bca_8853e1404fe6b19a806485270ee96956.xsd'
+  cssSelectorChecker_188:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        99261296:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_191:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_196:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_201:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        51586153:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_205:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_206:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_211:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        17389139:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_213:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_215:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_380:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_383:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_450:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_470:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_395:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        1350748:
+          pattern: footer
+        29031115:
+          pattern: header
+  cssSelectorChecker_399:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_403:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_408:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_410:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_435:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_436:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        4428784:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_442:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_538:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_368:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        84761619:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_476:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_19177:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+  cssSelectorChecker_511:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        40470139:
+          pattern: footer.pageFooter
+        63216756:
+          pattern: h1.seoText__h1
+  cssSelectorChecker_519:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+        40470139:
+          pattern: footer.pageFooter
+  cssSelectorChecker_527:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+        40470139:
+          pattern: footer.pageFooter
+  cssSelectorChecker_1173:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1177:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+        34047250:
+          pattern: div.pager
+  cssSelectorChecker_1178:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1179:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1180:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1181:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+        42964637:
+          pattern: div.pager
+  cssSelectorChecker_1182:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1183:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+  cssSelectorChecker_1367:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        90391320:
+          pattern: 'div#taboola-organic-below-article-thumbnails'
+        96667029:
+          pattern: 'div#taboola-below-article-thumbnails'
+        55677833:
+          pattern: div.taboolaWrapper
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+        68434278:
+          pattern: div.pager
+  cssSelectorChecker_2062:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        83636697:
+          pattern: main.main
+        75822045:
+          pattern: div.wrapperFooter
+        49789289:
+          pattern: header.header
+        49740481:
+          pattern: 'header > nav'
+        34094499:
+          pattern: 'footer.pageFooter form'
+        32527855:
+          pattern: div.aside
+        24632107:
+          pattern: div.gridContainer
+        10507284:
+          pattern: div.adAnything
+        32152568:
+          pattern: 'img[src*=404]'
+  performance_188:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_190:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_191:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_192:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_193:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_196:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_198:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_230:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_231:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_233:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_238:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_239:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_245:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_261:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_490:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_5713:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_201:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_202:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_203:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_204:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_205:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_206:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_207:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_209:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_221:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_223:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_224:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_225:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_226:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_236:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_240:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_243:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_246:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_247:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_248:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_249:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_256:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_491:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_211:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_212:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_213:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_214:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_215:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_227:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_228:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_234:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_237:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_241:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_242:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_250:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_259:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_493:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_379:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_380:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_382:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_383:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_384:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_385:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_386:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_387:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_388:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_389:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_465:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_472:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_473:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_474:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_492:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_5705:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_447:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_448:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_449:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_450:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_451:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_452:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_453:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_454:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_455:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_456:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_457:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_458:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_460:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_461:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_462:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_463:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_464:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_469:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_470:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_498:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_2321:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_391:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_392:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_393:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_394:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_395:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_396:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_397:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_398:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_399:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_400:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_401:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_403:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_404:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_405:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_406:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_466:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_494:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_5707:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_407:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_408:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_409:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_410:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_411:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_412:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_413:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_414:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_415:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_416:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_417:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_418:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_429:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_430:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_467:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_495:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_5709:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_431:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_432:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_433:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_434:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_435:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_436:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_437:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_438:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_440:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_441:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_442:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_443:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_444:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_445:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_446:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_468:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_496:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_538:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_365:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_366:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_367:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_368:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_369:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_371:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_373:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_374:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_376:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_377:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_378:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_381:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_476:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_497:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_5712:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_510:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_511:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_512:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_513:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_514:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_515:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_519:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_520:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_527:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_531:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_532:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_533:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_536:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_5711:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_1173:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1177:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1178:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1179:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1180:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1181:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1182:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1183:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1184:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_1185:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '20000'
+  performance_1367:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_2062:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_2194:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_2195:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_2196:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_2197:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  performance_5706:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '5000'
+  jsonvalidator_451:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_452:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_453:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_454:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_22245:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  ResourcesCount_188:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '250'
+  ResourcesCount_201:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_211:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_384:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_457:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_395:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_414:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_436:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '250'
+  ResourcesCount_368:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_511:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '200'
+  ResourcesCount_1173:
+    class: whm\Smoke\Rules\Html\ResourcesCountRule
+    parameters:
+      maxElements: '250'
+

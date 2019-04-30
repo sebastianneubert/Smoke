@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Http\Header;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -22,10 +23,10 @@ class HttpStatusRule implements Rule
         $this->expectedStatus = $expectedStatus;
     }
 
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
-        if ($response->getStatus() !== $this->expectedStatus) {
-            throw new ValidationFailedException('Status code ' . $response->getStatus() . ' found, ' . $this->expectedStatus . ' expected.');
+        if ($response->getStatusCode() !== $this->expectedStatus) {
+            throw new ValidationFailedException('Status code ' . $response->getStatusCode() . ' found, ' . $this->expectedStatus . ' expected.');
         }
     }
 }

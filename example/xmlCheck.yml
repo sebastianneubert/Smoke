@@ -33,15 +33,12 @@ responseRetriever:
  parameters:
    parallelRequests: 1
    startPage: http://lxappepgapi01:8080/solr/broadcast/select?q=*%3A*&wt=xml&indent=true
-   # startPage: http://www.chevez.de/upload/brokenxmlfile.xml
+   #startPage: http://www.chevez.de/upload/brokenxmlfile.xml
 
    pageContainer:
      class: whm\Crawler\PageContainer\PatternAwareContainer
 
    filters:
-    _BlackWhiteListFilter:
-      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
-
     _ValidUrlFilter:
       class: whm\Crawler\Filter\ValidUrlFilter
 
@@ -58,8 +55,3 @@ rules:
   _IvwJsFile:
    runLevel: 1
    class: whm\Smoke\Rules\Xml\XmlCheckRule
-   parameters:
-     checkedHeaders:
-      1:
-        key: 'Connection'
-        value: '(keep\-alive|close)'

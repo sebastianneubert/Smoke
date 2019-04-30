@@ -1,0 +1,153 @@
+
+options:
+  extendDefault: false
+  scanForeignDomains: false
+
+extensions:
+
+  Leankoala:
+    class: whm\Smoke\Extensions\Leankoala\LeankoalaExtension
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _ProgressBar:
+    class: whm\Smoke\Extensions\SmokeProgressBar\NullProgressBar
+
+  _Filter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      filters:
+        _HtmlJsCount:
+          - fbdfb
+        _HtmlClosingTag:
+          - deqwdw
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  LeankoalaReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\LeankoalaReporter
+     parameters:
+       systemUseRetriever: false
+       system: 4
+       apiKey: 91293516-559D-45D6-82AC-B3A3945F10C5
+       server: http://leankoala.local/app_dev.php/webhook/
+       tool: SmokeBasic
+       collect: true
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
+  parameters:
+    startPage: "http://www.bravo.de"
+    parallelRequests: 5
+    pageContainer:
+      class: whm\Crawler\PageContainer\PatternAwareContainer
+    filters:
+      _BlackWhiteListFilter:
+        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
+
+      _ValidUrlFilter:
+        class: whm\Crawler\Filter\ValidUrlFilter
+
+      _ForeignDomainFilter:
+        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+
+stop:
+  _CountStop:
+    class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
+    parameters:
+      maxCount: 30
+
+rules:
+  _HtmlSize:
+    class: whm\Smoke\Rules\Html\SizeRule
+    parameters:
+      maxSize: 500
+
+  _ImageSize:
+    class: whm\Smoke\Rules\NullRule
+
+  _HtmlJsCount:
+    class: whm\Smoke\Rules\Html\JsFileCountRule
+    parameters:
+      maxCount: 25
+
+  _HtmlForeignDomainImageTag:
+    class: whm\Smoke\Rules\NullRule
+
+  _HttpHeaderSuccessStatus:
+    class: whm\Smoke\Rules\Http\Header\SuccessStatusRule
+    parameters:
+      maxStatusCode: 499
+
+  _HtmlClosingTag:
+    runLevel: 0
+    class: whm\Smoke\Rules\Html\ClosingHtmlTagRule
+
+  _HtmlNoIndex:
+    runLevel: 1
+    class: whm\Smoke\Rules\Html\NoIndexRule
+
+  _HtmlInvalidUrlsTag:
+    runLevel: 1
+    class: whm\Smoke\Rules\Html\InvalidUrlsRule
+
+  _HtmlUnsecureContent:
+    runLevel: 1
+    class: whm\Smoke\Rules\Html\InsecureContentRule
+
+  _HttpDuration:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+        maxDuration: 10000
+
+  _HttpHeaderGzip:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\Header\GZipRule
+
+  _HttpHeaderCacheExpires:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\Header\Cache\ExpiresRule
+
+  _HttpHeaderCacheMaxAge:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\Header\Cache\MaxAgeRule
+
+  _HttpHeaderCacheNoCache:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\Header\Cache\PragmaNoCacheRule
+
+  _ImageSize:
+    runLevel: 1
+    class: whm\Smoke\Rules\Image\SizeRule
+    parameters:
+      maxSize: 500
+
+  _ImageFavIcon:
+    runLevel: 1
+    class: whm\Smoke\Rules\Image\FavIconRule
+
+  _JsonValid:
+    runLevel: 1
+    class: whm\Smoke\Rules\Json\ValidRule
+
+  _RssValid:
+    runLevel: 1
+    class: whm\Smoke\Rules\Xml\Rss\ValidRule
+
+  _XmlDuplicateId:
+    runLevel: 2
+    class: whm\Smoke\Rules\NullRule
+
+  _SecurityPasswordSecureTranfer:
+    runLevel: 1
+    class: whm\Smoke\Rules\Security\PasswordSecureTransferRule

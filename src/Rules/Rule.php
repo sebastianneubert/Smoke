@@ -2,9 +2,9 @@
 
 namespace whm\Smoke\Rules;
 
-use whm\Smoke\Http\Response;
+use Psr\Http\Message\ResponseInterface;
 
 interface Rule
 {
-    public function validate(Response $response);
+    public function validate(ResponseInterface $response);
 }

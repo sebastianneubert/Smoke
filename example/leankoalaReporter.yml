@@ -1,0 +1,259 @@
+
+options:
+  extendDefault: false
+
+extensions:
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _Filter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      exclusive:
+        JsonValidator_Default:
+          - http://tests.koalamon.com/json/valid.json
+          - http://tests.koalamon.com/json/invalid.json
+        RegExExists_158:
+        RegExExists_83:
+        RegExExists_84:
+          - http://tests.koalamon.com/failure.php
+        RegExExists_85:
+          - http://tests.koalamon.com/success.php
+        RegExExists_345:
+        RegExExists_347:
+        HttpCertExpire_347:
+        HttpCertExpire_348:
+          - https://www.leankoala.com/
+        xpathchecker_84:
+          - http://tests.koalamon.com/failure.php
+        xpathchecker_85:
+          - http://tests.koalamon.com/success.php
+        httphead_317:
+          - http://tests.koalamon.com/cache.php
+        httphead_318:
+          - http://tests.koalamon.com/no-cache.php
+        XmlWellFormed_222:
+          - http://tests.koalamon.com/sitemap.failure.xml
+        XmlWellFormed_221:
+          - http://tests.koalamon.com/sitemap.success.xml
+        sitemap_222:
+          - http://tests.koalamon.com/sitemap.failure.xml
+        sitemap_221:
+          - http://tests.koalamon.com/sitemap.success.xml
+        jsonPathChecker_352:
+          - http://tests.koalamon.com/json/invalid.json
+        jsonPathChecker_351:
+          - http://tests.koalamon.com/json/valid.json
+        LittleSeo_83:
+          - http://tests.koalamon.com
+        xmlvalidxsd_343:
+          - http://tests.koalamon.com/xsdconform.xml
+        xmlvalidxsd_344:
+          - http://tests.koalamon.com/xsdunconform.xml
+        cssSelectorChecker_85:
+          - http://tests.koalamon.com/success.php
+        cssSelectorChecker_84:
+          - http://tests.koalamon.com/failure.php
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  KoalamonReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\KoalamonReporter
+     parameters:
+       systemUseRetriever: true
+       apiKey: E1BE8FEB-7DB8-4D0F-982C-075ED346D7BF
+       server: https://monitor.leankoala.com/webhook/
+       collect: false
+       groupBy: prefix
+       addComingFrom: false
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      tests.koalamon.com:
+        - http://tests.koalamon.com/json/valid.json
+        - http://tests.koalamon.com/json/invalid.json
+        - http://tests.koalamon.com/failure.php
+        - http://tests.koalamon.com/success.php
+        - http://tests.koalamon.com/cache.php
+        - http://tests.koalamon.com/no-cache.php
+        - http://tests.koalamon.com/sitemap.failure.xml
+        - http://tests.koalamon.com/sitemap.success.xml
+        - http://tests.koalamon.com
+        - http://tests.koalamon.com/xsdconform.xml
+        - http://tests.koalamon.com/xsdunconform.xml
+
+      347:
+        - https://www.leankoala.com/
+
+
+rules:
+  JsonValidator_Default:
+    class: whm\Smoke\Rules\Json\ValidRule
+  RegExExists_158:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+  RegExExists_83:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+  RegExExists_84:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+        -
+          pattern: Failure
+          isRegEx: false
+  RegExExists_85:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+        -
+          pattern: Success
+          isRegEx: false
+  RegExExists_345:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+  RegExExists_347:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Success
+          isRegEx: false
+  HttpCertExpire_347:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 30
+  HttpCertExpire_348:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 366
+  xpathchecker_84:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/body/h2
+          relation: equals
+          value: '1'
+  xpathchecker_85:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/body/h2
+          relation: equals
+          value: '1'
+  httphead_317:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Cache-Control
+          value: max-age=1
+  httphead_318:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Cache-Control
+          value: max-age=1
+  XmlWellFormed_222:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  XmlWellFormed_221:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  sitemap_222:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  sitemap_221:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  jsonPathChecker_352:
+    class: whm\Smoke\Rules\Json\JsonPathExistsRule
+    parameters:
+      jsonPaths:
+        -
+          pattern: $.glossary.GlossDiv.GlossList.GlossEntry.SortAss
+          relation: equals
+          value: '1'
+        -
+          pattern: $.glossary.GlossDiv.GlossList.GlossEntry.SortAs
+          relation: equals
+          value: '1'
+  jsonPathChecker_351:
+    class: whm\Smoke\Rules\Json\JsonPathExistsRule
+    parameters:
+      jsonPaths:
+        -
+          pattern: $.glossary.GlossDiv.GlossList.GlossEntry.SortAss
+          relation: equals
+          value: '1'
+        -
+          pattern: $.glossary.GlossDiv.GlossList.GlossEntry.SortAs
+          relation: equals
+          value: '1'
+  LittleSeo_83:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  xmlvalidxsd_343:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        78440262:
+          xsdfiletitle: 'Simple XSD Schema'
+          xsdfilename: simpleSchema.xsd
+          xsdfileurl: 'https://monitor.leankoala.com/upload/xsdfiles/55ed85dcb4e4fea8b86cfff0695b12fc_ebf305fd58386c8427bef262ebeed920.xsd'
+  xmlvalidxsd_344:
+    class: whm\Smoke\Rules\Xml\XmlValidXsdRule
+    parameters:
+      xsdFiles:
+        78440262:
+          xsdfiletitle: 'Simple XSD Schema'
+          xsdfilename: simpleSchema.xsd
+          xsdfileurl: 'https://monitor.leankoala.com/upload/xsdfiles/55ed85dcb4e4fea8b86cfff0695b12fc_ebf305fd58386c8427bef262ebeed920.xsd'
+  cssSelectorChecker_85:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        69877881:
+          pattern: h2
+  cssSelectorChecker_84:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        69877881:
+          pattern: h2
+

@@ -1,0 +1,742 @@
+
+options:
+  extendDefault: false
+
+#client:
+#  class: phm\HttpWebdriverClient\Http\Client\Chrome\ChromeClient
+
+extensions:
+
+  Leankoala:
+    class: whm\Smoke\Extensions\Leankoala\LeankoalaExtension
+
+  CookieMaker:
+    class: whm\Smoke\Extensions\CookieMaker\CookieMakerExtension
+    parameters:
+      sessions:
+        6:
+          url: "https://monitor.leankoala.com/secure_area/login"
+          action: "/secure_area/login_check"
+          fields:
+            _username: "nils.langner"
+            _password: "langner"
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _Filter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      exclusive:
+        RegExExists_130:
+        RegExExists_594:
+        RegExExists_726:
+        RegExExists_727:
+        RegExExists_815:
+        HttpCertExpire_127:
+        HttpCertExpire_135:
+        HttpCertExpire_130:
+        HttpCertExpire_132:
+        HttpCertExpire_137:
+        HttpCertExpire_139:
+        HttpCertExpire_141:
+        HttpCertExpire_189:
+        HttpCertExpire_191:
+        HttpCertExpire_212:
+        HttpCertExpire_773:
+        xpathchecker_127:
+        xpathchecker_142:
+        xpathchecker_135:
+        xpathchecker_143:
+        xpathchecker_144:
+        xpathchecker_145:
+        xpathchecker_146:
+        xpathchecker_148:
+        xpathchecker_132:
+        xpathchecker_133:
+        xpathchecker_137:
+        xpathchecker_149:
+        xpathchecker_150:
+        xpathchecker_151:
+        xpathchecker_152:
+        xpathchecker_153:
+        xpathchecker_139:
+        xpathchecker_157:
+        xpathchecker_189:
+        xpathchecker_212:
+        httphead_189:
+        XmlWellFormed_223:
+        sitemap_223:
+        LittleSeo_126:
+        LittleSeo_128:
+        LittleSeo_129:
+        LittleSeo_131:
+        LittleSeo_138:
+        LittleSeo_188:
+        LittleSeo_772:
+        cssSelectorChecker_189:
+        cssSelectorChecker_190:
+        cssSelectorChecker_191:
+        performance_127:
+        performance_142:
+        performance_179:
+        performance_135:
+        performance_143:
+        performance_144:
+        performance_148:
+        performance_130:
+        performance_132:
+        performance_133:
+        performance_134:
+        performance_223:
+        performance_137:
+        performance_149:
+        performance_150:
+        performance_151:
+        performance_152:
+        performance_153:
+        performance_643:
+          - https://monitor.leankoala.com/#login
+        performance_646:
+          - https://monitor.leankoala.com/p/koalamon/admin/integrations/
+        performance_647:
+          - https://monitor.leankoala.com/p/koalamon/admin/systems/
+        performance_650:
+          - https://monitor.leankoala.com/p/koalamon/admin/collaborator/
+        performance_651:
+          - https://monitor.leankoala.com/p/koalamon/admin/notifications/
+        performance_652:
+          - https://monitor.leankoala.com/p/koalamon/notifications/alerts/
+        performance_653:
+          - https://monitor.leankoala.com/p/koalamon/admin/notifications/alerts/edit/26/
+        performance_654:
+          - https://monitor.leankoala.com/p/koalamon/admin/notifications/edit/7/
+        performance_659:
+          - https://monitor.leankoala.com/p/koalamon/integrations/koalaping/
+        performance_139:
+        performance_157:
+        performance_141:
+        performance_147:
+        performance_189:
+        performance_190:
+        performance_191:
+        performance_212:
+        MobileFriendly_126:
+        MobileFriendly_131:
+        MobileFriendly_188:
+        MobileFriendly_772:
+        jsonvalidator_134:
+        jsonvalidator_726:
+        jsonvalidator_727:
+        jsonvalidator_815:
+
+Leankoala:
+  systems:
+      643:
+        136
+      646:
+        136
+      647:
+        136
+      650:
+        136
+      651:
+        136
+      652:
+        136
+      653:
+        136
+      654:
+        136
+      659:
+        136
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  KoalamonReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\LeankoalaReporter
+     parameters:
+       systemUseRetriever: true
+       apiKey: cd
+       server: https://monitor.leankoala.com/webhook/
+       collect: false
+       groupBy: prefix
+       addComingFrom: false
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      643:
+        643:
+           url: https://monitor.leankoala.com/#login
+           session: 6
+
+      646:
+        646:
+           url: https://monitor.leankoala.com/p/koalamon/admin/integrations/
+           session: 6
+
+      647:
+        647:
+           url: https://monitor.leankoala.com/p/koalamon/admin/systems/
+           session: 6
+
+      650:
+        650:
+           url: https://monitor.leankoala.com/p/koalamon/admin/collaborator/
+           session: 6
+
+      651:
+        651:
+           url: https://monitor.leankoala.com/p/koalamon/admin/notifications/
+           session: 6
+
+      652:
+        652:
+           url: https://monitor.leankoala.com/p/koalamon/notifications/alerts/
+           session: 6
+
+      653:
+        653:
+           url: https://monitor.leankoala.com/p/koalamon/admin/notifications/alerts/edit/26/
+           session: 6
+
+      654:
+        654:
+           url: https://monitor.leankoala.com/p/koalamon/admin/notifications/edit/7/
+           session: 6
+
+      659:
+        659:
+           url: https://monitor.leankoala.com/p/koalamon/integrations/koalaping/
+           session: 6
+
+
+rules:
+  RegExExists_130:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: OK
+          isRegEx: false
+  RegExExists_594:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '"isRunning": true'
+          isRegEx: false
+  RegExExists_726:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: OK
+          isRegEx: false
+  RegExExists_727:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: OK
+          isRegEx: false
+  RegExExists_815:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: '"status": "success"'
+          isRegEx: false
+  HttpCertExpire_127:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_135:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_130:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_132:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_137:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_139:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_141:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_189:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_191:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  HttpCertExpire_212:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 30
+  HttpCertExpire_773:
+    class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+    parameters:
+      expireWarningTime: 7
+  xpathchecker_127:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_142:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_135:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_143:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_144:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_145:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_146:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_148:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_132:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_133:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_137:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_149:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_150:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_151:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_152:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_153:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_139:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_157:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+  xpathchecker_189:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: '//html/head/meta[@property=''og:description'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@property=''og:title'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@property=''og:image'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@name=''description'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@property=''og:image'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@property=''og:title'']'
+          relation: equals
+          value: '1'
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+        -
+          pattern: '//html/head/meta[@name=''description'']'
+          relation: equals
+          value: '1'
+  xpathchecker_212:
+    class: whm\Smoke\Rules\Html\XPathExistsRule
+    parameters:
+      xPaths:
+        -
+          pattern: //html/head/title
+          relation: equals
+          value: '1'
+        -
+          pattern: '//span[@class=''status failure'']'
+          relation: equals
+          value: '21'
+  httphead_189:
+    class: whm\Smoke\Rules\Http\Header\ExistsRule
+    parameters:
+      checkedHeaders:
+        -
+          key: Content-Encoding
+          value: gzip
+  XmlWellFormed_223:
+    class: whm\Smoke\Rules\Xml\XmlCheckRule
+    parameters: {  }
+  sitemap_223:
+    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
+    parameters:
+      strictMode: false
+  LittleSeo_126:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_128:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_129:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_131:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_138:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_188:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  LittleSeo_772:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+    parameters:
+      seoRobotsTxt: true
+  cssSelectorChecker_189:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        19686024:
+          pattern: article
+        28985264:
+          pattern: header
+        13385158:
+          pattern: footer
+        86421258:
+          pattern: h1
+  cssSelectorChecker_190:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        19686024:
+          pattern: article
+        28985264:
+          pattern: header
+        13385158:
+          pattern: footer
+  cssSelectorChecker_191:
+    class: whm\Smoke\Rules\Html\CssSelectorExistsRule
+    parameters:
+      cssSelectors:
+        19686024:
+          pattern: article
+        28985264:
+          pattern: header
+        13385158:
+          pattern: footer
+  performance_127:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_142:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_179:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_135:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_143:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '3000'
+  performance_144:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_148:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_130:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_132:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_133:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_134:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_223:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_137:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_149:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_150:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_151:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_152:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_153:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_643:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_646:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_647:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_650:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_651:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_652:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_653:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_654:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_659:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_139:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_157:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_141:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_147:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  performance_189:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_190:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_191:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '2000'
+  performance_212:
+    class: whm\Smoke\Rules\Http\DurationRule
+    parameters:
+      maxDuration: '1000'
+  MobileFriendly_126:
+    class: whm\Smoke\Rules\Seo\GoogleMobileFriendlyRule
+    parameters: {  }
+  MobileFriendly_131:
+    class: whm\Smoke\Rules\Seo\GoogleMobileFriendlyRule
+    parameters: {  }
+  MobileFriendly_188:
+    class: whm\Smoke\Rules\Seo\GoogleMobileFriendlyRule
+    parameters: {  }
+  MobileFriendly_772:
+    class: whm\Smoke\Rules\Seo\GoogleMobileFriendlyRule
+    parameters: {  }
+  jsonvalidator_134:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_726:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_727:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+  jsonvalidator_815:
+    class: whm\Smoke\Rules\Json\ValidRule
+    parameters: {  }
+

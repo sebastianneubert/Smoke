@@ -6,4 +6,10 @@
     <xs:import namespace="http://www.google.com/schemas/sitemap-image/1.1"
                schemaLocation="sitemap-image.xsd"/>
 
+    <xs:import namespace="http://www.google.com/schemas/sitemap-news/0.9"
+               schemaLocation="sitemap-news.xsd"/>
+
+    <xs:import namespace="https://www.google.com/schemas/sitemap-video/1.1"
+               schemaLocation="sitemap-video.xsd"/>
+
 </xs:schema>

@@ -1,3 +1,4 @@
+
 options:
   extendDefault: false
 
@@ -15,38 +16,28 @@ extensions:
   _Filter:
     class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
     parameters:
-      filters:
-        LittleSeo_Robots:
-          - http://www.google.de
+      exclusive:
+        LittleSeo_258:
+          - https://www.ars-dessous.de
+        LittleSeo_289:
+          - http://tests.koalamon.com
+
 reporter:
   _CliReporter:
     class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
-
-  KoalamonReporter:
-     class: whm\Smoke\Extensions\SmokeReporter\Reporter\KoalamonReporter
-     parameters:
-       systemUseRetriever: true
-       apiKey: 98208A01-9F93-4B54-B442-7CDE50C0BC0C
-       collect: false
-       identifier: smoke_little_seo
-       tool: Smoke
-       groupBy: prefix
 
 responseRetriever:
   class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
   parameters:
     urls:
-      srfg:
-        - http://www.dewfr.de
-      serf:
-        - http://www.web.de
-      www.amilio.de:
-        - http://www.amilio.de
-      www.prixdebeaute.de:
-        - http://www.prixdebeaute.de
-      www.thewebhatesme.com:
-        - http://www.thewebhatesme.com
+      258:
+        - https://www.ars-dessous.de
+      289:
+        - http://tests.koalamon.com
 
 rules:
-   LittleSeo_Robots:
+  LittleSeo_258:
+    class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule
+
+  LittleSeo_289:
     class: whm\Smoke\Rules\Seo\RobotsDisallowAllRule

@@ -2,7 +2,9 @@
 
 namespace whm\Smoke\Rules\Xml\Sitemap;
 
-use whm\Smoke\Http\Response;
+use phm\HttpWebdriverClient\Http\Response\DomAwareResponse;
+use Psr\Http\Message\ResponseInterface;
+use whm\Smoke\Rules\CheckResult;
 use whm\Smoke\Rules\StandardRule;
 use whm\Smoke\Rules\ValidationFailedException;
 
@@ -12,68 +14,92 @@ use whm\Smoke\Rules\ValidationFailedException;
 class ValidRule extends StandardRule
 {
     const SCHEMA = 'schema.xsd';
+    const NON_STRICT_SCHEMA = 'nonStrictSchema.xsd';
+    const INDEX = 'siteindex.xsd';
 
-    protected $contentTypes = array('text/xml', 'application/xml');
+    private $strictMode;
+    private $debug;
 
-    private function getSchema()
+    private $gzipContentTypes = [
+        'application/x-gzip',
+        'application/gzip'
+    ];
+
+    public function init($strictMode = true, $debug = false)
     {
-        return __DIR__ . '/' . self::SCHEMA;
+        $this->debug = $debug;
+        $this->strictMode = $strictMode;
     }
 
-    private function validateBody($body, $filename)
+    private function getSchema($isIndex)
     {
-        libxml_clear_errors();
-        $dom = new \DOMDocument();
-        @$dom->loadXML($body);
-        $lastError = libxml_get_last_error();
-        if ($lastError) {
-            throw new ValidationFailedException(
-                'The given sitemap file (' . $filename . ') is not well formed (last error: ' . str_replace("\n", '', $lastError->message) . ').');
+        if ($isIndex) {
+            return __DIR__ . '/' . self::INDEX;
         }
-        $valid = @$dom->schemaValidate($this->getSchema());
-        if (!$valid) {
-            $lastError = libxml_get_last_error();
-            throw new ValidationFailedException(
-                'The given sitemap file (' . $filename . ') did not validate against the sitemap schema (last error: ' . str_replace("\n", '', $lastError->message) . ').');
+
+        if ($this->strictMode) {
+            return __DIR__ . '/' . self::SCHEMA;
+        } else {
+            return __DIR__ . '/' . self::NON_STRICT_SCHEMA;
         }
     }
 
     /**
-     * @param string
-     *
-     * @return array
+     * @param $body
+     * @param $filename
+     * @param bool $isIndex
+     * @throws ValidationFailedException
      */
-    private function getLocations($body)
+    private function validateBody($body, $filename, $isIndex = true)
     {
-        $locations = array();
-        $xml = simplexml_load_string($body);
-        $json = json_encode($xml);
-        $xmlValues = json_decode($json, true);
+        if (!$this->strictMode) {
+            $body = str_replace('<sitemapindex>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', $body);
+        }
 
-        if (isset($xmlValues['sitemap']['loc'])) {
-            $locations[] = $xmlValues['sitemap']['loc'];
+        $dom = new \DOMDocument();
+
+        @$dom->loadXML($body);
+
+        $schema = $this->getSchema($isIndex);
+        $valid = @$dom->schemaValidate($schema);
+
+        if (!$valid) {
+            $lastError = libxml_get_last_error();
+            $message = 'The given sitemap file (' . $filename . ') did not validate against the sitemap schema (last error: ' . str_replace("\n", '', $lastError->message) . ').';
+            return new CheckResult(CheckResult::STATUS_FAILURE, $message);
         } else {
-            foreach ($xmlValues['sitemap'] as $sitemap) {
-                $locations[] = $sitemap['loc'];
+            $message = 'The given sitemap file (' . $filename . ') is valid.';
+            return new CheckResult(CheckResult::STATUS_SUCCESS, $message);
+
+        }
+    }
+
+    /**
+     * @param ResponseInterface $response
+     * @throws ValidationFailedException
+     */
+    protected function doValidation(ResponseInterface $response)
+    {
+        if ($response instanceof DomAwareResponse) {
+            $body = (string)$response->getHtmlBody();
+        } else {
+            $body = (string)$response->getBody();
+        }
+
+        if ($response->hasHeader('content-type')) {
+            $contentType = $response->getHeader('content-type');
+            if (is_array($contentType) && in_array(strtolower($contentType[0]), $this->gzipContentTypes)) {
+                $body = gzdecode($response->getBody());
             }
         }
 
-        return $locations;
-    }
-
-    protected function doValidation(Response $response)
-    {
-        $body = $response->getBody();
-
         // sitemapindex or urlset
         if (preg_match('/<sitemapindex/', $body)) {
-            $allSingleSitemapsUrls = $this->getLocations($body);
-            if (count($allSingleSitemapsUrls) > 0) {
-                // we only check the first sitemap we find
-                $this->validateBody(file_get_contents($allSingleSitemapsUrls[0]), $allSingleSitemapsUrls[0]);
-            }
+            return $this->validateBody($body, (string)$response->getUri(), true);
         } elseif (preg_match('/<urlset/', $body)) {
-            $this->validateBody($body, (string) $response->getUri());
+            return $this->validateBody($body, (string)$response->getUri(), false);
+        } else {
+            throw new ValidationFailedException('The given document is not a valid sitemap. Nether sitemapindex nor urlset element was found. ');
         }
     }
 }

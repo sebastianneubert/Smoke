@@ -1,10 +1,28 @@
+whitelist:
+ - ^^
+
+client:
+  class: phm\HttpWebdriverClient\Http\Client\Chrome\ChromeClient
+
+blacklist:
+ - ^jpg^
+ - ^png^
+ - ^css^
+ - ^.js^
+
 options:
-  extendDefault: false
+  scanForeignDomains: false
 
 extensions:
 
   _SmokeStop:
     class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _ProgressBar:
+    class: whm\Smoke\Extensions\SmokeProgressBar\ProgressBar
+    parameters:
+      width: 100
+      format: normal
 
   _Reporter:
     class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
@@ -12,39 +30,44 @@ extensions:
   _ResponseRetriever:
     class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
 
-  _Filter:
-    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+  _SmokeRunLevel:
+    class: whm\Smoke\Extensions\SmokeRunLevel\RunLevelExtension
     parameters:
-      exclusive:
-        _XPathCheck:
-          - http://ultrahocherhitzt.net
+      runLevel: 10
 
 reporter:
   _CliReporter:
     class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
 
 responseRetriever:
-  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
-  parameters:
-    startPage: "http://ultrahocherhitzt.net"
+ class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
 
-    pageContainer:
-      class: whm\Crawler\PageContainer\PatternAwareContainer
+ parameters:
+   parallelRequests: 5
+   startPage: "http://m.gala.de"
 
-    filters:
-      _BlackWhiteListFilter:
-        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
+   pageContainer:
+     class: whm\Crawler\PageContainer\PatternAwareContainer
 
-      _ValidUrlFilter:
-        class: whm\Crawler\Filter\ValidUrlFilter
+   filters:
+    _BlackWhiteListFilter:
+      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
 
-      _ForeignDomainFilter:
-        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+    _ValidUrlFilter:
+      class: whm\Crawler\Filter\ValidUrlFilter
+
+    _ForeignDomainFilter:
+      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+
+stop:
+  _CountStop:
+    class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
+    parameters:
+      maxCount: 1
 
 rules:
-   _XPathCheck:
-    class: whm\Smoke\Rules\Html\XPathExistsRule
-    parameters:
-      xPaths:
-        - "/html/head/title"
-        - "/html/bodyx"
+  _Https:
+   runLevel: 1
+   class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
+   parameters:
+     expireWarningTime: 7

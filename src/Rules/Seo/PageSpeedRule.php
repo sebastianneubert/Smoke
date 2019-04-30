@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Seo;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -11,7 +12,7 @@ use whm\Smoke\Rules\ValidationFailedException;
  */
 class PageSpeedRule implements Rule
 {
-    public function validate(Response $response)
+    public function validate(ResponseInterface $response)
     {
         $url = (string) $response->getUri();
         throw new ValidationFailedException("This function isn't implemented yet");

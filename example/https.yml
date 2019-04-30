@@ -41,7 +41,7 @@ responseRetriever:
 
  parameters:
    parallelRequests: 5
-   startPage: "https://www.google.de"
+   startPage: "https://www.leankoala.com"
 
    pageContainer:
      class: whm\Crawler\PageContainer\PatternAwareContainer
@@ -65,6 +65,6 @@ stop:
 rules:
   _Https:
    runLevel: 1
-   class: whm\Smoke\Rules\Http\HttpsCertificateAuthorityRule
+   class: whm\Smoke\Rules\Http\HttpsCertificateExpireRule
    parameters:
-     authorityName: Hallo
+     expireWarningTime: 7

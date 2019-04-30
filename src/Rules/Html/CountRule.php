@@ -2,8 +2,8 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Html\Document;
-use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
 
 abstract class CountRule extends StandardRule
@@ -22,11 +22,11 @@ abstract class CountRule extends StandardRule
         $this->maxCount = $maxCount;
     }
 
-    abstract protected function getFilesToCount(Document $document, Response $response);
+    abstract protected function getFilesToCount(Document $document, ResponseInterface $response);
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        $document = new Document($response->getBody());
+        $document = new Document((string)$response->getBody());
         $files = $this->getFilesToCount($document, $response);
 
         $this->assert(count($files) <= $this->maxCount, sprintf($this->errorMessage, count($files)));

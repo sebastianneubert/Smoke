@@ -2,9 +2,13 @@
 
 namespace whm\Smoke\Extensions\SmokeReporter\Reporter;
 
+use phm\HttpWebdriverClient\Http\Request\DeviceAwareRequest;
+use phm\HttpWebdriverClient\Http\Request\ViewportAwareRequest;
+use phm\HttpWebdriverClient\Http\Response\RequestAwareResponse;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever;
-use whm\Smoke\Scanner\Result;
+use whm\Smoke\Rules\CheckResult;
 
 abstract class CliReporter implements Reporter
 {
@@ -28,17 +32,36 @@ abstract class CliReporter implements Reporter
         $this->output = $output;
     }
 
-    protected function renderFailure(Result $result)
+    private function getRequestString(ResponseInterface $response)
     {
-        $this->output->writeln('   <error> ' . $result->getUrl() . ' </error> coming from ' . (string) $this->retriever->getComingFrom($result->getUrl()));
-        foreach ($result->getMessages() as $ruleName => $message) {
-            $this->output->writeln('    - ' . $message . " [rule: $ruleName]");
+        if ($response instanceof RequestAwareResponse) {
+            $request = $response->getRequest();
+            if ($request instanceof DeviceAwareRequest) {
+                return ' (Device: ' . $request->getDevice()->getName() . ')';
+            } else if ($request instanceof ViewportAwareRequest) {
+                $viewport = $request->getViewport();
+                return ' (Viewport: width: ' . $viewport->getWidth() . ', height: ' . $viewport->getHeight() . ')';
+            }
         }
+
+        return '';
+    }
+
+    protected function renderFailure(CheckResult $result)
+    {
+        $this->output->writeln('   <error> ' . (string)$result->getResponse()->getUri() . $this->getRequestString($result->getResponse()) . ' </error> coming from ' . (string)$this->retriever->getComingFrom($result->getResponse()->getUri()));
+        $this->output->writeln('    - ' . $result->getMessage() . ' [rule: ' . $result->getRuleName() . ']');
         $this->output->writeln('');
     }
 
-    protected function renderSuccess(Result $result)
+    protected function renderSuccess(CheckResult $result)
     {
-        $this->output->writeln('   <info> ' . $result->getUrl() . ' </info> all tests passed');
+        $this->output->writeln('   <info> ' . (string)$result->getResponse()->getUri() . $this->getRequestString($result->getResponse()) . ' </info> all tests passed');
+    }
+
+    protected function renderSkipped(CheckResult $result)
+    {
+        $this->output->writeln('   <comment> ' . (string)$result->getResponse()->getUri() . $this->getRequestString($result->getResponse()) . ' </comment>test skipped');
+        $this->output->writeln('    - ' . $result->getMessage() . ' [rule: ' . $result->getRuleName() . ']');
     }
 }

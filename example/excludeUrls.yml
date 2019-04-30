@@ -1,0 +1,67 @@
+options:
+  scanForeignDomains: false
+
+extensions:
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _ProgressBar:
+    class: whm\Smoke\Extensions\SmokeProgressBar\ProgressBar
+    parameters:
+      width: 100
+      format: normal
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _SmokeRunLevel:
+    class: whm\Smoke\Extensions\SmokeRunLevel\RunLevelExtension
+    parameters:
+      runLevel: 10
+
+  _SmokeFilter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      filters:
+        _HttpHeaderCacheNoCache:
+          - http://www.bravo.de/image_captcha(.*)
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+filters:
+  _HttpHeaderSuccessStatus:
+    - http://www.bravo.de/image_captcha(.*)
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Crawler
+
+  parameters:
+    parallelRequests: 5
+    startPage: http://www.bravo.de/image_captcha?sid=124057&ts=1475577937
+
+    pageContainer:
+      class: whm\Crawler\PageContainer\PatternAwareContainer
+
+    filters:
+      _ValidUrlFilter:
+        class: whm\Crawler\Filter\ValidUrlFilter
+
+      _ForeignDomainFilter:
+        class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\ForeignDomainFilter
+
+stop:
+  _CountStop:
+    class: whm\Smoke\Extensions\SmokeStop\Strategy\CountStrategy
+    parameters:
+      maxCount: 1
+
+rules:
+  _HttpHeaderCacheNoCache:
+    runLevel: 1
+    class: whm\Smoke\Rules\Http\Header\Cache\PragmaNoCacheRule

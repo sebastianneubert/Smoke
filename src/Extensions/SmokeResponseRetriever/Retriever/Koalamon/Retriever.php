@@ -2,11 +2,13 @@
 
 namespace whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Koalamon;
 
-use Ivory\HttpAdapter\HttpAdapterInterface;
+use GuzzleHttp\Client;
+use phm\HttpWebdriverClient\Http\HttpClient;
 use Psr\Http\Message\UriInterface;
 use whm\Crawler\Http\RequestFactory;
 use whm\Html\Uri;
 use whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Retriever as SmokeRetriever;
+use whm\Smoke\Scanner\SessionContainer;
 
 class Retriever implements SmokeRetriever
 {
@@ -27,13 +29,13 @@ class Retriever implements SmokeRetriever
         $this->project = $project;
     }
 
-    public function setHttpClient(HttpAdapterInterface $httpClient)
+    public function setHttpClient(Client $httpClient)
     {
         $this->client = $httpClient;
         $this->systems = $this->getSystems($httpClient);
     }
 
-    public function getSystems(HttpAdapterInterface $httpClient)
+    public function getSystems(HttpClient $httpClient)
     {
         $url = $this->prepareUrl(self::ENDPOINT_SYSTEMS);
 
@@ -72,5 +74,14 @@ class Retriever implements SmokeRetriever
     public function getOriginUri(UriInterface $uri)
     {
         return $uri;
+    }
+
+    public function setSessionContainer(SessionContainer $sessionContainer)
+    {
+    }
+
+    public function getOccuredExceptions()
+    {
+        return [];
     }
 }

@@ -48,6 +48,11 @@ class CustomCommand extends ConfigurableCommand
     private function initConfiguration($configFile, Dispatcher $dispatcher)
     {
         $configArray = $this->getConfigArray($configFile, true);
+
+        if (is_string($configArray)) {
+            throw new \RuntimeException('Unable to load config file. Please check ' . $configFile);
+        }
+
         $this->config = new Configuration(new Uri('http://www.example.com'), $dispatcher, $configArray);
     }
 }

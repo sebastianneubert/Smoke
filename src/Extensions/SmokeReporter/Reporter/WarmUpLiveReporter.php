@@ -3,10 +3,12 @@
 namespace whm\Smoke\Extensions\SmokeReporter\Reporter;
 
 use Symfony\Component\Console\Output\OutputInterface;
-use whm\Smoke\Scanner\Result;
 
 class WarmUpLiveReporter implements Reporter
 {
+    /**
+     * @var OutputInterface
+     */
     private $output;
     private $urlCount = 0;
 
@@ -15,11 +17,14 @@ class WarmUpLiveReporter implements Reporter
         $this->output = $_output;
     }
 
-    public function processResult(Result $result)
+    public function processResults($results)
     {
-        ++$this->urlCount;
-        $this->output->writeln('   ' . $result->getUrl());
-        $this->output->writeln('');
+        if (count($results) > 0) {
+            ++$this->urlCount;
+            $firstResult = array_pop($results);
+            $this->output->writeln('   ' . (string) $firstResult->getResponse()->getUri());
+            $this->output->writeln('');
+        }
     }
 
     public function finish()

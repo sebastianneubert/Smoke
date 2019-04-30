@@ -2,6 +2,9 @@
 
 namespace whm\Smoke\Rules\Seo;
 
+use phm\HttpWebdriverClient\Http\Response\UriAwareResponse;
+use Psr\Http\Message\ResponseInterface;
+use whm\Smoke\Http\ClientAware;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\Rule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -11,27 +14,48 @@ use whm\Smoke\Rules\ValidationFailedException;
  */
 class RobotsDisallowAllRule implements Rule
 {
-    public function validate(Response $response)
+    /**
+     * @param ResponseInterface $response
+     * @throws ValidationFailedException
+     */
+    public function validate(ResponseInterface $response)
     {
-        $url = $response->getUri()->getScheme() . '://' . $response->getUri()->getHost();
+        if ($response instanceof UriAwareResponse) {
+            $url = $response->getUri()->getScheme() . '://' . $response->getUri()->getHost();
 
-        if (substr_count($url, '/') === 2) {
-            $filename = $robotsUrl = $url . '/robots.txt';
-        } elseif (substr_count($url, '/') === 3) {
-            $filename = $robotsUrl = $url . 'robots.txt';
-        } else {
-            return;
-        }
+            if (substr_count($url, '/') === 2) {
+                $filename = $robotsUrl = $url . '/robots.txt';
+            } elseif (substr_count($url, '/') === 3) {
+                $filename = $robotsUrl = $url . 'robots.txt';
+            } else {
+                return;
+            }
 
-        $headers = @get_headers($filename);
+            try {
+                $content = @file_get_contents($filename);
+            } catch (\Exception $e) {
+                return;
+            }
 
-        if (strpos($headers[0], '200') !== false) {
-            $content = file_get_contents($filename);
-            $normalizedContent = str_replace(' ', '', $content);
+            $normalizedContent = $this->normalizeContent($content);
 
-            if (strpos($normalizedContent, 'Disallow:/' . PHP_EOL) !== false) {
+            if (strpos($normalizedContent, 'user-agent:* disallow:/' . PHP_EOL) !== false) {
+                throw new ValidationFailedException('The robots.txt contains disallow all (Disallow: /)');
+            }
+
+            if (strpos($normalizedContent, 'user-agent:* disallow:/') === strlen($normalizedContent) - 23) {
                 throw new ValidationFailedException('The robots.txt contains disallow all (Disallow: /)');
             }
         }
+    }
+
+    private function normalizeContent($content)
+    {
+        $normalizedContent = strtolower($content);
+        $normalizedContent = str_replace(' ', '', $normalizedContent);
+
+        $normalizedContent = trim(preg_replace('/\s+/', ' ', $normalizedContent));
+
+        return $normalizedContent;
     }
 }

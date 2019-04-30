@@ -1,0 +1,70 @@
+
+options:
+  extendDefault: false
+
+client:
+  class: whm\Smoke\Http\ChromeClient
+  parameters:
+    host: webdriver
+    port: 4444
+
+extensions:
+
+  Leankoala:
+    class: whm\Smoke\Extensions\Leankoala\LeankoalaExtension
+
+  _SmokeStop:
+    class: whm\Smoke\Extensions\SmokeStop\StopExtension
+
+  _Reporter:
+    class: whm\Smoke\Extensions\SmokeReporter\ReporterExtension
+
+  _ResponseRetriever:
+    class: whm\Smoke\Extensions\SmokeResponseRetriever\ResponseRetrieverExtension
+
+  _Filter:
+    class: whm\Smoke\Extensions\SmokeFilter\FilterExtension
+    parameters:
+      exclusive:
+        RegExExists_22967:
+          - http://www.lecker.de/suche-rezept/apfel
+
+Leankoala:
+  systems:
+      22967:
+        22966
+
+reporter:
+  _CliReporter:
+    class: whm\Smoke\Extensions\SmokeReporter\Reporter\StandardCliReporter
+
+  KoalamonReporter:
+     class: whm\Smoke\Extensions\SmokeReporter\Reporter\LeankoalaReporter
+     parameters:
+       systemUseRetriever: true
+       apiKey: 72D6D197-B631-4E95-A52C-0183F6258E87
+       server: http://lean.xcel.io/webhook/
+       collect: false
+       groupBy: prefix
+       addComingFrom: false
+
+responseRetriever:
+  class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\ListRetriever\Retriever
+  parameters:
+    urls:
+      22967:
+        - http://www.lecker.de/suche-rezept/apfel
+
+
+rules:
+  RegExExists_22967:
+    class: whm\Smoke\Rules\Html\RegExExistsRule
+    parameters:
+      regExs:
+        -
+          pattern: Apfel
+          isRegEx: false
+        -
+          pattern: Fanta
+          isRegEx: false
+

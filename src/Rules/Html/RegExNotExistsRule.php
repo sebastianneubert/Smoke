@@ -2,7 +2,7 @@
 
 namespace whm\Smoke\Rules\Html;
 
-use whm\Smoke\Http\Response;
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Rules\StandardRule;
 
 /**
@@ -22,10 +22,10 @@ class RegExNotExistsRule extends StandardRule
         $this->regExs = $regExs;
     }
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
         foreach ($this->regExs as $regEx) {
-            $this->assert(preg_match('^' . $regEx . '^', (string) $response->getBody()) === 0,
+            $this->assert(preg_match('^' . $regEx . '^', (string)$response->getBody()) === 0,
                 'The given regular expression (' . $regEx . ') was found in this document.');
         }
     }

@@ -13,6 +13,9 @@ class Result
     private $url;
     private $duration;
 
+    private $value;
+    private $attributes = array();
+
     public function __construct($uri, $type, Response $response, $parent, $duration)
     {
         $this->type = $type;
@@ -20,6 +23,35 @@ class Result
         $this->response = $response;
         $this->parent = $parent;
         $this->duration = $duration;
+    }
+
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param array $attributes
+     */
+    public function setAttributes($attributes)
+    {
+        $this->attributes = $attributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
     }
 
     public function isFailure()

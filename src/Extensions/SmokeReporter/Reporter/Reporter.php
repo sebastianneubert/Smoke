@@ -2,16 +2,16 @@
 
 namespace whm\Smoke\Extensions\SmokeReporter\Reporter;
 
-use whm\Smoke\Scanner\Result;
+use whm\Smoke\Rules\CheckResult;
 
 interface Reporter
 {
     /**
      * This function will be called after an url has been validated.
      *
-     * @param $result the result of the validation
+     * @param CheckResult[] $results the result of the validation
      */
-    public function processResult(Result $result);
+    public function processResults($results);
 
     /**
      * This function is called after the last url has been validated.

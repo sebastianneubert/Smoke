@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Http\Header;
 
+use Psr\Http\Message\ResponseInterface;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
 use whm\Smoke\Rules\ValidationFailedException;
@@ -18,7 +19,7 @@ class ExistsRule extends StandardRule
         $this->checkedHeaders = $checkedHeaders;
     }
 
-    public function doValidation(Response $response)
+    public function doValidation(ResponseInterface $response)
     {
         // @todo the test should not fail with the first not found header
 
@@ -29,7 +30,7 @@ class ExistsRule extends StandardRule
 
             $currentValue = $response->getHeader($headerConfig['key'])[0];
 
-            if (!preg_match('^' . $headerConfig['value'] . '^', $currentValue, $matches)) {
+            if (!preg_match('%' . $headerConfig['value'] . '%', $currentValue, $matches)) {
                 throw new ValidationFailedException('Header "' . $headerConfig['key'] . '" does not match "' . $headerConfig['value'] . '". Current value is "' . $currentValue . '"');
             }
         }

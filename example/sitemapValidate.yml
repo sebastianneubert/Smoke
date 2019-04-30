@@ -32,18 +32,13 @@ responseRetriever:
 
  parameters:
    parallelRequests: 1
-   #startPage: http://wohnidee.wunderweib.de/sitemap.xml
-   #startPage: http://www.tvmovie.de/sitemap.xml
-   startPage: https://www.thewebhatesme.com/sitemap_index.xml
-   #startPage: http://www.tvmovie.de/sitemap/standard/0
+   #startPage: http://astrowoche.wunderweib.de/sitemap.xml
+   startPage: http://astrowoche.wunderweib.de/sitemap/standard/1
 
    pageContainer:
      class: whm\Crawler\PageContainer\PatternAwareContainer
 
    filters:
-    _BlackWhiteListFilter:
-      class: whm\Smoke\Extensions\SmokeResponseRetriever\Retriever\Crawler\Filter\BlackWhiteListFilter
-
     _ValidUrlFilter:
       class: whm\Crawler\Filter\ValidUrlFilter
 
@@ -60,4 +55,5 @@ rules:
   _IvwJsFile:
    runLevel: 1
    class: whm\Smoke\Rules\Xml\Sitemap\ValidRule
-
+   parameters:
+     strictMode: true

@@ -2,6 +2,7 @@
 
 namespace whm\Smoke\Rules\Html;
 
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 use whm\Smoke\Http\Response;
 use whm\Smoke\Rules\StandardRule;
@@ -13,13 +14,13 @@ class NoIndexRule extends StandardRule
 {
     protected $contentTypes = array('text/html');
 
-    protected function doValidation(Response $response)
+    protected function doValidation(ResponseInterface $response)
     {
-        if ($response->getStatus() >= 300) {
+        if ($response->getStatusCode() >= 300) {
             return;
         }
 
-        $crawler = new Crawler($response->getBody());
+        $crawler = new Crawler((string)$response->getBody());
         $metaTags = $crawler->filterXPath("//meta[@name='robots']/@content");
 
         foreach ($metaTags as $metaTag) {
